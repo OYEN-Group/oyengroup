@@ -1,135 +1,190 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Our Products', href: '/products' },
-    { name: 'Our Approach', href: '/#approach' },
-    { name: 'Investment', href: '/investment' },
-    { name: 'Contact', href: '/contact' },
-  ];
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setProductsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
-  // If we are not on the homepage, the header should have a solid background by default
   const isHomepage = pathname === '/';
   const isSolidBg = scrolled || !isHomepage;
 
+  const productItems = [
+    { name: 'OYEN GRID', href: '/products' },
+    { name: 'VERBA', href: '/products' },
+    { name: 'ORIVEX', href: '/products' },
+  ];
+
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isSolidBg ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
+        isSolidBg ? 'bg-[#09251F] border-white/10 py-4 shadow-lg' : 'bg-transparent border-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between">
           
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className={`text-2xl font-bold tracking-tight font-heading ${
-              isSolidBg ? 'text-brand-primary' : 'text-white'
-            }`}>
-              OYEN<span className="text-brand-accent">GROUP</span>
-            </span>
+          {/* Official Logo */}
+          <Link href="/" className="flex items-center shrink-0">
+            <div className="relative w-[160px] h-[45px]">
+              <Image 
+                src="/images/logo.png" 
+                alt="OYEN GROUP" 
+                fill 
+                className="object-contain object-left" 
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-300 relative group ${
-                  isSolidBg ? 'text-brand-primary hover:text-brand-accent' : 'text-white hover:text-brand-accent-soft'
-                }`}
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
+            <Link href="/" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+              Home
+              {pathname === '/' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
+              {pathname !== '/' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
+            </Link>
+            
+            <Link href="/about" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+              About
+              {pathname === '/about' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
+              {pathname !== '/about' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
+            </Link>
+
+            {/* Dropdown for Products */}
+            <div 
+              className="relative group" 
+              ref={dropdownRef}
+              onMouseEnter={() => setProductsOpen(true)}
+              onMouseLeave={() => setProductsOpen(false)}
+            >
+              <button 
+                onClick={() => setProductsOpen(!productsOpen)}
+                className={`text-[12px] uppercase tracking-[0.15em] font-semibold flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent ${pathname.startsWith('/products') ? 'text-brand-accent' : ''}`}
               >
-                {item.name}
-                {/* Active Indicator */}
-                {pathname === item.href && (
-                  <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-brand-accent rounded-full" />
-                )}
-                {/* Hover Indicator */}
-                {pathname !== item.href && (
-                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />
-                )}
-              </Link>
-            ))}
+                Our Products
+                <svg className={`w-4 h-4 transition-transform duration-300 ${productsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+                {pathname.startsWith('/products') && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div 
+                className={`absolute top-full left-0 mt-6 w-56 bg-[#09251F] border border-white/10 shadow-2xl transition-all duration-300 origin-top-left ${productsOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
+              >
+                <div className="py-2">
+                  {productItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block px-6 py-3 text-[13px] font-medium tracking-wide text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
+                      onClick={() => setProductsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <Link href="/#approach" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+              Our Approach
+              <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />
+            </Link>
+            
+            <Link href="/investment" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+              Investment
+              {pathname === '/investment' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
+              {pathname !== '/investment' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
+            </Link>
+            
+            <Link href="/contact" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+              Contact
+              {pathname === '/contact' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
+              {pathname !== '/contact' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
+            </Link>
           </nav>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className={`px-6 py-3 text-sm font-semibold tracking-wider rounded-sm transition-all duration-300 flex items-center gap-2 group ${
-                isSolidBg 
-                  ? 'bg-brand-primary hover:bg-brand-secondary text-white' 
-                  : 'bg-brand-accent hover:bg-brand-accent-soft text-brand-primary'
-              }`}
+              className="px-7 py-3 text-[12px] font-bold uppercase tracking-[0.15em] text-[#09251F] bg-brand-accent hover:bg-white transition-all duration-300 rounded-sm"
             >
               Partner With Us
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button 
-            className={`md:hidden p-2 focus:outline-none ${isSolidBg ? 'text-brand-primary' : 'text-white'}`}
+            className="lg:hidden p-2 text-white focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl py-6 px-6 flex flex-col gap-4 border-t border-gray-100">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className={`text-lg font-medium ${
-                pathname === item.href ? 'text-brand-accent' : 'text-brand-primary'
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-          <div className="pt-4 mt-2 border-t border-gray-100">
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="inline-flex items-center justify-center gap-2 w-full bg-brand-primary text-white py-4 rounded-sm font-semibold tracking-wider uppercase text-sm"
-            >
-              Partner With Us →
-            </Link>
+      {/* Mobile Navigation Panel */}
+      <div 
+        className={`lg:hidden fixed inset-0 top-[76px] bg-[#09251F] transition-all duration-300 overflow-y-auto ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+      >
+        <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+          <Link href="/" onClick={() => setIsOpen(false)} className="text-xl font-medium text-white tracking-wide border-b border-white/10 pb-4">Home</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)} className="text-xl font-medium text-white tracking-wide border-b border-white/10 pb-4">About</Link>
+          
+          <div className="flex flex-col gap-4 border-b border-white/10 pb-4">
+            <div className="text-xl font-medium text-white tracking-wide">Our Products</div>
+            <div className="flex flex-col gap-3 pl-4">
+              {productItems.map(item => (
+                <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)} className="text-lg text-brand-accent">
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
+
+          <Link href="/#approach" onClick={() => setIsOpen(false)} className="text-xl font-medium text-white tracking-wide border-b border-white/10 pb-4">Our Approach</Link>
+          <Link href="/investment" onClick={() => setIsOpen(false)} className="text-xl font-medium text-white tracking-wide border-b border-white/10 pb-4">Investment</Link>
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="text-xl font-medium text-white tracking-wide border-b border-white/10 pb-4">Contact</Link>
+          
+          <Link href="/contact" onClick={() => setIsOpen(false)} className="mt-8 px-6 py-4 text-center font-bold uppercase tracking-[0.15em] text-[#09251F] bg-brand-accent rounded-sm">
+            Partner With Us
+          </Link>
         </div>
-      )}
+      </div>
     </header>
   );
 }
