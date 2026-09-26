@@ -50,15 +50,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our Businesses */}
+          {/* Our Products */}
           <div className="lg:col-span-3">
             <h4 className="text-sm font-semibold text-white uppercase tracking-widest mb-6">
-              Our Businesses
+              Our Products
             </h4>
             <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/businesses/energy" className="hover:text-brand-accent transition-colors">Oyen Energy</Link></li>
-              <li><Link href="/businesses/tech" className="hover:text-brand-accent transition-colors">Oyen Tech</Link></li>
-              <li><Link href="/businesses/agro" className="hover:text-brand-accent transition-colors">Oyen Agro</Link></li>
+              <li><Link href="/products" className="hover:text-brand-accent transition-colors">OYEN GRID</Link></li>
+              <li><Link href="/products" className="hover:text-brand-accent transition-colors">VERBA</Link></li>
+              <li><Link href="/products" className="hover:text-brand-accent transition-colors">ORIVEX</Link></li>
             </ul>
           </div>
 

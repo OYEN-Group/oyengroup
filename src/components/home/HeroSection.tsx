@@ -54,10 +54,10 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <Link
-            href="/businesses"
+            href="/products"
             className="group flex items-center gap-3 bg-brand-accent hover:bg-brand-accent-soft text-brand-primary px-8 py-4 rounded-sm font-semibold transition-all duration-300"
           >
-            Explore Our Businesses
+            Explore Our Products
             <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
           <Link
