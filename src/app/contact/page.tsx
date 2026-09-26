@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us | OYEN GROUP',
@@ -47,54 +48,7 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-8">
-            <div className="bg-white p-8 md:p-12 rounded-sm shadow-sm border border-brand-primary/5">
-              <h2 className="text-2xl font-bold text-brand-primary mb-8">Send a Message</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-semibold text-brand-primary mb-2">First Name</label>
-                    <input type="text" id="firstName" className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all" />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-semibold text-brand-primary mb-2">Last Name</label>
-                    <input type="text" id="lastName" className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-brand-primary mb-2">Email Address</label>
-                    <input type="email" id="email" className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all" />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-brand-primary mb-2">Company / Organization</label>
-                    <input type="text" id="company" className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all" />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-semibold text-brand-primary mb-2">Inquiry Type</label>
-                  <select id="inquiryType" className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all appearance-none">
-                    <option value="">Select an option</option>
-                    <option value="investment">Investment Opportunity</option>
-                    <option value="partnership">Strategic Partnership</option>
-                    <option value="media">Media / Press</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-brand-primary mb-2">Message</label>
-                  <textarea id="message" rows={6} className="w-full bg-brand-offwhite border border-transparent focus:border-brand-accent focus:ring-1 focus:ring-brand-accent rounded-sm px-4 py-3 outline-none transition-all resize-none"></textarea>
-                </div>
-                
-                <div>
-                  <button type="button" className="bg-brand-primary hover:bg-brand-secondary text-white font-semibold py-4 px-8 rounded-sm transition-colors duration-300 w-full md:w-auto">
-                    Submit Message
-                  </button>
-                </div>
-              </form>
-            </div>
+            <ContactForm />
           </div>
           
         </div>
