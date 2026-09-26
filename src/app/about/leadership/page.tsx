@@ -28,64 +28,55 @@ const leaders = [
 export default function LeadershipPage() {
   return (
     <main className="bg-white min-h-screen">
-      {/* ASYMMETRIC EDITORIAL HERO */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#111719] overflow-hidden">
-        {/* Subtle architectural background */}
-        <div className="absolute inset-0 z-0">
+      {/* PREMIUM EDITORIAL HERO */}
+      <section className="relative pt-40 pb-32 md:pt-56 md:pb-40 bg-[#09251F] overflow-hidden">
+        {/* Deep, rich corporate background */}
+        <div className="absolute inset-0 z-0 bg-black">
           <Image
-            src="/images/impact_bg.jpg"
+            src="/images/solutions_bg.jpg"
             alt="Corporate Architecture"
             fill
-            className="object-cover opacity-25 object-right"
+            className="object-cover opacity-35"
             quality={100}
             unoptimized={true}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/90 to-transparent" />
+          {/* Multi-layered gradient for depth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111719] via-[#111719]/20 to-transparent" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-            <div className="lg:col-span-8">
-              <motion.div 
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-4 mb-8"
-              >
-                <span className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-[#D5A547]">
-                  ABOUT / LEADERSHIP
-                </span>
-                <span className="w-12 h-px bg-[#D5A547]/40" />
-                <span className="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  OYEN GROUP — 2026
-                </span>
-              </motion.div>
-              
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-light text-white tracking-tight mb-8 leading-[1.1]"
-              >
-                The People Behind <br className="hidden md:block" />
-                <span className="font-bold">Our Progress.</span>
-              </motion.h1>
-              
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-lg md:text-xl text-gray-400 max-w-xl font-light leading-relaxed border-l-2 border-[#D5A547] pl-6"
-              >
-                Our leadership provides the vision, direction and support needed to turn ideas into real-world impact.
-              </motion.p>
-            </div>
+          <div className="max-w-4xl">
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="flex items-center gap-6 mb-12"
+            >
+              <div className="h-px w-16 bg-[#D5A547]" />
+              <span className="text-[11px] md:text-xs font-bold uppercase tracking-[0.3em] text-[#D5A547]">
+                About Oyen Group / Leadership
+              </span>
+            </motion.div>
             
-            <div className="hidden lg:block lg:col-span-4 text-right pb-4">
-              <div className="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center ml-auto">
-                <div className="w-2 h-2 rounded-full bg-[#D5A547] animate-pulse" />
-              </div>
-            </div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-5xl md:text-7xl lg:text-8xl font-light text-white tracking-tighter mb-10 leading-[1.05]"
+            >
+              The People Behind <br className="hidden md:block" />
+              <span className="font-semibold text-white">Our Progress.</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl md:text-2xl text-white/80 max-w-2xl font-light leading-relaxed"
+            >
+              Our leadership provides the vision, direction and support needed to turn ideas into real-world impact.
+            </motion.p>
           </div>
         </div>
       </section>
