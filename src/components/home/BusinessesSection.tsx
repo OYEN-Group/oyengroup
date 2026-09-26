@@ -34,7 +34,7 @@ export default function BusinessesSection() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold text-brand-primary">
-            Our Portfolio
+            Our Products
           </h2>
         </div>
 
