@@ -34,7 +34,7 @@ export default function Header() {
   const isSolidBg = scrolled || !isHomepage;
 
   const productItems = [
-    { name: 'OYEN GRID', href: '/products' },
+    { name: 'OYEN GRID', href: '/products/oyen-grid' },
     { name: 'VERBA', href: '/products' },
     { name: 'ORIVEX', href: '/products' },
   ];
