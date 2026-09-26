@@ -26,18 +26,26 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-brand-accent uppercase tracking-widest text-sm font-semibold mb-6"
         >
-          People. Ideas. Solutions. Impact.
+          People. Ideas. Technology. Real Impact.
         </motion.p>
         
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold max-w-4xl mx-auto leading-tight mb-10"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold max-w-4xl mx-auto leading-tight mb-8"
         >
-          Building a Sustainable Business <br className="hidden md:block" />
-          for a Brighter Tomorrow.
+          Research. Build. Solve. Scale.
         </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-xl text-white/90 font-medium mb-12 max-w-2xl mx-auto"
+        >
+          Technology built to solve real problems.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

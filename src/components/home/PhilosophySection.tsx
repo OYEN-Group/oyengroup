@@ -27,12 +27,11 @@ export default function PhilosophySection() {
             className="lg:col-span-8"
           >
             <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold text-brand-primary leading-[1.1] tracking-tight">
-              We build the infrastructure and businesses that enable{' '}
-              <span className="text-brand-accent">industries</span>,{' '}
-              <span className="text-brand-accent">communities</span> and{' '}
-              <span className="text-brand-accent">future generations</span>{' '}
-              to thrive more intelligently.
+              Research. <span className="text-brand-accent">Build.</span> Solve. <span className="text-brand-accent">Scale.</span>
             </h3>
+            <p className="mt-8 text-xl text-brand-muted max-w-2xl leading-relaxed">
+              Technology built to solve real problems.
+            </p>
           </motion.div>
         </div>
       </div>

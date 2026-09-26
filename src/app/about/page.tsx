@@ -16,7 +16,7 @@ export default function AboutPage() {
             of Tomorrow.
           </h1>
           <p className="text-xl md:text-2xl text-brand-muted leading-relaxed max-w-3xl">
-            OYEN GROUP is a diversified business group focused on building and scaling innovative solutions across key sectors. We combine people, technology and strategic partnerships to create sustainable value, strengthen businesses and drive meaningful impact.
+            OYEN GROUP is a technology and research company focused on solving real problems through practical software products, data-driven solutions and applied research.
           </p>
         </div>
 
@@ -29,18 +29,28 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-24">
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4 border-l-2 border-brand-accent pl-4">Our Vision</h2>
             <p className="text-lg text-brand-primary leading-relaxed">
-              To be the premier diversified corporate group building the foundational infrastructure, technologies, and businesses that empower future generations and drive sustainable global economic progress.
+              A more capable Africa powered by technology, talent and innovation.
             </p>
           </div>
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4 border-l-2 border-brand-accent pl-4">Our Mission</h2>
             <p className="text-lg text-brand-primary leading-relaxed">
-              To develop, invest in, and scale transformative solutions across energy, technology, and agriculture. We are committed to operational excellence, creating long-term value for our stakeholders, and positively impacting the communities where we operate.
+              To research, build and deploy practical solutions that solve real problems and create lasting value.
             </p>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4 border-l-2 border-brand-accent pl-4">Our Values</h2>
+            <ul className="text-lg text-brand-primary leading-relaxed space-y-2 list-none">
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>People first</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>Integrity</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>Practical innovation</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>Excellence</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>Long-term impact</li>
+            </ul>
           </div>
         </div>
 

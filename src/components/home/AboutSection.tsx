@@ -14,8 +14,8 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-primary mb-12 leading-tight"
         >
-          A Group Building Real Solutions <br className="hidden md:block" />
-          For People And Communities.
+          We research problems and build <br className="hidden md:block" />
+          technology around solving them.
         </motion.h2>
 
         <motion.p 
@@ -25,7 +25,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-brand-muted max-w-4xl mx-auto leading-relaxed mb-16"
         >
-          Oyen Group is a diversified business group focused on building and scaling innovative solutions across key sectors. We combine people, technology and strategic partnerships to create sustainable value and drive meaningful impact.
+          OYEN GROUP is a technology and research company focused on solving real problems through practical software products, data-driven solutions and applied research.
         </motion.p>
 
         <motion.div

@@ -18,7 +18,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-brand-accent text-sm font-semibold tracking-widest uppercase">
-              People. Ideas. Solutions. Impact.
+              People. Ideas. Technology. Real Impact.
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-brand-accent hover:text-brand-accent transition-colors duration-300">
@@ -88,7 +88,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
           <div>
-            &copy; {currentYear} Oyen Group. All rights reserved.
+            &copy; {currentYear} Oyen Group. All rights reserved. | <span className="text-brand-accent">Africa and Beyond.</span>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
