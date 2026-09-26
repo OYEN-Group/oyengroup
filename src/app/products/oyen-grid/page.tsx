@@ -9,25 +9,25 @@ const features = [
   {
     title: 'Programme Design & Management',
     description: 'Structure training programmes, coordinate learning activities and manage programme delivery from one connected environment.',
-    image: '/images/grid-feature-1.jpg',
+    image: '/images/oyen-grid/programme-management.jpg',
     layout: 'image-left'
   },
   {
     title: 'Participant Management',
     description: 'Organise participant information and maintain visibility across training activities.',
-    image: '/images/grid-feature-2.jpg',
+    image: '/images/oyen-grid/participant-management.jpg',
     layout: 'text-left'
   },
   {
     title: 'Facilitator Coordination',
     description: 'Support facilitator assignments, programme coordination and training delivery.',
-    image: '/images/grid-feature-3.jpg',
+    image: '/images/oyen-grid/facilitator-coordination.jpg',
     layout: 'image-left'
   },
   {
     title: 'Attendance & Progress Tracking',
     description: 'Maintain records of attendance and monitor participant progress throughout programme delivery.',
-    image: '/images/grid-feature-4.jpg',
+    image: '/images/oyen-grid/attendance-progress.jpg',
     layout: 'text-left'
   }
 ];
@@ -38,16 +38,18 @@ export default function OyenGridPage() {
       {/* 1. PAGE HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#111719] overflow-hidden">
         {/* Cinematic Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image quality={100}
-            src="/images/tech_business.jpg" 
+        <div className="absolute inset-0 z-0 bg-[#111719]">
+          <Image 
+            src="/images/oyen-grid/hero-training.jpg" 
             alt="OYEN GRID Training Workshop"
             fill
             className="object-cover opacity-30"
+            quality={100}
+            unoptimized={true}
             priority
           />
           {/* Carefully controlled dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-[#111719]/60 to-[#111719]/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/90 via-[#111719]/70 to-[#111719]/90" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center mt-16">
@@ -90,7 +92,7 @@ export default function OyenGridPage() {
 
       {/* 2 & 3. MAIN CONTENT LAYOUT / ALTERNATING ROWS */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="container mx-auto px-6 lg:px-12 max-w-7xl flex flex-col gap-24 md:gap-32">
+        <div className="container mx-auto px-6 lg:px-12 max-w-7xl flex flex-col gap-16 md:gap-20">
           {features.map((feature, index) => {
             const isImageLeft = feature.layout === 'image-left';
             
@@ -101,16 +103,17 @@ export default function OyenGridPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
               >
                 {/* Image Container */}
                 <div className={`relative aspect-[4/3] w-full bg-[#FAFAFA] overflow-hidden ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
-                  {/* Using generic tech/business placeholders for now; swap with actual African professional training photos */}
-                  <Image quality={100}
+                  <Image 
                     src={feature.image}
                     alt={feature.title}
                     fill
-                    className="object-cover filter contrast-[1.05]"
+                    className="object-cover"
+                    quality={100}
+                    unoptimized={true}
                   />
                   {/* Fallback styling if images don't exist yet */}
                   <div className="absolute inset-0 bg-gray-200 -z-10 flex items-center justify-center text-gray-400 text-sm">
