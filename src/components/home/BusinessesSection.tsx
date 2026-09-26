@@ -16,7 +16,7 @@ const products = [
     id: 'verba',
     name: 'VERBA',
     description: 'AI-Powered Academic Research & Writing.',
-    image: '/images/partnership.jpg',
+    image: '/images/verba.jpg',
     link: '/products',
   },
   {
