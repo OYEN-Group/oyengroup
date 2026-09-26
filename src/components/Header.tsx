@@ -54,7 +54,7 @@ export default function Header() {
                 src="/images/logo.png" 
                 alt="OYEN GROUP" 
                 fill 
-                className="object-contain object-left" 
+                className="object-contain object-left mix-blend-screen" 
                 priority
               />
             </div>

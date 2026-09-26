@@ -18,7 +18,7 @@ export default function Footer() {
                 src="/images/logo.png" 
                 alt="OYEN GROUP" 
                 fill 
-                className="object-contain object-left" 
+                className="object-contain object-left mix-blend-screen" 
               />
             </Link>
             <p className="text-brand-accent text-sm font-semibold tracking-widest uppercase">
