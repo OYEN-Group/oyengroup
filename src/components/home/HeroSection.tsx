@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-primary">
       <div className="absolute inset-0 w-full h-full">
-        <Image
+        <Image quality={100}
           src="/images/hero.jpg"
           alt="Premium aerial photograph of energy infrastructure"
           fill

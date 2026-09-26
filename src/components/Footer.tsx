@@ -14,7 +14,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-4 space-y-6">
             <Link href="/" className="inline-block relative w-[160px] h-[45px]">
-              <Image 
+              <Image quality={100} 
                 src="/images/logo.png" 
                 alt="OYEN GROUP" 
                 fill 

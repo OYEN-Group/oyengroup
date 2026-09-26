@@ -39,7 +39,7 @@ export default function OyenGridPage() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#111719] overflow-hidden">
         {/* Cinematic Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <Image quality={100}
             src="/images/tech_business.jpg" 
             alt="OYEN GRID Training Workshop"
             fill
@@ -106,7 +106,7 @@ export default function OyenGridPage() {
                 {/* Image Container */}
                 <div className={`relative aspect-[4/3] w-full bg-[#FAFAFA] overflow-hidden ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                   {/* Using generic tech/business placeholders for now; swap with actual African professional training photos */}
-                  <Image
+                  <Image quality={100}
                     src={feature.image}
                     alt={feature.title}
                     fill

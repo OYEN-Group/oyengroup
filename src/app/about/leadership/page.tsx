@@ -32,7 +32,7 @@ export default function LeadershipPage() {
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#111719] overflow-hidden">
         {/* Subtle architectural background */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <Image quality={100}
             src="/images/impact_bg.jpg"
             alt="Corporate Architecture"
             fill
@@ -112,7 +112,7 @@ export default function LeadershipPage() {
               >
                 {/* Large Editorial Portrait */}
                 <div className="relative w-full aspect-[4/5] bg-gray-100 mb-8 overflow-hidden">
-                  <Image
+                  <Image quality={100}
                     src={leader.image}
                     alt={leader.name}
                     fill

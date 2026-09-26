@@ -54,7 +54,7 @@ export default function LeadershipSection() {
               className="flex flex-col items-center text-center"
             >
               <div className="relative w-full aspect-[4/5] rounded-sm overflow-hidden mb-8 bg-gray-100 shadow-lg">
-                <Image
+                <Image quality={100}
                   src={leader.image}
                   alt={leader.name}
                   fill

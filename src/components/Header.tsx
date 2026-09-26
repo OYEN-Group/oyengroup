@@ -51,7 +51,7 @@ export default function Header() {
           {/* Official Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <div className="relative w-[130px] h-[35px]">
-              <Image 
+              <Image quality={100} 
                 src="/images/logo.png" 
                 alt="OYEN GROUP" 
                 fill 

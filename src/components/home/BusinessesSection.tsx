@@ -48,7 +48,7 @@ export default function BusinessesSection() {
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <Link href={product.link} className="group block relative h-[600px] lg:h-[700px] overflow-hidden rounded-sm shadow-xl">
-                <Image
+                <Image quality={100}
                   src={product.image}
                   alt={product.name}
                   fill

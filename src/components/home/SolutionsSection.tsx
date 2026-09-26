@@ -17,7 +17,7 @@ export default function SolutionsSection() {
       {/* Hero Part of Solutions */}
       <div className="relative w-full h-[60vh] min-h-[500px] flex items-center">
         <div className="absolute inset-0">
-          <Image
+          <Image quality={100}
             src="/images/solutions_bg.jpg"
             alt="From Research to Real-World Solutions"
             fill
@@ -57,7 +57,7 @@ export default function SolutionsSection() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="relative h-[400px] lg:h-[500px] group overflow-hidden border-r border-b border-white/10 last:border-r-0"
           >
-            <Image
+            <Image quality={100}
               src={stage.bg}
               alt={stage.title}
               fill

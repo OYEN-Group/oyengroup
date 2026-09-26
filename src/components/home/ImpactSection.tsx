@@ -8,7 +8,7 @@ export default function ImpactSection() {
   return (
     <section className="relative w-full h-[70vh] min-h-[600px] flex items-center bg-brand-primary">
       <div className="absolute inset-0">
-        <Image
+        <Image quality={100}
           src="/images/impact_bg.jpg"
           alt="Architectural overview showing progress and development"
           fill

@@ -21,7 +21,7 @@ export default function AboutPage() {
         </div>
 
         <div className="relative w-full h-[400px] md:h-[600px] mb-24 overflow-hidden rounded-sm">
-          <Image
+          <Image quality={100}
             src="/images/partnership.jpg"
             alt="Oyen Group Leadership"
             fill

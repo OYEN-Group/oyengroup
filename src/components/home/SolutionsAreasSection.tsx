@@ -45,7 +45,7 @@ export default function SolutionsAreasSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href="/products" className="group block relative h-[350px] lg:h-[400px] overflow-hidden bg-brand-primary">
-                <Image
+                <Image quality={100}
                   src={solution.bg}
                   alt={solution.title}
                   fill
@@ -74,7 +74,7 @@ export default function SolutionsAreasSection() {
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
               <Link href="/products" className="group block relative h-[350px] lg:h-[400px] overflow-hidden bg-brand-primary">
-                <Image
+                <Image quality={100}
                   src={solution.bg}
                   alt={solution.title}
                   fill

@@ -53,7 +53,7 @@ export default function WorkWithUsSection() {
 
         {/* Image Side */}
         <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full">
-          <Image 
+          <Image quality={100} 
             src="/images/partnership.jpg" 
             alt="Corporate Collaboration" 
             fill 

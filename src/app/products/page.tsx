@@ -49,7 +49,7 @@ export default function BusinessesPage() {
             <div key={division.id} className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}>
               <div className="w-full lg:w-1/2">
                 <div className="relative h-[400px] w-full overflow-hidden rounded-sm group">
-                  <Image
+                  <Image quality={100}
                     src={division.image}
                     alt={division.name}
                     fill
