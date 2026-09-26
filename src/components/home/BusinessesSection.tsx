@@ -9,7 +9,7 @@ const products = [
     id: 'oyen-grid',
     name: 'OYEN GRID',
     description: 'Training & Programme Management.',
-    image: '/images/tech.jpg',
+    image: '/images/oyen_grid.jpg',
     link: '/products',
   },
   {
