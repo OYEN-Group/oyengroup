@@ -41,7 +41,7 @@ export default function Header() {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isSolidBg ? 'bg-[#09251F] border-white/10 py-4 shadow-lg' : 'bg-transparent border-transparent py-6'
+        isSolidBg ? 'bg-[#09251F] border-white/10 py-2 shadow-lg' : 'bg-transparent border-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6 lg:px-12">
@@ -49,7 +49,7 @@ export default function Header() {
           
           {/* Official Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <div className="relative w-[160px] h-[45px]">
+            <div className="relative w-[130px] h-[35px]">
               <Image 
                 src="/images/logo.png" 
                 alt="OYEN GROUP" 
@@ -61,47 +61,42 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
-            <Link href="/" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 ml-auto mr-8">
+            <Link href="/" className={`text-[14px] font-medium transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
               Home
-              {pathname === '/' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
-              {pathname !== '/' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
             </Link>
             
-            <Link href="/about" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+            <Link href="/about" className={`text-[14px] font-medium transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
               About
-              {pathname === '/about' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
-              {pathname !== '/about' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
             </Link>
 
             {/* Dropdown for Products */}
             <div 
-              className="relative group" 
+              className="relative group h-full flex items-center" 
               ref={dropdownRef}
               onMouseEnter={() => setProductsOpen(true)}
               onMouseLeave={() => setProductsOpen(false)}
             >
               <button 
                 onClick={() => setProductsOpen(!productsOpen)}
-                className={`text-[12px] uppercase tracking-[0.15em] font-semibold flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent ${pathname.startsWith('/products') ? 'text-brand-accent' : ''}`}
+                className={`text-[14px] font-medium flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent ${pathname.startsWith('/products') ? 'text-brand-accent' : ''}`}
               >
                 Our Products
-                <svg className={`w-4 h-4 transition-transform duration-300 ${productsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${productsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-                {pathname.startsWith('/products') && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
               </button>
               
               {/* Dropdown Menu */}
               <div 
-                className={`absolute top-full left-0 mt-6 w-56 bg-[#09251F] border border-white/10 shadow-2xl transition-all duration-300 origin-top-left ${productsOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
+                className={`absolute top-full left-0 mt-4 w-56 bg-[#09251F] border border-white/10 shadow-2xl transition-all duration-300 origin-top-left ${productsOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
               >
                 <div className="py-2">
                   {productItems.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
-                      className="block px-6 py-3 text-[13px] font-medium tracking-wide text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
+                      className="block px-6 py-2.5 text-[14px] text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
                       onClick={() => setProductsOpen(false)}
                     >
                       {item.name}
@@ -111,31 +106,22 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/#approach" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+            <Link href="/#approach" className={`text-[14px] font-medium transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
               Our Approach
-              <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />
             </Link>
             
-            <Link href="/investment" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
+            <Link href="/investment" className={`text-[14px] font-medium transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
               Investment
-              {pathname === '/investment' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
-              {pathname !== '/investment' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
-            </Link>
-            
-            <Link href="/contact" className={`text-[12px] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
-              Contact
-              {pathname === '/contact' && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-brand-accent rounded-full" />}
-              {pathname !== '/contact' && <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-brand-accent rounded-full transition-all duration-300 group-hover:w-full" />}
             </Link>
           </nav>
 
-          {/* CTA */}
+          {/* CTA / Contact */}
           <div className="hidden lg:flex items-center">
             <Link
               href="/contact"
-              className="px-7 py-3 text-[12px] font-bold uppercase tracking-[0.15em] text-[#09251F] bg-brand-accent hover:bg-white transition-all duration-300 rounded-sm"
+              className="text-[14px] font-medium text-white hover:text-brand-accent transition-colors duration-300"
             >
-              Partner With Us
+              Contact
             </Link>
           </div>
 
