@@ -95,11 +95,18 @@ export default function Header() {
                     About OYEN GROUP
                   </Link>
                   <Link
-                    href="/about/leadership"
+                    href="/leadership"
                     className="block px-6 py-2.5 text-[14px] text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
                     onClick={() => setAboutOpen(false)}
                   >
-                    Leadership & Governance
+                    Leadership & Structure
+                  </Link>
+                  <Link
+                    href="/#approach"
+                    className="block px-6 py-2.5 text-[14px] text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
+                    onClick={() => setAboutOpen(false)}
+                  >
+                    Vision, Mission & Values
                   </Link>
                 </div>
               </div>
