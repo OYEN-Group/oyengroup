@@ -9,6 +9,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -66,9 +67,43 @@ export default function Header() {
               Home
             </Link>
             
-            <Link href="/about" className={`text-[14px] font-medium transition-colors duration-300 relative group text-white hover:text-brand-accent`}>
-              About
-            </Link>
+            {/* Dropdown for About */}
+            <div 
+              className="relative group h-full flex items-center" 
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <button 
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className={`text-[14px] font-medium flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent ${pathname.startsWith('/about') ? 'text-brand-accent' : ''}`}
+              >
+                About
+                <svg className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${aboutOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              <div 
+                className={`absolute top-full left-0 mt-4 w-56 bg-[#09251F] border border-white/10 shadow-2xl transition-all duration-300 origin-top-left ${aboutOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
+              >
+                <div className="py-2">
+                  <Link
+                    href="/about"
+                    className="block px-6 py-2.5 text-[14px] text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
+                    onClick={() => setAboutOpen(false)}
+                  >
+                    About OYEN GROUP
+                  </Link>
+                  <Link
+                    href="/about/leadership"
+                    className="block px-6 py-2.5 text-[14px] text-white/90 hover:text-brand-accent hover:bg-white/5 transition-colors"
+                    onClick={() => setAboutOpen(false)}
+                  >
+                    Leadership & Governance
+                  </Link>
+                </div>
+              </div>
+            </div>
 
             {/* Dropdown for Products */}
             <div 
