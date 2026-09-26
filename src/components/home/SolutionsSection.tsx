@@ -47,7 +47,7 @@ export default function SolutionsSection() {
       </div>
 
       {/* Solutions Tiles */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-brand-secondary">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#09251F]">
         {stages.map((stage, index) => (
           <motion.div
             key={stage.id}
@@ -55,15 +55,15 @@ export default function SolutionsSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="relative h-64 lg:h-80 group overflow-hidden border-r border-b border-brand-primary/20 last:border-r-0"
+            className="relative h-[400px] lg:h-[500px] group overflow-hidden border-r border-b border-white/10 last:border-r-0"
           >
             <Image
               src={stage.bg}
               alt={stage.title}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-40 group-hover:opacity-60"
+              className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90"
             />
-            <div className="absolute inset-0 bg-brand-primary/50 group-hover:bg-brand-primary/20 transition-colors duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#09251F]/90 via-[#09251F]/30 to-transparent transition-colors duration-500 group-hover:from-[#09251F]" />
             
             <div className="relative z-10 h-full p-8 flex flex-col justify-end">
               <h3 className="text-3xl font-bold mb-2 group-hover:-translate-y-2 transition-transform duration-300 text-brand-accent">

@@ -45,9 +45,9 @@ export default function RoadmapSection() {
                 {/* Indicator Point */}
                 <div className="absolute left-4 lg:left-0 top-0 lg:top-5 w-4 h-4 rounded-full bg-brand-accent transform -translate-x-1/2 lg:-translate-y-1/2 lg:translate-x-0 ring-4 ring-brand-offwhite z-10" />
                 
-                <h3 className="text-5xl font-bold text-brand-primary/10 mb-4 font-heading">{stage.num}</h3>
-                <h4 className="text-xl font-semibold text-brand-primary mb-3">{stage.title}</h4>
-                <p className="text-brand-muted max-w-[250px] leading-relaxed">
+                <h3 className="text-6xl font-black text-brand-accent/80 mb-6 font-heading">{stage.num}</h3>
+                <h4 className="text-2xl font-bold text-brand-primary mb-4">{stage.title}</h4>
+                <p className="text-lg text-brand-muted max-w-[280px] leading-relaxed">
                   {stage.desc}
                 </p>
               </motion.div>

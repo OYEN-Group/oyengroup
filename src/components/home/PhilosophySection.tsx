@@ -6,52 +6,69 @@ export default function PhilosophySection() {
   return (
     <section className="bg-white py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-4"
-          >
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-brand-muted border-l-2 border-brand-accent pl-4">
-              Our Identity
-            </h2>
-          </motion.div>
-          
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-accent mb-4">
+            Our Identity
+          </h2>
+          <div className="w-12 h-1 bg-brand-primary mx-auto" />
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-8"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="flex flex-col"
           >
-            <div className="space-y-16">
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4">Our Vision</h3>
-                <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-primary leading-[1.1] tracking-tight max-w-3xl">
-                  A more capable Africa powered by technology, talent and innovation.
-                </p>
-              </div>
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-accent" />
+              Our Vision
+            </h3>
+            <p className="text-2xl lg:text-3xl font-bold text-brand-primary leading-snug">
+              A more capable Africa powered by technology, talent and innovation.
+            </p>
+          </motion.div>
 
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4">Our Mission</h3>
-                <p className="text-xl md:text-2xl text-brand-muted leading-relaxed max-w-3xl">
-                  To research, build and deploy practical solutions that solve real problems and create lasting value.
-                </p>
-              </div>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col md:border-l border-brand-primary/10 md:pl-8 lg:pl-16"
+          >
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-accent" />
+              Our Mission
+            </h3>
+            <p className="text-xl lg:text-2xl text-brand-muted leading-relaxed">
+              To research, build and deploy practical solutions that solve real problems and create lasting value.
+            </p>
+          </motion.div>
 
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-accent mb-4">Our Values</h3>
-                <div className="flex flex-wrap gap-x-8 gap-y-4">
-                  {['People first.', 'Integrity.', 'Practical innovation.', 'Excellence.', 'Long-term impact.'].map((value, i) => (
-                    <div key={i} className="flex items-center gap-3 text-lg text-brand-primary font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand-accent flex-shrink-0" />
-                      {value}
-                    </div>
-                  ))}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex flex-col md:border-l border-brand-primary/10 md:pl-8 lg:pl-16"
+          >
+            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-brand-accent" />
+              Our Values
+            </h3>
+            <div className="flex flex-col gap-4">
+              {['People first.', 'Integrity.', 'Practical innovation.', 'Excellence.', 'Long-term impact.'].map((value, i) => (
+                <div key={i} className="text-lg text-brand-primary font-medium">
+                  {value}
                 </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         </div>

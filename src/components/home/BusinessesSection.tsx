@@ -47,18 +47,18 @@ export default function BusinessesSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <Link href={product.link} className="group block relative h-[500px] overflow-hidden rounded-sm">
+              <Link href={product.link} className="group block relative h-[600px] lg:h-[700px] overflow-hidden rounded-sm shadow-xl">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-brand-primary/40 group-hover:bg-brand-primary/50 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09251F]/90 via-[#09251F]/40 to-transparent group-hover:from-[#09251F] transition-colors duration-500" />
                 
-                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-                  <h3 className="text-3xl font-bold mb-4">{product.name}</h3>
-                  <p className="text-lg text-white/90 mb-8 max-w-sm">
+                <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
+                  <h3 className="text-3xl md:text-4xl font-bold mb-6 group-hover:-translate-y-2 transition-transform duration-300">{product.name}</h3>
+                  <p className="text-lg text-white/90 mb-10 max-w-sm group-hover:-translate-y-2 transition-transform duration-300 delay-75">
                     {product.description}
                   </p>
                   

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-primary">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-primary">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/images/hero.jpg"
@@ -15,11 +15,11 @@ export default function HeroSection() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-brand-primary/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/80 via-transparent to-brand-primary/90" />
+        <div className="absolute inset-0 bg-brand-primary/50 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/90 via-transparent to-brand-primary/80" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white mt-20">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white mt-32 lg:mt-40">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

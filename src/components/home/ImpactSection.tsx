@@ -14,30 +14,31 @@ export default function ImpactSection() {
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-brand-primary/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/95 via-brand-primary/70 to-transparent" />
+        <div className="absolute inset-0 bg-[#09251F]/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09251F] via-[#09251F]/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 text-white">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl"
+          className="max-w-4xl"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight text-white">
             Driving Progress. <br />
-            Creating Opportunities.
+            <span className="text-brand-accent">Creating Opportunities.</span>
           </h2>
-          <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed max-w-2xl">
+          <p className="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-3xl">
             We work with partners, businesses and communities to build solutions that create jobs, strengthen industries and support sustainable development.
           </p>
           <Link 
             href="/about" 
-            className="inline-flex items-center gap-3 border border-white hover:bg-white hover:text-brand-primary px-8 py-4 rounded-sm font-semibold transition-all duration-300 uppercase tracking-widest text-sm"
+            className="inline-flex items-center gap-3 bg-brand-accent text-[#09251F] hover:bg-white px-8 py-4 rounded-sm font-semibold transition-all duration-300 tracking-widest text-sm uppercase"
           >
             Our Story
+            <span className="group-hover:translate-x-1 transition-transform">→</span>
           </Link>
         </motion.div>
       </div>
