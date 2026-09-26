@@ -32,14 +32,16 @@ export default function LeadershipPage() {
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-32 bg-[#111719] overflow-hidden">
         {/* Subtle architectural background */}
         <div className="absolute inset-0 z-0">
-          <Image quality={100}
+          <Image
             src="/images/impact_bg.jpg"
             alt="Corporate Architecture"
             fill
-            className="object-cover opacity-10 mix-blend-luminosity object-right"
+            className="object-cover opacity-25 object-right"
+            quality={100}
+            unoptimized={true}
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/95 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/90 to-transparent" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
@@ -111,12 +113,14 @@ export default function LeadershipPage() {
                 className="flex flex-col"
               >
                 {/* Large Editorial Portrait */}
-                <div className="relative w-full aspect-[4/5] bg-gray-100 mb-8 overflow-hidden">
-                  <Image quality={100}
+                <div className="relative w-full aspect-[4/5] bg-[#111719] mb-8 overflow-hidden">
+                  <Image 
                     src={leader.image}
                     alt={leader.name}
                     fill
-                    className="object-cover filter grayscale-[10%] contrast-[1.05]"
+                    className="object-cover"
+                    quality={100}
+                    unoptimized={true}
                   />
                 </div>
                 
