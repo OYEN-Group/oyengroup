@@ -3,7 +3,7 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import PageLoader from '@/components/PageLoader';
+import SignatureLoader from '@/components/SignatureLoader';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased flex flex-col min-h-screen bg-brand-offwhite text-brand-primary`}>
-        <PageLoader />
+        <SignatureLoader />
         <Header />
         <main className="grow">{children}</main>
         <Footer />
