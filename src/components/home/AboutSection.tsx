@@ -1,63 +1,46 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 export default function AboutSection() {
- return (
- <section className="bg-white py-32 md:py-48">
- <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
- 
- {/* Left Column - Oversized Typography */}
- <div className="lg:col-span-7">
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true, margin: "-100px" }}
- transition={{ duration: 0.8 }}
- >
- <div className="flex items-center gap-4 mb-8">
- <span className="text-brand-accent text-base font-bold tracking-widest">01</span>
- <div className="h-[1px] w-12 bg-brand-accent"></div>
- <span className="text-base font-bold uppercase tracking-[0.2em] text-gray-600">About Oyen Group</span>
- </div>
- 
- <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-brand-primary leading-[1.1] tracking-tight">
- We research problems and build technology around solving them.
- </h2>
- </motion.div>
- </div>
-
- {/* Right Column - Description & CTA */}
- <div className="lg:col-span-5 lg:mt-24">
- <motion.div
- initial={{ opacity: 0, y: 20 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true, margin: "-100px" }}
- transition={{ duration: 0.8, delay: 0.2 }}
- className="flex flex-col border-l border-gray-200 pl-8"
- >
- <p className="text-xl md:text-2xl text-brand-muted leading-relaxed mb-12">
- OYEN GROUP is a technology and research company focused on solving real problems through practical software products, data-driven solutions and applied research.
- </p>
- 
- <div>
- <Link 
- href="/about" 
- className="group inline-flex items-center gap-3 text-brand-primary font-bold text-base uppercase tracking-[0.2em] transition-colors duration-300"
- >
- <span className="border-b border-brand-primary group-hover:border-brand-accent pb-1 transition-colors">
- Discover Our Story
- </span>
- <span className="group-hover:translate-x-1 transition-transform text-brand-accent">→</span>
- </Link>
- </div>
- </motion.div>
- </div>
- 
- </div>
- </div>
- </section>
- );
+  return (
+    <section className="bg-white py-24 md:py-32">
+      <div className="container mx-auto px-6 lg:px-12 max-w-[1100px] text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center"
+        >
+          {/* Small gold section label */}
+          <span className="text-sm md:text-base font-bold uppercase tracking-[0.2em] text-[#D5A547] mb-6 block">
+            OYEN GROUP
+          </span>
+          
+          {/* Large but balanced, centred heading */}
+          <h2 className="text-3xl md:text-[44px] font-bold text-[#111719] leading-tight tracking-tight mb-8 max-w-4xl font-['Plus_Jakarta_Sans',sans-serif]">
+            OYEN: A Culture of Innovation
+          </h2>
+          
+          {/* Centred introductory paragraph */}
+          <p className="text-[17px] md:text-[19px] text-[#59636D] leading-[1.7] max-w-4xl mx-auto mb-12 font-['Inter',sans-serif]">
+            OYEN GROUP is a technology and research company focused on solving real-world problems through practical software products, data-driven solutions and applied research. We develop technology that supports learning, research and industrial operations, turning ideas into solutions that create lasting value.
+          </p>
+          
+          {/* Subtle text-link CTA */}
+          <Link 
+            href="/about" 
+            className="group inline-flex items-center gap-3 text-[#111719] font-bold text-[14px] md:text-[15px] uppercase tracking-[0.2em] transition-colors duration-300"
+          >
+            <span className="border-b border-[#111719] group-hover:border-[#D5A547] pb-1 transition-colors">
+              DISCOVER OUR STORY
+            </span>
+            <span className="group-hover:translate-x-1 transition-transform text-[#D5A547]">→</span>
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
 }
