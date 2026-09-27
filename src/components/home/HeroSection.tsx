@@ -7,16 +7,19 @@ import { motion } from 'framer-motion';
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-primary">
-      <div className="absolute inset-0 w-full h-full">
-        <Image quality={100}
+      <div className="absolute inset-0 w-full h-full bg-black">
+        <Image
           src="/images/hero.jpg"
           alt="Premium aerial photograph of energy infrastructure"
           fill
           priority
           className="object-cover object-center"
+          quality={100}
+          unoptimized={true}
         />
-        <div className="absolute inset-0 bg-brand-primary/50 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/90 via-transparent to-brand-primary/80" />
+        {/* Lighter, strictly essential gradient to preserve image brightness while keeping text readable */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-transparent to-[#111719]/80" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white mt-32 lg:mt-40">

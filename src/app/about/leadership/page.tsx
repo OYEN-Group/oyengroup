@@ -30,20 +30,20 @@ export default function LeadershipPage() {
     <main className="bg-white min-h-screen">
       {/* PREMIUM EDITORIAL HERO */}
       <section className="relative pt-40 pb-32 md:pt-56 md:pb-40 bg-[#09251F] overflow-hidden">
-        {/* Deep, rich corporate background */}
-        <div className="absolute inset-0 z-0 bg-black">
+        {/* Bright, sharp corporate background */}
+        <div className="absolute inset-0 z-0">
           <Image
             src="/images/solutions_bg.jpg"
             alt="Corporate Architecture"
             fill
-            className="object-cover opacity-35"
+            className="object-cover"
             quality={100}
             unoptimized={true}
             priority
           />
-          {/* Multi-layered gradient for depth */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/80 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111719] via-[#111719]/20 to-transparent" />
+          {/* Gradient strictly for text readability on the left */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/70 to-transparent w-full md:w-3/4" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#111719] via-transparent to-transparent h-32 bottom-0 absolute" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
