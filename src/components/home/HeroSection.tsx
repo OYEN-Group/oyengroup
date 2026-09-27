@@ -14,7 +14,7 @@ export default function HeroSection() {
   className="absolute inset-0 w-full h-full bg-black"
   >
   <Image
-  src="/images/hero.jpg"
+  src="/images/hero-new.jpg"
   alt="Premium aerial photograph of energy infrastructure"
   fill
   priority
