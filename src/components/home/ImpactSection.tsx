@@ -14,11 +14,11 @@ export default function ImpactSection() {
           fill
           className="object-cover"
         />
-        {/* Lighter overlay to let the image shine */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111719]/90 via-[#111719]/40 to-transparent" />
+        <div className="absolute inset-0 bg-[#09251F]/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09251F] via-[#09251F]/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-32">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 flex flex-col justify-end h-full pb-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ export default function ImpactSection() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold mb-10 leading-[1.1] tracking-tight text-white drop-shadow-lg">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight tracking-tight text-white">
             Driving Progress. <br />
             <span className="text-brand-accent">Creating Opportunities.</span>
           </h2>

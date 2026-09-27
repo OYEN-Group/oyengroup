@@ -37,8 +37,8 @@ export default function OyenGridPage() {
     <main className="bg-white min-h-screen">
       {/* 1. PAGE HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#111719] overflow-hidden">
-        {/* Cinematic Background Image */}
-        <div className="absolute inset-0 z-0 bg-black">
+        {/* Bright, sharp Photographic Background */}
+        <div className="absolute inset-0 z-0">
           <Image 
             src="/images/oyen-grid/hero-training.jpg" 
             alt="OYEN GRID Training Workshop"
@@ -48,9 +48,9 @@ export default function OyenGridPage() {
             unoptimized={true}
             priority
           />
-          {/* Subtle gradient to ensure text readability without washing out the image */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-transparent to-[#111719]/80" />
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Subtle gradient to keep the centered white text readable without washing out the image */}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/60 via-transparent to-[#111719]/80" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center mt-16">

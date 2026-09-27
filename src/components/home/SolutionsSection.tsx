@@ -46,35 +46,36 @@ export default function SolutionsSection() {
         </div>
       </div>
 
-      {/* Philosophy Stages */}
-      <div className="bg-[#09251F] py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-12 relative z-10">
-          {/* Connecting Line Desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[1px] bg-brand-accent/30 -translate-y-1/2 z-0" />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
-            {stages.map((stage, index) => (
-              <motion.div
-                key={stage.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="flex flex-col items-center text-center relative"
-              >
-                <div className="w-16 h-16 rounded-full bg-[#111719] border-2 border-brand-accent flex items-center justify-center text-brand-accent font-bold text-xl mb-8 shadow-lg shadow-brand-accent/20">
-                  0{index + 1}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">
-                  {stage.title}
-                </h3>
-                <p className="text-lg text-white/80 font-light max-w-xs mx-auto">
-                  {stage.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+      {/* Solutions Tiles */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 bg-[#09251F]">
+        {stages.map((stage, index) => (
+          <motion.div
+            key={stage.id}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="relative h-[400px] lg:h-[500px] group overflow-hidden border-r border-b border-white/10 last:border-r-0"
+          >
+            <Image quality={100}
+              src={stage.bg}
+              alt={stage.title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-90"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#09251F]/90 via-[#09251F]/30 to-transparent transition-colors duration-500 group-hover:from-[#09251F]" />
+            
+            <div className="relative z-10 h-full p-8 flex flex-col justify-end">
+              <h3 className="text-3xl font-bold mb-2 group-hover:-translate-y-2 transition-transform duration-300 text-brand-accent">
+                {stage.title}
+              </h3>
+              <p className="text-lg text-white/90 font-medium opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:-translate-y-2 transition-all duration-300">
+                {stage.description}
+              </p>
+              <div className="h-[2px] w-0 bg-brand-accent group-hover:w-12 transition-all duration-500 mt-2" />
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
