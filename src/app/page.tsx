@@ -4,7 +4,7 @@ import BusinessesSection from '@/components/home/BusinessesSection';
 import SolutionsAreasSection from '@/components/home/SolutionsAreasSection';
 import SolutionsSection from '@/components/home/SolutionsSection';
 import PhilosophySection from '@/components/home/PhilosophySection';
-import ImpactSection from '@/components/home/ImpactSection';
+import BehindTheWorkSection from '@/components/home/BehindTheWorkSection';
 import RoadmapSection from '@/components/home/RoadmapSection';
 import WorkWithUsSection from '@/components/home/WorkWithUsSection';
 
@@ -17,7 +17,7 @@ export default function Home() {
       <SolutionsAreasSection />
       <SolutionsSection />
       <PhilosophySection />
-      <ImpactSection />
+      <BehindTheWorkSection />
       <RoadmapSection />
       <WorkWithUsSection />
     </>

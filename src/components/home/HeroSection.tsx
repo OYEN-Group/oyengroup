@@ -50,9 +50,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-xl md:text-2xl text-white/80 font-light mb-16 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl text-white/80 font-light mb-16 max-w-3xl mx-auto leading-relaxed"
         >
-          Technology built to solve real problems.
+          We research real-world challenges and develop practical technology for learning, academic research and industrial operations.
         </motion.p>
 
         <motion.div
@@ -70,9 +70,10 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/about"
-            className="text-white hover:text-brand-accent font-semibold tracking-widest transition-colors duration-300 uppercase text-xs border-b border-transparent hover:border-brand-accent pb-1"
+            className="text-white hover:text-brand-accent font-semibold tracking-widest transition-colors duration-300 uppercase text-xs border-b border-transparent hover:border-brand-accent pb-1 flex items-center gap-2"
           >
             Discover OYEN GROUP
+            <span className="text-brand-accent group-hover:text-white transition-colors text-lg leading-none">↗</span>
           </Link>
         </motion.div>
       </div>
