@@ -57,12 +57,12 @@ export default function BusinessesSection() {
  className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-500 border border-gray-100"
  >
  {/* Image Container */}
- <div className="relative aspect-[16/10] w-full overflow-hidden">
+ <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#FAFAFA] flex items-center justify-center p-4">
  <Image 
  src={product.image}
  alt={product.name}
  fill
- className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+ className="object-contain object-center group-hover:scale-105 transition-transform duration-700 p-4"
  quality={100}
  unoptimized={true}
  />
