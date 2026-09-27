@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-primary">
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-brand-primary">
       <motion.div 
         initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
