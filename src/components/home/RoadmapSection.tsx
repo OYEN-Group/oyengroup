@@ -18,21 +18,21 @@ export default function RoadmapSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="mb-24"
+          className="mb-32 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-brand-primary tracking-tight">
-            Building For The Long Term.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-primary tracking-tight">
+            Building For The Long Term
           </h2>
         </motion.div>
 
-        <div className="relative">
+        <div className="relative max-w-6xl mx-auto">
           {/* Horizontal Line for Desktop */}
-          <div className="hidden lg:block absolute top-6 left-0 w-full h-[1px] bg-brand-primary/20" />
+          <div className="hidden lg:block absolute top-[52px] left-[10%] w-[80%] h-[1px] bg-brand-accent/40 z-0" />
           
           {/* Vertical Line for Mobile */}
-          <div className="block lg:hidden absolute top-0 left-6 w-[1px] h-full bg-brand-primary/20" />
+          <div className="block lg:hidden absolute top-10 left-[34px] w-[1px] h-[calc(100%-80px)] bg-brand-accent/40 z-0" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-8">
             {stages.map((stage, index) => (
               <motion.div
                 key={stage.num}
@@ -40,14 +40,15 @@ export default function RoadmapSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative pl-16 lg:pl-0 pt-0 lg:pt-16"
+                className="relative pl-24 lg:pl-0 pt-0 lg:pt-0 text-left lg:text-center flex flex-col items-start lg:items-center"
               >
-                {/* Indicator Point */}
-                <div className="absolute left-4 lg:left-0 top-0 lg:top-5 w-4 h-4 rounded-full bg-brand-accent transform -translate-x-1/2 lg:-translate-y-1/2 lg:translate-x-0 ring-4 ring-brand-offwhite z-10" />
+                {/* Indicator Point with Number Inside */}
+                <div className="absolute left-0 lg:left-1/2 top-0 lg:top-0 w-[68px] h-[68px] rounded-full bg-brand-offwhite border border-brand-accent/30 flex items-center justify-center text-brand-accent transform lg:-translate-x-1/2 z-10 shadow-sm">
+                  <span className="text-2xl font-bold">{stage.num}</span>
+                </div>
                 
-                <h3 className="text-6xl font-black text-brand-accent/80 mb-6 font-heading">{stage.num}</h3>
-                <h4 className="text-2xl font-bold text-brand-primary mb-4">{stage.title}</h4>
-                <p className="text-lg text-brand-muted max-w-[280px] leading-relaxed">
+                <h4 className="text-2xl font-bold text-brand-primary mb-4 mt-3 lg:mt-24">{stage.title}</h4>
+                <p className="text-lg text-brand-muted leading-relaxed lg:max-w-[220px]">
                   {stage.desc}
                 </p>
               </motion.div>

@@ -7,61 +7,63 @@ import Link from 'next/link';
 export default function WorkWithUsSection() {
   return (
     <section className="bg-brand-offwhite">
-      <div className="flex flex-col lg:flex-row min-h-[700px]">
+      <div className="flex flex-col lg:flex-row min-h-[800px]">
         
         {/* Content Side */}
-        <div className="w-full lg:w-1/2 flex items-center p-12 lg:p-24 bg-white relative z-10">
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-12 lg:p-24 bg-white relative z-10 order-2 lg:order-1">
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto lg:mx-0 w-full"
+            className="max-w-2xl w-full"
           >
-            <h2 className="text-[13px] font-bold uppercase tracking-[0.2em] text-brand-muted border-l-2 border-brand-accent pl-4 mb-10">
+            <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-brand-muted border-l-2 border-brand-accent pl-4 mb-10">
               Work With Oyen Group
             </h2>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold text-brand-primary leading-[1.1] mb-8 tracking-tight">
-              Let's Build What's Next. <span className="block text-brand-accent mt-2">Together.</span>
+            <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-primary leading-[1.1] mb-8 tracking-tight">
+              Let's Build <br/>What's Next. <br/><span className="text-brand-accent mt-2 block">Together.</span>
             </h3>
-            <p className="text-xl text-brand-muted mb-16 leading-relaxed max-w-xl">
+            <p className="text-xl md:text-2xl text-brand-muted mb-16 leading-relaxed max-w-xl font-light">
               Whether you're a researcher, developer, investor or strategic partner, discover opportunities to collaborate and create meaningful impact.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Link 
-                href="/contact"
-                className="inline-flex justify-center items-center gap-3 bg-brand-primary text-white hover:bg-brand-accent hover:text-brand-primary px-8 py-4 rounded-sm font-semibold transition-all duration-300 group shadow-lg"
-              >
-                Explore Careers
-              </Link>
-              <Link 
-                href="/contact"
-                className="inline-flex justify-center items-center gap-3 bg-transparent border-2 border-brand-primary/20 text-brand-primary hover:border-brand-primary px-8 py-4 rounded-sm font-semibold transition-all duration-300 group"
-              >
-                Become a Partner
-              </Link>
-              <Link 
-                href="/investment"
-                className="inline-flex justify-center items-center gap-3 bg-transparent border-2 border-brand-primary/20 text-brand-primary hover:border-brand-primary px-8 py-4 rounded-sm font-semibold transition-all duration-300 group"
-              >
-                Investment Opportunity
-              </Link>
+            <div className="flex flex-col gap-8">
+              <div>
+                <Link 
+                  href="/contact"
+                  className="inline-flex justify-center items-center bg-brand-primary text-white hover:bg-brand-accent hover:text-brand-primary px-12 py-5 font-bold transition-all duration-300 uppercase tracking-widest text-sm"
+                >
+                  Partner With Us
+                </Link>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-6 mt-4">
+                <Link 
+                  href="/investment"
+                  className="text-brand-primary font-bold text-xs uppercase tracking-[0.1em] hover:text-brand-accent transition-colors border-b border-gray-200 hover:border-brand-accent pb-1 inline-flex"
+                >
+                  Explore Investment Opportunities
+                </Link>
+                <Link 
+                  href="/contact"
+                  className="text-brand-primary font-bold text-xs uppercase tracking-[0.1em] hover:text-brand-accent transition-colors border-b border-gray-200 hover:border-brand-accent pb-1 inline-flex"
+                >
+                  Contact OYEN GROUP
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
 
         {/* Image Side */}
-        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full">
+        <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full order-1 lg:order-2">
           <Image quality={100} 
             src="/images/partnership.jpg" 
             alt="Corporate Collaboration" 
             fill 
-            className="object-cover"
-            priority={false}
+            className="object-cover object-center"
+            unoptimized={true}
           />
-          {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-brand-primary/10 mix-blend-multiply" />
         </div>
 
       </div>

@@ -35,7 +35,7 @@ export default function SolutionsAreasSection() {
         </motion.div>
 
         {/* Row 1: 3 cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {solutionsRow1.map((solution, index) => (
             <motion.div
               key={solution.id}
@@ -44,19 +44,22 @@ export default function SolutionsAreasSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Link href="/products" className="group block relative h-[350px] lg:h-[400px] overflow-hidden bg-brand-primary">
-                <Image quality={100}
+              <Link href="/products" className="group block relative h-[400px] lg:h-[450px] overflow-hidden bg-[#111719]">
+                <Image 
                   src={solution.bg}
                   alt={solution.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-50"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  quality={100}
+                  unoptimized={true}
                 />
-                <div className="absolute inset-0 bg-brand-primary/40 group-hover:bg-brand-primary/60 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111719]/90 via-[#111719]/40 to-transparent transition-opacity duration-500 opacity-90 group-hover:opacity-100" />
                 
-                <div className="absolute inset-0 p-8 flex items-center justify-center text-center text-white z-10">
-                  <h3 className="text-2xl font-bold max-w-[250px] leading-snug">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
+                  <h3 className="text-2xl font-bold leading-snug mb-4 group-hover:-translate-y-1 transition-transform duration-300">
                     {solution.title}
                   </h3>
+                  <div className="w-10 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full max-w-[80px]" />
                 </div>
               </Link>
             </motion.div>
@@ -64,7 +67,7 @@ export default function SolutionsAreasSection() {
         </div>
 
         {/* Row 2: 2 cards centered */}
-        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto gap-8">
           {solutionsRow2.map((solution, index) => (
             <motion.div
               key={solution.id}
@@ -73,19 +76,22 @@ export default function SolutionsAreasSection() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
             >
-              <Link href="/products" className="group block relative h-[350px] lg:h-[400px] overflow-hidden bg-brand-primary">
-                <Image quality={100}
+              <Link href="/products" className="group block relative h-[400px] lg:h-[450px] overflow-hidden bg-[#111719]">
+                <Image 
                   src={solution.bg}
                   alt={solution.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-50"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  quality={100}
+                  unoptimized={true}
                 />
-                <div className="absolute inset-0 bg-brand-primary/40 group-hover:bg-brand-primary/60 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111719]/90 via-[#111719]/40 to-transparent transition-opacity duration-500 opacity-90 group-hover:opacity-100" />
                 
-                <div className="absolute inset-0 p-8 flex items-center justify-center text-center text-white z-10">
-                  <h3 className="text-2xl font-bold max-w-[250px] leading-snug">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end text-white z-10">
+                  <h3 className="text-2xl font-bold leading-snug mb-4 group-hover:-translate-y-1 transition-transform duration-300">
                     {solution.title}
                   </h3>
+                  <div className="w-10 h-[2px] bg-brand-accent transition-all duration-300 group-hover:w-full max-w-[80px]" />
                 </div>
               </Link>
             </motion.div>
