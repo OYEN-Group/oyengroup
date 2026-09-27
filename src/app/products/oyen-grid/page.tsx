@@ -38,18 +38,19 @@ export default function OyenGridPage() {
       {/* 1. PAGE HERO */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#111719] overflow-hidden">
         {/* Cinematic Background Image */}
-        <div className="absolute inset-0 z-0 bg-[#111719]">
+        <div className="absolute inset-0 z-0 bg-black">
           <Image 
             src="/images/oyen-grid/hero-training.jpg" 
             alt="OYEN GRID Training Workshop"
             fill
-            className="object-cover opacity-30"
+            className="object-cover"
             quality={100}
             unoptimized={true}
             priority
           />
-          {/* Carefully controlled dark overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/90 via-[#111719]/70 to-[#111719]/90" />
+          {/* Subtle gradient to ensure text readability without washing out the image */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-transparent to-[#111719]/80" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
         
         <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center mt-16">
