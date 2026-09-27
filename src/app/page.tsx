@@ -9,17 +9,17 @@ import RoadmapSection from '@/components/home/RoadmapSection';
 import WorkWithUsSection from '@/components/home/WorkWithUsSection';
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <BusinessesSection />
-      <SolutionsAreasSection />
-      <SolutionsSection />
-      <PhilosophySection />
-      <BehindTheWorkSection />
-      <RoadmapSection />
-      <WorkWithUsSection />
-    </>
-  );
+ return (
+ <>
+ <HeroSection />
+ <AboutSection />
+ <BusinessesSection />
+ <SolutionsAreasSection />
+ <SolutionsSection />
+ <PhilosophySection />
+ <BehindTheWorkSection />
+ <RoadmapSection />
+ <WorkWithUsSection />
+ </>
+ );
 }
