@@ -19,19 +19,21 @@ export default function PhilosophySection() {
           <div className="w-12 h-1 bg-brand-primary mx-auto" />
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-0 lg:divide-x lg:divide-gray-200 mt-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="flex flex-col"
+            className="flex flex-col lg:pr-12 xl:pr-16"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-accent" />
-              Our Vision
-            </h3>
-            <p className="text-2xl lg:text-3xl font-bold text-brand-primary leading-snug">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-12 h-[1px] bg-brand-accent" />
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-primary">
+                Our Vision
+              </h3>
+            </div>
+            <p className="text-2xl xl:text-3xl font-bold text-brand-primary leading-tight tracking-tight">
               A more capable Africa powered by technology, talent and innovation.
             </p>
           </motion.div>
@@ -41,13 +43,15 @@ export default function PhilosophySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col md:border-l border-brand-primary/10 md:pl-8 lg:pl-16"
+            className="flex flex-col lg:px-12 xl:px-16"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-accent" />
-              Our Mission
-            </h3>
-            <p className="text-xl lg:text-2xl text-brand-muted leading-relaxed">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-12 h-[1px] bg-brand-accent" />
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-primary">
+                Our Mission
+              </h3>
+            </div>
+            <p className="text-xl xl:text-2xl text-brand-muted leading-relaxed font-light">
               To research, build and deploy practical solutions that solve real problems and create lasting value.
             </p>
           </motion.div>
@@ -57,15 +61,17 @@ export default function PhilosophySection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col md:border-l border-brand-primary/10 md:pl-8 lg:pl-16"
+            className="flex flex-col lg:pl-12 xl:pl-16"
           >
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-muted mb-6 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-brand-accent" />
-              Our Values
-            </h3>
-            <div className="flex flex-col gap-4">
+            <div className="flex items-center gap-4 mb-8">
+              <span className="w-12 h-[1px] bg-brand-accent" />
+              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-brand-primary">
+                Our Values
+              </h3>
+            </div>
+            <div className="flex flex-col gap-5">
               {['People first.', 'Integrity.', 'Practical innovation.', 'Excellence.', 'Long-term impact.'].map((value, i) => (
-                <div key={i} className="text-lg text-brand-primary font-medium">
+                <div key={i} className="text-xl text-brand-primary font-medium tracking-tight">
                   {value}
                 </div>
               ))}

@@ -35,8 +35,8 @@ export default function Header() {
 
   const productItems = [
     { name: 'OYEN GRID', href: '/products/oyen-grid' },
-    { name: 'VERBA', href: '/products' },
-    { name: 'ORIVEX', href: '/products' },
+    { name: 'VERBA', href: '/products/verba' },
+    { name: 'ORIVEX', href: '/products/orivex' },
   ];
 
   return (
