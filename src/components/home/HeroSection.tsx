@@ -5,30 +5,32 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 export default function HeroSection() {
- return (
- <section className="relative w-full min-h-[120vh] flex items-center justify-center overflow-hidden bg-brand-primary">
- <motion.div 
- initial={{ scale: 1.05, opacity: 0 }}
- animate={{ scale: 1, opacity: 1 }}
- transition={{ duration: 1.2, ease: "easeOut" }}
- className="absolute inset-0 w-full h-full bg-black"
- >
- <Image
- src="/images/hero.jpg"
- alt="Premium aerial photograph of energy infrastructure"
- fill
- priority
- className="object-cover object-center"
- quality={100}
- unoptimized={true}
- />
- {/* Cinematic gradient strictly for text readability */}
- <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-transparent to-[#111719]/80" />
- <div className="absolute inset-0 bg-black/20" />
- </motion.div>
+  return (
+  <section className="relative w-full min-h-[120vh] overflow-hidden bg-brand-primary">
+  <motion.div 
+  initial={{ scale: 1.05, opacity: 0 }}
+  animate={{ scale: 1, opacity: 1 }}
+  transition={{ duration: 1.2, ease: "easeOut" }}
+  className="absolute inset-0 w-full h-full bg-black"
+  >
+  <Image
+  src="/images/hero.jpg"
+  alt="Premium aerial photograph of energy infrastructure"
+  fill
+  priority
+  className="object-cover object-center"
+  quality={100}
+  unoptimized={true}
+  />
+  {/* Cinematic gradient strictly for text readability */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/80 via-transparent to-[#111719]/80" />
+  <div className="absolute inset-0 bg-black/20" />
+  </motion.div>
 
- <div className="relative z-10 container mx-auto px-6 lg:px-12 text-center text-white mt-20">
- <motion.p
+  {/* Content wrapper fixed to 100vh so text/CTA is perfectly centered on screen load */}
+  <div className="relative z-10 w-full h-screen flex flex-col items-center justify-center">
+  <div className="container mx-auto px-6 lg:px-12 text-center text-white mt-20">
+  <motion.p
  initial={{ opacity: 0, y: 20 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, delay: 0.2 }}
@@ -76,6 +78,7 @@ export default function HeroSection() {
  <span className="text-brand-accent group-hover:text-white transition-colors text-lg leading-none">↗</span>
  </Link>
  </motion.div>
+ </div>
  </div>
  </section>
  );
