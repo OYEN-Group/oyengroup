@@ -50,12 +50,12 @@ export default function Header() {
  
  {/* Official Logo */}
  <Link href="/" className="flex items-center shrink-0">
- <div className="relative w-[130px] h-[35px]">
+ <div className="relative w-[150px] h-[40px] md:w-[170px] md:h-[45px]">
  <Image quality={100} 
- src="/images/logo.png" 
+ src="/images/logo_transparent.png" 
  alt="OYEN GROUP" 
  fill 
- className="object-contain object-left mix-blend-screen" 
+ className="object-contain object-left" 
  priority
  />
  </div>
