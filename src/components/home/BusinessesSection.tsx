@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -34,7 +34,7 @@ export default function BusinessesSection() {
       <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
         <div className="mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-[32px] md:text-[44px] font-bold text-[#111719] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-            Our Products
+            Technology
           </h2>
         </div>
 

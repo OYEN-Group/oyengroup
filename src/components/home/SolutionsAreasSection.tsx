@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -36,7 +36,7 @@ export default function SolutionsAreasSection() {
           {/* Header */}
           <div className="text-center mb-10 md:mb-12">
             <h2 className="text-[28px] md:text-[36px] font-bold text-brand-primary tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-              Our Solutions
+              Solutions
             </h2>
           </div>
 
