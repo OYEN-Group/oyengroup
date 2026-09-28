@@ -80,11 +80,32 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
-        isSolidBg ? 'bg-[#09251F] border-white/10 py-2 shadow-lg' : 'bg-transparent border-transparent py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b flex flex-col ${
+        isSolidBg ? 'bg-[#09251F] border-white/10 shadow-lg' : 'bg-transparent border-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12">
+      {/* Utility Bar */}
+      <div 
+        className={`w-full bg-[#0d0d0d]/40 transition-all duration-300 hidden md:flex items-center overflow-hidden ${
+          scrolled ? 'h-0 opacity-0' : 'h-[28px] opacity-100'
+        }`}
+      >
+        <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center text-[#B8BFBC] text-[11px] font-['Inter',sans-serif]">
+          <div className="flex items-center gap-4">
+            <Link href="#" className="hover:text-white transition-colors duration-300">English</Link>
+            <span className="opacity-30">|</span>
+            <Link href="/contact" className="hover:text-white transition-colors duration-300">Global Contacts</Link>
+          </div>
+          <div className="flex items-center gap-1.5 group cursor-pointer hover:text-white transition-colors duration-300">
+            <span>OYEN GROUP · Nigeria</span>
+            <svg className="w-3 h-3 opacity-80 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div className={`container mx-auto px-6 lg:px-12 transition-all duration-500 ${isSolidBg ? 'py-2' : 'pt-4 pb-4 md:pt-3'}`}>
         <div className="flex items-center justify-between">
           
           {/* Official Logo */}
