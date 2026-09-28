@@ -156,24 +156,27 @@ export default function HeroSection() {
       {/* Horizontal Navigation Strip */}
       <div className="absolute bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-black/90 via-black/40 to-transparent pt-32 pb-4 md:pb-6">
         <div className="container mx-auto px-4 md:px-6 lg:px-12">
-          <div className="flex flex-row w-full border-b border-white/20">
+          <div className="flex flex-row justify-between w-full gap-4 lg:gap-8">
             {slides.map((slide, idx) => (
               <button
                 key={slide.id}
                 onClick={() => handleNavClick(idx)}
                 aria-label={`Go to ${slide.navLabel}`}
-                className="relative flex-1 py-4 md:py-6 px-2 text-center flex flex-col items-center justify-center group"
+                className="relative flex-1 pb-4 md:pb-5 text-left group"
               >
-                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
+                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis mb-2 md:mb-3 ${
                   currentSlide === idx ? 'text-[#D5A547]' : 'text-white/60 group-hover:text-white'
                 }`}>
                   {slide.navLabel}
                 </span>
                 
+                {/* Inactive line segment */}
+                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/30 transition-colors group-hover:bg-white/50" />
+                
                 {/* Active Progress Line */}
                 {currentSlide === idx && (
                   <motion.div
-                    className="absolute bottom-[-1px] left-0 h-[2px] bg-[#D5A547]"
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#D5A547] z-10"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 7, ease: "linear" }}
