@@ -8,7 +8,7 @@ export const metadata = {
 
 const leaders = [
   { name: 'Farooq Oyeniyi', role: 'Founder & CEO', img: '/images/partnership.jpg' },
-  { name: 'Dr. Habeeb Oyeniyi', role: 'Chief Technology Officer', img: '/images/partnership.jpg' },
+  { name: 'OYEWOLE, James Mayowa', role: 'Founder & CTO', img: '/images/james.jpg' },
   { name: 'Sarah Adebayo', role: 'Director of Operations', img: '/images/partnership.jpg' },
   { name: 'Dr. Emmanuel Okon', role: 'Head of Research', img: '/images/partnership.jpg' },
   { name: 'Amira Hassan', role: 'VP Corporate Strategy', img: '/images/partnership.jpg' },
