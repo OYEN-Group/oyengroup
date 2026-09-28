@@ -165,8 +165,10 @@ export default function HeroSection() {
                 className="relative flex-1 pb-2 md:pb-3 text-left group"
               >
                 {/* Thumbnail popup on hover */}
-                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-700 ease-out pointer-events-none shadow-2xl border border-white/10 z-50">
-                  <Image src={slide.image} alt={slide.navLabel} fill className="object-cover" unoptimized={true} />
+                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md pointer-events-none z-50">
+                  <div className="relative w-full h-full translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] shadow-2xl border border-white/10 rounded-md overflow-hidden">
+                    <Image src={slide.image} alt={slide.navLabel} fill className="object-cover" unoptimized={true} />
+                  </div>
                 </div>
 
                 <span className={`block text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
