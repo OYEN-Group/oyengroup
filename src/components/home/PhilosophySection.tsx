@@ -12,7 +12,7 @@ export default function PhilosophySection() {
           <motion.h4 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-[#D5A547] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-4 font-['Inter',sans-serif]"
           >
@@ -21,7 +21,7 @@ export default function PhilosophySection() {
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
             className="text-3xl md:text-5xl lg:text-[52px] font-bold text-[#111719] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]"
           >
@@ -34,7 +34,7 @@ export default function PhilosophySection() {
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="flex flex-col"
           >
@@ -58,7 +58,7 @@ export default function PhilosophySection() {
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.35, ease: "easeOut" }}
             className="flex flex-col"
           >
@@ -85,7 +85,7 @@ export default function PhilosophySection() {
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:w-1/4"
           >
@@ -103,7 +103,7 @@ export default function PhilosophySection() {
                   initial={{ scaleY: 0 }}
                   whileInView={{ scaleY: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, amount: 0.3 }}
                 />
                 
                 {/* Desktop horizontal line */}
@@ -112,7 +112,7 @@ export default function PhilosophySection() {
                   initial={{ scaleX: 0 }}
                   whileInView={{ scaleX: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, amount: 0.3 }}
                 />
                 
                 <motion.span 
@@ -120,7 +120,7 @@ export default function PhilosophySection() {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: 0.6 + i * 0.1, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  viewport={{ once: true, amount: 0.3 }}
                 >
                   {value}
                 </motion.span>
