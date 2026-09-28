@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] overflow-hidden bg-brand-primary">
+    <section className="relative w-full min-h-[110vh] lg:min-h-[120vh] overflow-hidden bg-brand-primary">
       <motion.div 
         initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -28,7 +28,7 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Content wrapper */}
-      <div className="relative z-10 w-full min-h-[85vh] lg:min-h-[90vh] flex flex-col items-center justify-center">
+      <div className="relative z-10 w-full min-h-[100vh] flex flex-col items-center justify-center">
         <div className="container mx-auto px-6 lg:px-12 text-center text-white mt-16">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
