@@ -138,7 +138,7 @@ export default function HeroSection() {
 
               <Link
                 href={slides[currentSlide].ctaLink}
-                className="group inline-flex items-center gap-3 bg-brand-accent text-brand-primary hover:bg-[#c29541] px-8 py-3.5 rounded-sm font-bold transition-all duration-300 uppercase tracking-widest text-[13px] shadow-lg hover:shadow-xl font-['Inter',sans-serif]"
+                className="group inline-flex items-center gap-3 border border-white text-white hover:bg-white hover:text-brand-primary px-8 py-3.5 rounded-sm font-bold transition-all duration-300 uppercase tracking-widest text-[13px] font-['Inter',sans-serif]"
               >
                 {slides[currentSlide].ctaText}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
