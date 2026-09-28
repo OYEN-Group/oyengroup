@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import SignatureLoader from '@/components/SignatureLoader';
+import CustomCursor from '@/components/CustomCursor';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -24,6 +25,7 @@ export default function RootLayout({
  return (
  <html lang="en">
  <body className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased flex flex-col min-h-screen bg-brand-offwhite text-brand-primary`}>
+ <CustomCursor />
  <SignatureLoader />
  <Header />
  <main className="grow">{children}</main>
