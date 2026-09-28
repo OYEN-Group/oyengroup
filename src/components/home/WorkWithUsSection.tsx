@@ -1,72 +1,70 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function WorkWithUsSection() {
- return (
- <section className="bg-brand-offwhite">
- <div className="flex flex-col lg:flex-row min-h-[800px]">
- 
- {/* Content Side */}
- <div className="w-full lg:w-1/2 flex items-center justify-center p-12 lg:p-24 bg-white relative z-10 order-2 lg:order-1">
- <motion.div 
- initial={{ opacity: 0, x: -30 }}
- whileInView={{ opacity: 1, x: 0 }}
- viewport={{ once: true, margin: "-100px" }}
- transition={{ duration: 0.8 }}
- className="max-w-2xl w-full"
- >
- <h2 className="text-base font-bold uppercase tracking-[0.2em] text-brand-muted border-l-2 border-brand-accent pl-4 mb-10">
- Work With Oyen Group
- </h2>
- <h3 className="text-5xl md:text-6xl lg:text-7xl font-bold text-brand-primary leading-[1.1] mb-8 tracking-tight">
- Let's Build <br/>What's Next. <br/><span className="text-brand-accent mt-2 block">Together.</span>
- </h3>
- <p className="text-xl md:text-2xl text-brand-muted mb-16 leading-relaxed max-w-xl ">
- Whether you're a researcher, developer, investor or strategic partner, discover opportunities to collaborate and create meaningful impact.
- </p>
- 
- <div className="flex flex-col gap-8">
- <div>
- <Link 
- href="/contact"
- className="inline-flex justify-center items-center bg-brand-primary text-white hover:bg-brand-accent hover:text-brand-primary px-12 py-5 font-bold transition-all duration-300 uppercase tracking-widest text-base"
- >
- Partner With Us
- </Link>
- </div>
- <div className="flex flex-col sm:flex-row gap-6 mt-4">
- <Link 
- href="/investment"
- className="text-brand-primary font-bold text-base uppercase tracking-[0.1em] hover:text-brand-accent transition-colors border-b border-gray-200 hover:border-brand-accent pb-1 inline-flex"
- >
- Explore Investment Opportunities
- </Link>
- <Link 
- href="/contact"
- className="text-brand-primary font-bold text-base uppercase tracking-[0.1em] hover:text-brand-accent transition-colors border-b border-gray-200 hover:border-brand-accent pb-1 inline-flex"
- >
- Contact OYEN GROUP
- </Link>
- </div>
- </div>
- </motion.div>
- </div>
+  return (
+    <section className="bg-white w-full flex flex-col lg:flex-row overflow-hidden border-t border-gray-100">
+      {/* LEFT SIDE: Content */}
+      <div className="w-full lg:w-1/2 flex flex-col justify-center px-8 py-20 md:px-16 lg:px-24 lg:py-32 bg-white text-[#111719] order-2 lg:order-1">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-xl"
+        >
+          <h4 className="text-[#D5A547] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-6 font-['Inter',sans-serif]">
+            Let's Build What's Next
+          </h4>
+          <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#111719] leading-[1.1] mb-6 tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+            Collaborate With Us.
+          </h2>
+          <p className="text-[#59636D] text-lg font-['Inter',sans-serif] leading-relaxed mb-12">
+            Whether you're a researcher, developer, investor or strategic partner, discover opportunities to collaborate and create meaningful impact together.
+          </p>
+          
+          <div className="flex flex-col gap-8">
+            <div>
+              <Link 
+                href="/contact"
+                className="inline-flex justify-center items-center bg-[#D5A547] text-white hover:bg-[#111719] px-10 py-4 font-bold transition-colors duration-300 uppercase tracking-widest text-sm font-['Inter',sans-serif]"
+              >
+                Partner With Us
+              </Link>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 pt-4 border-t border-gray-100">
+              <Link 
+                href="/investment"
+                className="text-[#111719] font-bold text-sm uppercase tracking-[0.1em] hover:text-[#D5A547] transition-colors font-['Inter',sans-serif]"
+              >
+                Investment Opportunities →
+              </Link>
+              <Link 
+                href="/contact"
+                className="text-[#111719] font-bold text-sm uppercase tracking-[0.1em] hover:text-[#D5A547] transition-colors font-['Inter',sans-serif]"
+              >
+                General Enquiries →
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </div>
 
- {/* Image Side */}
- <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full order-1 lg:order-2">
- <Image quality={100} 
- src="/images/partnership.jpg" 
- alt="Corporate Collaboration" 
- fill 
- className="object-cover object-center"
- unoptimized={true}
- />
- </div>
-
- </div>
- </section>
- );
+      {/* RIGHT SIDE: Image */}
+      <div className="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-full order-1 lg:order-2">
+        <Image 
+          quality={100} 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+          alt="Professional collaboration" 
+          fill 
+          className="object-cover object-center"
+          unoptimized={true}
+        />
+      </div>
+    </section>
+  );
 }
