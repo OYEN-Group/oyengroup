@@ -165,23 +165,23 @@ export default function HeroSection() {
                 className="relative flex-1 pb-2 md:pb-3 text-left group"
               >
                 {/* Thumbnail popup on hover */}
-                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-2xl border border-white/10 z-50">
+                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-2xl border border-white/10 z-50">
                   <Image src={slide.image} alt={slide.navLabel} fill className="object-cover" unoptimized={true} />
                 </div>
 
-                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
-                  currentSlide === idx ? 'text-[#D5A547]' : 'text-white/60 group-hover:text-white'
+                <span className={`block text-[9px] sm:text-[10px] md:text-[11px] font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
+                  currentSlide === idx ? 'text-[#D5A547]' : 'text-white/50 group-hover:text-white'
                 }`}>
                   {slide.navLabel}
                 </span>
                 
                 {/* Inactive line segment */}
-                <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-white/30 transition-colors group-hover:bg-white/50" />
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/20 transition-colors group-hover:bg-white/40" />
                 
                 {/* Active Progress Line */}
                 {currentSlide === idx && (
                   <motion.div
-                    className="absolute bottom-0 left-0 h-[2px] bg-[#D5A547] z-10"
+                    className="absolute bottom-0 left-0 h-[2px] bg-[#D5A547] shadow-[0_0_8px_rgba(213,165,71,0.6)] z-10"
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 7, ease: "linear" }}
