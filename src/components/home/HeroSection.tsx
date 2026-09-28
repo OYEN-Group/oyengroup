@@ -87,7 +87,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative w-full h-[90vh] overflow-hidden bg-brand-primary focus:outline-none"
+      className="relative w-full min-h-[150vh] overflow-hidden bg-brand-primary focus:outline-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onKeyDown={handleKeyDown}
@@ -118,7 +118,7 @@ export default function HeroSection() {
       </AnimatePresence>
 
       {/* Content wrapper */}
-      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center pointer-events-none">
+      <div className="relative z-10 w-full min-h-[100vh] flex flex-col items-center justify-center pointer-events-none">
         <div className="container mx-auto px-6 lg:px-12 text-center text-white mt-16 pointer-events-auto">
           <AnimatePresence mode="wait">
             <motion.div
@@ -149,7 +149,7 @@ export default function HeroSection() {
       </div>
 
       {/* Navigation Arrows */}
-      <div className="absolute inset-y-0 left-4 md:left-8 flex items-center z-20">
+      <div className="absolute top-[50vh] -translate-y-1/2 left-4 md:left-8 flex items-center z-20">
         <button 
           onClick={() => { prevSlide(); resetTimer(); }}
           className="w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/50 text-white backdrop-blur-sm transition-all border border-white/10"
@@ -158,7 +158,7 @@ export default function HeroSection() {
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
         </button>
       </div>
-      <div className="absolute inset-y-0 right-4 md:right-8 flex items-center z-20">
+      <div className="absolute top-[50vh] -translate-y-1/2 right-4 md:right-8 flex items-center z-20">
         <button 
           onClick={() => { nextSlide(); resetTimer(); }}
           className="w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/50 text-white backdrop-blur-sm transition-all border border-white/10"
@@ -169,7 +169,7 @@ export default function HeroSection() {
       </div>
 
       {/* Progress Indicators */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center gap-3 z-20">
+      <div className="absolute top-[90vh] left-0 right-0 flex justify-center gap-3 z-20">
         {slides.map((_, idx) => (
           <button
             key={idx}
