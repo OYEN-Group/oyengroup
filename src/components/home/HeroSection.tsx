@@ -87,7 +87,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative w-full min-h-[150vh] overflow-hidden bg-brand-primary focus:outline-none"
+      className="relative w-full h-[150vh] overflow-hidden bg-brand-primary focus:outline-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onKeyDown={handleKeyDown}
