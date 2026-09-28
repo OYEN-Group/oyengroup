@@ -18,21 +18,21 @@ const slides = [
   },
   {
     id: 2,
-    navLabel: 'OUR TECHNOLOGY',
-    image: '/images/hero-slide2.jpg',
-    headline: 'Ideas Become Solutions.',
-    subtitle: 'Bringing people, research and technology together to address real challenges.',
-    ctaText: 'Our Approach',
-    ctaLink: '/about#approach',
-  },
-  {
-    id: 3,
     navLabel: 'OUR APPROACH',
     image: '/images/hero-slide3.png',
     headline: 'Technology Built for Real Impact.',
     subtitle: 'Developing practical solutions across learning, research and industrial operations.',
     ctaText: 'Explore Our Products',
     ctaLink: '/products',
+  },
+  {
+    id: 3,
+    navLabel: 'OUR TECHNOLOGY',
+    image: '/images/hero-slide2.jpg',
+    headline: 'Ideas Become Solutions.',
+    subtitle: 'Bringing people, research and technology together to address real challenges.',
+    ctaText: 'Our Approach',
+    ctaLink: '/about#approach',
   },
   {
     id: 4,
@@ -162,9 +162,14 @@ export default function HeroSection() {
                 key={slide.id}
                 onClick={() => handleNavClick(idx)}
                 aria-label={`Go to ${slide.navLabel}`}
-                className="relative flex-1 pb-4 md:pb-5 text-left group"
+                className="relative flex-1 pb-2 md:pb-3 text-left group"
               >
-                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis mb-2 md:mb-3 ${
+                {/* Thumbnail popup on hover */}
+                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-2xl border border-white/10 z-50">
+                  <Image src={slide.image} alt={slide.navLabel} fill className="object-cover" unoptimized={true} />
+                </div>
+
+                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
                   currentSlide === idx ? 'text-[#D5A547]' : 'text-white/60 group-hover:text-white'
                 }`}>
                   {slide.navLabel}

@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -112,7 +112,7 @@ export default function Header() {
                 >
                   <button 
                     onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
-                    className="text-base font-bold flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent font-['Inter',sans-serif]"
+                    className="text-[13px] uppercase tracking-widest font-bold flex items-center gap-1.5 transition-colors duration-300 relative text-white hover:text-brand-accent font-['Inter',sans-serif]"
                   >
                     {item.name}
                     <svg className={`w-3.5 h-3.5 transition-transform duration-300 opacity-70 ${activeDropdown === item.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ export default function Header() {
                 <Link 
                   key={item.name}
                   href={item.href} 
-                  className="text-base font-bold transition-colors duration-300 relative group text-white hover:text-brand-accent font-['Inter',sans-serif] py-2"
+                  className="text-[13px] uppercase tracking-widest font-bold transition-colors duration-300 relative group text-white hover:text-brand-accent font-['Inter',sans-serif] py-2"
                 >
                   {item.name}
                 </Link>
