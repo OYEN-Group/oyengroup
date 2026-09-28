@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+import CTAButton from '@/components/CTAButton';
 
 export default function WorkWithUsSection() {
   return (
@@ -28,27 +29,24 @@ export default function WorkWithUsSection() {
           
           <div className="flex flex-col gap-8">
             <div>
-              <Link 
+              <CTAButton 
                 href="/contact"
-                className="inline-flex justify-center items-center bg-[#D5A547] text-white hover:bg-[#111719] px-10 py-4 font-bold transition-colors duration-300 uppercase tracking-widest text-sm font-['Inter',sans-serif]"
-              >
-                Partner With Us
-              </Link>
+                text="Partner With Us"
+                theme="dark"
+              />
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 pt-4 border-t border-gray-100">
-              <Link 
+            <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 pt-6 border-t border-gray-200">
+              <CTAButton 
                 href="/investment"
-                className="text-[#111719] font-bold text-sm uppercase tracking-[0.1em] hover:text-[#D5A547] transition-colors font-['Inter',sans-serif]"
-              >
-                Investment Opportunities →
-              </Link>
-              <Link 
+                text="Investment Opportunities"
+                theme="dark"
+              />
+              <CTAButton 
                 href="/contact"
-                className="text-[#111719] font-bold text-sm uppercase tracking-[0.1em] hover:text-[#D5A547] transition-colors font-['Inter',sans-serif]"
-              >
-                General Enquiries →
-              </Link>
+                text="General Enquiries"
+                theme="dark"
+              />
             </div>
           </div>
         </motion.div>

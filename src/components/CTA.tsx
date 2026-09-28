@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import CTAButton from '@/components/CTAButton';
 
 export default function CTA() {
  return (
@@ -47,13 +48,11 @@ export default function CTA() {
  </div>
  
  <div className="pt-8">
- <Link
+ <CTAButton
  href="/services"
- className="inline-flex items-center gap-1.5 text-base font-bold text-[#d4af37] group-hover:text-white transition-colors"
- >
- <span>Explore Our Solutions</span>
- <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
- </Link>
+ text="Explore Our Solutions"
+ theme="light"
+ />
  </div>
  </div>
 
@@ -72,13 +71,11 @@ export default function CTA() {
  </div>
  
  <div className="pt-8">
- <Link
+ <CTAButton
  href="/reports"
- className="inline-flex items-center gap-1.5 text-base font-bold text-[#d4af37] group-hover:text-white transition-colors"
- >
- <span>Investor Relations</span>
- <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
- </Link>
+ text="Investor Relations"
+ theme="light"
+ />
  </div>
  </div>
 
@@ -97,13 +94,11 @@ export default function CTA() {
  </div>
  
  <div className="pt-8">
- <Link
+ <CTAButton
  href="/contact"
- className="inline-flex items-center gap-1.5 text-base font-bold text-[#d4af37] group-hover:text-white transition-colors"
- >
- <span>Become a Partner</span>
- <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
- </Link>
+ text="Become a Partner"
+ theme="light"
+ />
  </div>
  </div>
 
@@ -161,18 +156,16 @@ export default function CTA() {
 
  {/* Right Block - Buttons */}
  <div className="relative z-10 flex flex-wrap md:flex-nowrap items-center gap-4 flex-shrink-0">
- <Link
+ <CTAButton
  href="/contact"
- className="px-6 py-3.5 text-base font-semibold tracking-wider bg-[#d4af37] hover:bg-[#e5c158] text-black rounded-xl transition duration-300 shadow-md shadow-[#d4af37]/10"
- >
- Partner With Us
- </Link>
- <Link
+ text="Partner With Us"
+ theme="light"
+ />
+ <CTAButton
  href="/contact"
- className="px-6 py-3.5 text-base font-semibold tracking-wider bg-transparent hover:bg-white/5 text-white border border-white/20 rounded-xl transition duration-300"
- >
- Contact Us
- </Link>
+ text="Contact Us"
+ theme="light"
+ />
  </div>
 
  </div>

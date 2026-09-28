@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import CTAButton from '@/components/CTAButton';
 
 export default function ImpactSection() {
  return (
@@ -33,13 +34,11 @@ export default function ImpactSection() {
  <p className="text-xl md:text-2xl text-white/95 mb-12 leading-relaxed max-w-3xl">
  We work with partners, businesses and communities to build solutions that create jobs, strengthen industries and support sustainable development.
  </p>
- <Link 
+ <CTAButton 
  href="/about" 
- className="inline-flex items-center gap-3 bg-brand-accent text-[#09251F] hover:bg-white px-8 py-4 rounded-sm font-semibold transition-all duration-300 tracking-widest text-base uppercase"
- >
- Our Story
- <span className="group-hover:translate-x-1 transition-transform">→</span>
- </Link>
+ text="Our Story"
+ theme="light"
+ />
  </motion.div>
  </div>
  </section>

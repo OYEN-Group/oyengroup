@@ -1,7 +1,8 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CTAButton from '@/components/CTAButton';
 
 export default function AboutSection() {
   return (
@@ -29,16 +30,12 @@ export default function AboutSection() {
             OYEN GROUP is a technology and research company focused on solving real-world problems through practical software products, data-driven solutions and applied research. We develop technology that supports learning, research and industrial operations, turning ideas into solutions that create lasting value.
           </p>
           
-          {/* Subtle text-link CTA */}
-          <Link 
+          <CTAButton 
             href="/about" 
-            className="group inline-flex items-center gap-3 text-[#111719] font-bold text-[14px] md:text-[15px] uppercase tracking-[0.2em] transition-colors duration-300"
-          >
-            <span className="border-b border-[#111719] group-hover:border-[#D5A547] pb-1 transition-colors">
-              DISCOVER OUR STORY
-            </span>
-            <span className="group-hover:translate-x-1 transition-transform text-[#D5A547]">→</span>
-          </Link>
+            text="Discover Our Story"
+            theme="dark"
+            className="mt-4"
+          />
         </motion.div>
       </div>
     </section>

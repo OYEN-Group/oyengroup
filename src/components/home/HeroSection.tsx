@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import CTAButton from '@/components/CTAButton';
 
 const slides = [
   {
@@ -141,13 +142,12 @@ export default function HeroSection() {
                 {slides[currentSlide].subtitle}
               </p>
 
-              <Link
-                href={slides[currentSlide].ctaLink}
-                className="group inline-flex items-center gap-3 border border-white text-white hover:bg-white hover:text-[#09251F] px-8 py-3.5 rounded-sm font-bold transition-all duration-300 uppercase tracking-[0.15em] text-sm font-['Inter',sans-serif]"
-              >
-                {slides[currentSlide].ctaText}
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
+              <CTAButton 
+                href={slides[currentSlide].ctaLink} 
+                text={slides[currentSlide].ctaText}
+                theme="light"
+                className="mt-4"
+              />
             </motion.div>
           </AnimatePresence>
         </div>

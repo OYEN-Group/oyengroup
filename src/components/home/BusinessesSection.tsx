@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import CTAButton from '@/components/CTAButton';
 
 const products = [
   {
@@ -71,11 +72,10 @@ export default function BusinessesSection() {
                       {product.subtitle}
                     </h3>
                   </div>
-                  
-                  <div className="flex items-center gap-2 text-white font-semibold uppercase tracking-widest text-[13px] font-['Inter',sans-serif]">
-                    Explore Product 
-                    <span className="text-brand-accent group-hover:translate-x-1 transition-transform">→</span>
-                  </div>
+                  <CTAButton 
+                    text="Explore Product"
+                    theme="light"
+                  />
                 </div>
               </motion.div>
             </Link>
