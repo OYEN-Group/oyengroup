@@ -1,286 +1,203 @@
-'use client';
-
-import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+export const metadata = {
+  title: 'Leadership | OYEN GROUP',
+  description: 'The executive team and board guiding OYEN GROUP.',
+};
 
 const leaders = [
- {
- id: 'rufus',
- name: 'Rufus Edesiri Ejukonemu',
- role: 'Co-Founder, CEO & Director',
- image: '/images/rufus.jpg',
- bio: [
- 'Leads business strategy, growth and partnerships, driving OYEN\'s mission to create technology solutions with real impact.'
- ]
- },
- {
- id: 'james',
- name: 'Oyewole, James Mayowa',
- role: 'Founder, CTO & Director',
- image: '/images/james.jpg',
- bio: [
- 'Leads technology, product development and research, building innovative solutions for real-world challenges.'
- ]
- }
+  { name: 'Farooq Oyeniyi', role: 'Founder & CEO', img: '/images/partnership.jpg' },
+  { name: 'Dr. Habeeb Oyeniyi', role: 'Chief Technology Officer', img: '/images/partnership.jpg' },
+  { name: 'Sarah Adebayo', role: 'Director of Operations', img: '/images/partnership.jpg' },
+  { name: 'Dr. Emmanuel Okon', role: 'Head of Research', img: '/images/partnership.jpg' },
+  { name: 'Amira Hassan', role: 'VP Corporate Strategy', img: '/images/partnership.jpg' },
+  { name: 'Daniel Chima', role: 'Head of Engineering', img: '/images/partnership.jpg' },
 ];
 
 export default function LeadershipPage() {
- return (
- <main className="bg-white min-h-screen">
- {/* PREMIUM EDITORIAL HERO */}
- <section className="relative pt-40 pb-32 md:pt-56 md:pb-40 bg-[#09251F] overflow-hidden">
- {/* Bright, sharp corporate background */}
- <div className="absolute inset-0 z-0">
- <Image
- src="/images/solutions_bg.jpg"
- alt="Corporate Architecture"
- fill
- className="object-cover"
- quality={100}
- unoptimized={true}
- priority
- />
- {/* Gradient strictly for text readability on the left */}
- <div className="absolute inset-0 bg-gradient-to-r from-[#111719] via-[#111719]/70 to-transparent w-full md:w-3/4" />
- <div className="absolute inset-0 bg-gradient-to-t from-[#111719] via-transparent to-transparent h-32 bottom-0 absolute" />
- </div>
- 
- <div className="container relative z-10 mx-auto px-6 lg:px-12 max-w-7xl">
- <div className="max-w-4xl">
- <motion.div 
- initial={{ opacity: 0, y: 10 }}
- animate={{ opacity: 1, y: 0 }}
- className="flex items-center gap-6 mb-12"
- >
- <div className="h-px w-16 bg-[#D5A547]" />
- <span className="text-[11px] md:text-base font-bold uppercase tracking-[0.3em] text-[#D5A547]">
- About Oyen Group / Leadership
- </span>
- </motion.div>
- 
- <motion.h1 
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ delay: 0.1 }}
- className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tighter mb-10 leading-[1.05]"
- >
- The People Behind <br className="hidden md:block" />
- <span className="font-semibold text-white">Our Progress.</span>
- </motion.h1>
- 
- <motion.p 
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ delay: 0.2 }}
- className="text-xl md:text-2xl text-white/95 max-w-2xl leading-relaxed"
- >
- Our leadership provides the vision, direction and support needed to turn ideas into real-world impact.
- </motion.p>
- </div>
- </div>
- </section>
+  return (
+    <div className="bg-white min-h-screen pb-32">
+      
+      {/* 1. HERO SECTION */}
+      <section className="pt-24 md:pt-32 px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
+        <div className="mb-6 flex items-center text-sm font-['Inter',sans-serif] text-[#59636D]">
+          <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
+          <span className="mx-2">/</span>
+          <Link href="/about" className="hover:text-[#D5A547] transition-colors">About OYEN</Link>
+          <span className="mx-2">/</span>
+          <span className="text-[#111719] font-medium">Leadership</span>
+        </div>
 
- {/* EXECUTIVE LEADERSHIP */}
- <section className="py-24 md:py-32 bg-white">
- <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
- <div className="mb-20">
- <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D5A547] block mb-3">
- EXECUTIVE LEADERSHIP
- </span>
- <h2 className="text-3xl md:text-4xl text-[#111719] tracking-tight">
- The people guiding our direction.
- </h2>
- </div>
+        <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden">
+          <Image 
+            src="/images/hero-slide1.jpg" 
+            alt="Our leadership" 
+            fill 
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+          
+          <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-6 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+              Our leadership
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 font-['Inter',sans-serif] max-w-2xl leading-relaxed">
+              Our leaders bring a wealth of diversified experience from across the technological, academic and business landscape.
+            </p>
+          </div>
+        </div>
+      </section>
 
- <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
- {leaders.map((leader, index) => (
- <motion.div 
- key={leader.id}
- initial={{ opacity: 0, y: 30 }}
- whileInView={{ opacity: 1, y: 0 }}
- viewport={{ once: true, margin: "-50px" }}
- transition={{ duration: 0.6, delay: index * 0.2 }}
- className="flex flex-col"
- >
- {/* Large Editorial Portrait */}
- <div className="relative w-full aspect-[4/5] bg-[#111719] mb-8 overflow-hidden">
- <Image 
- src={leader.image}
- alt={leader.name}
- fill
- className="object-cover"
- quality={100}
- unoptimized={true}
- />
- </div>
- 
- {/* Clean Details */}
- <div>
- <h3 className="text-3xl font-bold text-[#111719] mb-3">
- {leader.name}
- </h3>
- <p className="text-base font-semibold tracking-[0.15em] text-[#D5A547] uppercase mb-6">
- {leader.role}
- </p>
- 
- <div className="text-lg text-gray-600 leading-relaxed ">
- {leader.bio.map((paragraph, idx) => (
- <p key={idx}>{paragraph}</p>
- ))}
- </div>
- </div>
- </motion.div>
- ))}
- </div>
- </div>
- </section>
+      {/* 2. CENTERED TEXT INTRO */}
+      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto text-center">
+        <div className="flex flex-col gap-8 text-[19px] md:text-[21px] text-[#59636D] font-['Inter',sans-serif] leading-[1.6]">
+          <p className="text-[#111719] font-medium">
+            OYEN GROUP is a diversified technology and research group. The people guiding our organization share a commitment to operational excellence, rigorous research, and practical innovation.
+          </p>
+          <p>
+            At the heart of our strategy is our executive management team, who oversee our business units, shape our long-term vision, and ensure that our products deliver measurable impact across the sectors we serve.
+          </p>
+          <p>
+            The board of directors is drawn from leaders in academia, industry, and corporate governance. Their combined expertise provides strong oversight and strategic direction, helping the group navigate complex markets and deliver sustainable growth.
+          </p>
+        </div>
+      </section>
 
- {/* ORGANISATIONAL STRUCTURE */}
- <section className="py-24 md:py-32 bg-[#FAFAFA] border-t border-gray-100">
- <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
- <div className="text-center mb-24">
- <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D5A547] block mb-3">
- ORGANISATIONAL FRAMEWORK
- </span>
- <h2 className="text-3xl md:text-4xl text-[#111719] tracking-tight">
- Built for Execution.
- </h2>
- </div>
+      {/* 3. CORPORATE MANAGEMENT TEAM */}
+      <section className="bg-[#F8F9FA] py-20 md:py-32 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-6">
+              Our Corporate Management team
+            </h2>
+            <p className="text-[19px] text-[#59636D] font-['Inter',sans-serif]">
+              Our executive management team is responsible for driving the strategy and operations of the group. The team is made up of seasoned professionals with deep expertise in their respective fields.
+            </p>
+          </div>
 
- <div className="max-w-[1200px] mx-auto flex flex-col items-center">
- 
- {/* LEVEL 1: EXECUTIVE */}
- <div className="w-full flex flex-col items-center mb-16">
- <div className="bg-[#111719] px-10 py-6 text-center w-full max-w-xl shadow-sm z-10 border border-[#202629]">
- <h3 className="text-xl md:text-2xl font-bold text-white tracking-widest mb-2">OYEN GROUP LTD</h3>
- <p className="text-base md:text-base uppercase tracking-[0.25em] text-[#D5A547]">People · Ideas · Technology · Real Impact</p>
- </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {leaders.map((leader, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-8 flex flex-col group cursor-pointer hover:shadow-md transition-shadow">
+                <div className="relative w-full h-48 md:h-56 mb-6 overflow-hidden rounded-xl bg-gray-100">
+                  <Image src={leader.img} alt={leader.name} fill className="object-cover object-top" />
+                </div>
+                <h3 className="text-xl font-bold text-[#111719] mb-2 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#D5A547] transition-colors">
+                  {leader.name}
+                </h3>
+                <p className="text-[#59636D] text-[15px] font-medium uppercase tracking-wider mb-6 font-['Inter',sans-serif]">
+                  {leader.role}
+                </p>
+                <span className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                  Read more
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
- {/* Connecting Line */}
- <div className="w-px h-12 bg-gradient-to-b from-[#111719] to-gray-300" />
+      {/* 4. OUR BOARD OF DIRECTORS */}
+      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden">
+            <Image src="/images/energy.jpg" alt="Our board of directors" fill className="object-cover" />
+          </div>
+          <div className="flex flex-col">
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-6">
+              Our board of directors
+            </h2>
+            <p className="text-[19px] text-[#59636D] font-['Inter',sans-serif] mb-8 leading-relaxed">
+              Our Board of Directors oversees the strategic direction and management of the company. Their collective experience ensures rigorous oversight and robust governance structures.
+            </p>
+            <Link href="#" className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg">
+              Find out more
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-[#D5A547] p-1">
+                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
- <div className="w-full max-w-4xl relative">
- {/* Horizontal branch */}
- <div className="hidden md:block absolute top-0 left-[25%] right-[25%] h-px bg-gray-300" />
- 
- <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 pt-0 md:pt-8">
- {/* CEO */}
- <div className="relative flex flex-col items-center">
- <div className="hidden md:block absolute -top-8 left-1/2 w-px h-8 bg-gray-300" />
- <div className="bg-white border border-gray-200 text-center p-8 w-full shadow-sm hover:border-[#D5A547]/30 transition-colors">
- <h4 className="text-2xl font-bold text-[#111719] mb-3">CEO</h4>
- <p className="text-base uppercase tracking-[0.15em] text-gray-500 font-medium">Business, Strategy & Growth</p>
- </div>
- </div>
+      {/* 5. RELATED NEWS */}
+      <section className="bg-[#F8F9FA] py-20 md:py-32 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1600px] mx-auto">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">
+              Related news
+            </h2>
+            <span className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 cursor-pointer hover:gap-3 transition-all hidden md:flex">
+              Read all news
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-[#D5A547] p-1">
+                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </div>
 
- {/* CTO */}
- <div className="relative flex flex-col items-center">
- <div className="hidden md:block absolute -top-8 left-1/2 w-px h-8 bg-gray-300" />
- <div className="bg-white border border-gray-200 text-center p-8 w-full shadow-sm hover:border-[#D5A547]/30 transition-colors">
- <h4 className="text-2xl font-bold text-[#111719] mb-3">CTO</h4>
- <p className="text-base uppercase tracking-[0.15em] text-gray-500 font-medium">Technology, Product & R&D</p>
- </div>
- </div>
- </div>
- </div>
- </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[1, 2, 3, 4].map((item) => (
+              <div key={item} className="bg-white rounded-2xl p-8 flex flex-col hover:shadow-lg transition-shadow cursor-pointer min-h-[300px]">
+                <span className="text-xs font-bold text-[#59636D] uppercase tracking-wider mb-2 font-['Inter',sans-serif]">Press release</span>
+                <p className="text-sm text-[#59636D] mb-4">May 14, 2026</p>
+                <h3 className="text-[#111719] font-bold font-['Plus_Jakarta_Sans',sans-serif] text-lg leading-snug hover:text-[#D5A547] transition-colors">
+                  OYEN GROUP announces new strategic partnership for technical skills development.
+                </h3>
+                <div className="mt-auto pt-6 flex justify-end">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#D5A547]" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <path d="M12 8v8M8 12h8"/>
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
- {/* Connecting Line to Level 2 */}
- <div className="w-px h-16 bg-gray-300 mb-8" />
+      {/* 6. OUR VALUES (Split Section) */}
+      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto border-t border-gray-100">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="flex flex-col">
+            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-6">
+              Our values
+            </h2>
+            <p className="text-[19px] text-[#59636D] font-['Inter',sans-serif] mb-8 leading-relaxed">
+              Our values define how we work, how we interact with our partners, and the impact we strive to create.
+            </p>
+            <Link href="/about" className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
+              Explore our values
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-[#D5A547] p-1">
+                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </Link>
+          </div>
+          <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden">
+            <Image src="/images/tech.jpg" alt="Our values" fill className="object-cover" />
+          </div>
+        </div>
+      </section>
 
- {/* LEVEL 2: PRODUCT PORTFOLIO */}
- <div className="w-full flex flex-col items-center mb-16">
- <div className="mb-8">
- <span className="text-base font-bold tracking-[0.2em] uppercase text-[#111719] bg-gray-200/50 px-4 py-2 rounded-full">
- OUR PRODUCT PORTFOLIO
- </span>
- </div>
- 
- <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl relative">
- {/* Horizontal branch */}
- <div className="hidden md:block absolute -top-4 left-[16.66%] right-[16.66%] h-px bg-gray-300" />
- <div className="hidden md:block absolute -top-12 left-1/2 w-px h-8 bg-gray-300" />
- 
- <div className="relative flex flex-col items-center">
- <div className="hidden md:block absolute -top-4 left-1/2 w-px h-4 bg-gray-300" />
- <div className="bg-white border-t-2 border-[#D5A547] p-8 w-full text-center shadow-sm">
- <h5 className="text-lg font-bold text-[#111719] tracking-wide">OYEN GRID</h5>
- </div>
- </div>
+      {/* 7. BOTTOM BANNER */}
+      <section className="relative w-full h-[300px] mt-16">
+        <Image src="/images/hero-slide2.jpg" alt="Our governance" fill className="object-cover" />
+        <div className="absolute inset-0 bg-black/60 flex items-center justify-center flex-col">
+          <h2 className="text-3xl md:text-[40px] font-bold text-white font-['Plus_Jakarta_Sans',sans-serif] mb-4">
+            Our governance
+          </h2>
+          <Link href="/about/governance" className="text-white hover:text-[#D5A547] transition-colors font-medium font-['Inter',sans-serif] flex items-center gap-2">
+            Read more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </Link>
+        </div>
+      </section>
 
- <div className="relative flex flex-col items-center">
- <div className="hidden md:block absolute -top-4 left-1/2 w-px h-4 bg-gray-300" />
- <div className="bg-white border-t-2 border-[#D5A547] p-8 w-full text-center shadow-sm">
- <h5 className="text-lg font-bold text-[#111719] tracking-wide">VERBA</h5>
- </div>
- </div>
-
- <div className="relative flex flex-col items-center">
- <div className="hidden md:block absolute -top-4 left-1/2 w-px h-4 bg-gray-300" />
- <div className="bg-white border-t-2 border-[#D5A547] p-8 w-full text-center shadow-sm">
- <h5 className="text-lg font-bold text-[#111719] tracking-wide">ORIVEX</h5>
- </div>
- </div>
- </div>
- </div>
-
- {/* Connecting Line to Level 3 */}
- <div className="w-px h-16 bg-gray-300 mb-8" />
-
- {/* LEVEL 3: SUPPORTING FUNCTIONS */}
- <div className="w-full flex flex-col items-center">
- <div className="mb-10">
- <span className="text-base font-bold tracking-[0.2em] uppercase text-[#111719] bg-gray-200/50 px-4 py-2 rounded-full">
- SUPPORTING FUNCTIONS
- </span>
- </div>
- 
- <div className="relative w-full max-w-[1200px]">
- <div className="hidden md:block absolute -top-6 left-1/2 w-px h-6 bg-gray-300" />
- <div className="hidden lg:block absolute -top-6 left-[12.5%] right-[12.5%] h-px bg-gray-300" />
- 
- <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 pt-0 lg:pt-6">
- {[
- 'R&D / Engineering',
- 'Product & Operations',
- 'Marketing & Communications',
- 'Business Development & Partnerships',
- 'Finance',
- 'Legal & Compliance',
- 'People & Culture',
- 'Strategy & Corporate Services'
- ].map((func, i) => (
- <div key={i} className="relative flex flex-col items-center">
- {/* Vertical line for top row */}
- {i < 4 && <div className="hidden lg:block absolute -top-6 left-1/2 w-px h-6 bg-gray-300" />}
- <div className="bg-transparent border border-gray-200 p-5 md:p-6 text-center w-full h-full flex items-center justify-center hover:bg-white hover:shadow-sm transition-all duration-300">
- <span className="text-[13px] md:text-base text-[#111719] font-medium leading-snug">{func}</span>
- </div>
- </div>
- ))}
- </div>
- </div>
- </div>
-
- </div>
- </div>
- </section>
-
- {/* COMPACT CORPORATE CLOSING BANNER */}
- <section className="bg-[#111719] py-16 md:py-20 border-t border-[#202629]">
- <div className="container mx-auto px-6 lg:px-12 max-w-5xl text-center">
- <span className="text-base font-semibold tracking-[0.25em] uppercase text-[#D5A547] block mb-4">
- OUR COMMITMENT
- </span>
- <h2 className="text-2xl md:text-3xl text-white mb-6">
- Good ideas need people capable of carrying them through.
- </h2>
- <p className="text-base md:text-base text-gray-600 tracking-[0.2em] font-medium">
- PEOPLE. IDEAS. TECHNOLOGY. REAL IMPACT.
- </p>
- </div>
- </section>
- </main>
- );
+    </div>
+  );
 }
