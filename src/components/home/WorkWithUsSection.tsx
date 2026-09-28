@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -17,13 +17,13 @@ export default function WorkWithUsSection() {
           className="max-w-xl"
         >
           <h4 className="text-[#D5A547] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-6 font-['Inter',sans-serif]">
-            Let's Build What's Next
+            Let&apos;s Build What&apos;s Next
           </h4>
           <h2 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-[#111719] leading-[1.1] mb-6 tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Collaborate With Us.
           </h2>
           <p className="text-[#59636D] text-lg font-['Inter',sans-serif] leading-relaxed mb-12">
-            Whether you're a researcher, developer, investor or strategic partner, discover opportunities to collaborate and create meaningful impact together.
+            Whether you&apos;re a researcher, developer, investor or strategic partner, discover opportunities to collaborate and create meaningful impact together.
           </p>
           
           <div className="flex flex-col gap-8">
