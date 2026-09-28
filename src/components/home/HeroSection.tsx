@@ -165,7 +165,7 @@ export default function HeroSection() {
                 className="relative flex-1 pb-2 md:pb-3 text-left group"
               >
                 {/* Thumbnail popup on hover */}
-                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300 pointer-events-none shadow-2xl border border-white/10 z-50">
+                <div className="absolute bottom-full left-0 mb-3 w-[120px] md:w-[160px] lg:w-[200px] aspect-[16/10] overflow-hidden rounded-md opacity-0 group-hover:opacity-100 translate-y-6 group-hover:translate-y-0 transition-all duration-700 ease-out pointer-events-none shadow-2xl border border-white/10 z-50">
                   <Image src={slide.image} alt={slide.navLabel} fill className="object-cover" unoptimized={true} />
                 </div>
 
