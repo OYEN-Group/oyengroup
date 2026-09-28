@@ -8,6 +8,7 @@ import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 const slides = [
   {
     id: 1,
+    navLabel: 'OUR VISION',
     image: '/images/hero-slide1.jpg',
     headline: 'Research. Build. Solve. Scale.',
     subtitle: 'Building practical technology solutions for real-world challenges.',
@@ -16,6 +17,7 @@ const slides = [
   },
   {
     id: 2,
+    navLabel: 'OUR TECHNOLOGY',
     image: '/images/hero-slide2.jpg',
     headline: 'Ideas Become Solutions.',
     subtitle: 'Bringing people, research and technology together to address real challenges.',
@@ -24,6 +26,7 @@ const slides = [
   },
   {
     id: 3,
+    navLabel: 'OUR APPROACH',
     image: '/images/hero-slide3.png',
     headline: 'Technology Built for Real Impact.',
     subtitle: 'Developing practical solutions across learning, research and industrial operations.',
@@ -32,6 +35,7 @@ const slides = [
   },
   {
     id: 4,
+    navLabel: 'BUILDING THE FUTURE',
     image: '/images/hero-slide4.jpg',
     headline: 'Building a More Capable Africa.',
     subtitle: 'Creating lasting value through technology, talent and innovation.',
@@ -80,14 +84,14 @@ export default function HeroSection() {
     }
   };
 
-  const handleDotClick = (index: number) => {
+  const handleNavClick = (index: number) => {
     setCurrentSlide(index);
     resetTimer();
   };
 
   return (
     <section 
-      className="relative w-full h-[150vh] overflow-hidden bg-brand-primary focus:outline-none"
+      className="relative w-full h-[100vh] lg:h-[120vh] min-h-[700px] overflow-hidden bg-[#09251F] focus:outline-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onKeyDown={handleKeyDown}
@@ -97,10 +101,10 @@ export default function HeroSection() {
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
           className="absolute inset-0 w-full h-full bg-black"
         >
           <Image
@@ -109,36 +113,37 @@ export default function HeroSection() {
             fill
             priority={currentSlide === 0}
             className="object-cover object-center"
-            quality={90}
+            quality={100}
             unoptimized={true}
           />
-          {/* Dark green/black gradient overlays strictly for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111719]/90 via-black/40 to-[#111719]/80" />
+          {/* Subtle dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
       {/* Content wrapper */}
-      <div className="relative z-10 w-full min-h-[100vh] flex flex-col items-center justify-center pointer-events-none">
-        <div className="container mx-auto px-6 lg:px-12 text-center text-white mt-16 pointer-events-auto">
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center pointer-events-none pb-20">
+        <div className="container mx-auto px-6 lg:px-12 text-center text-white pointer-events-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -20 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              exit={{ opacity: 0, y: shouldReduceMotion ? 0 : -15 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <h1 className="text-[32px] sm:text-[36px] md:text-[44px] lg:text-[64px] font-bold max-w-5xl mx-auto leading-[1.1] mb-6 tracking-tight text-white font-['Plus_Jakarta_Sans',sans-serif]">
+              <h1 className="text-4xl md:text-5xl lg:text-[72px] font-bold max-w-5xl mx-auto leading-[1.1] mb-6 tracking-tight text-white font-['Plus_Jakarta_Sans',sans-serif]">
                 {slides[currentSlide].headline}
               </h1>
 
-              <p className="text-[17px] md:text-[19px] text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-['Inter',sans-serif]">
+              <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed font-['Inter',sans-serif] font-medium">
                 {slides[currentSlide].subtitle}
               </p>
 
               <Link
                 href={slides[currentSlide].ctaLink}
-                className="group inline-flex items-center gap-3 border border-white text-white hover:bg-white hover:text-brand-primary px-8 py-3.5 rounded-sm font-bold transition-all duration-300 uppercase tracking-widest text-[13px] font-['Inter',sans-serif]"
+                className="group inline-flex items-center gap-3 border border-white text-white hover:bg-white hover:text-[#09251F] px-8 py-3.5 rounded-sm font-bold transition-all duration-300 uppercase tracking-[0.15em] text-sm font-['Inter',sans-serif]"
               >
                 {slides[currentSlide].ctaText}
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -148,38 +153,37 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="absolute top-[50vh] -translate-y-1/2 left-4 md:left-8 flex items-center z-20">
-        <button 
-          onClick={() => { prevSlide(); resetTimer(); }}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/50 text-white backdrop-blur-sm transition-all border border-white/10"
-          aria-label="Previous Slide"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
-        </button>
-      </div>
-      <div className="absolute top-[50vh] -translate-y-1/2 right-4 md:right-8 flex items-center z-20">
-        <button 
-          onClick={() => { nextSlide(); resetTimer(); }}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-black/20 hover:bg-black/50 text-white backdrop-blur-sm transition-all border border-white/10"
-          aria-label="Next Slide"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-
-      {/* Progress Indicators */}
-      <div className="absolute top-[90vh] left-0 right-0 flex justify-center gap-3 z-20">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => handleDotClick(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-            className="group py-4 px-1"
-          >
-            <div className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === idx ? 'w-16 bg-brand-accent' : 'w-8 bg-white/30 group-hover:bg-white/50'}`} />
-          </button>
-        ))}
+      {/* Horizontal Navigation Strip */}
+      <div className="absolute bottom-0 left-0 right-0 z-30 bg-gradient-to-t from-black/90 via-black/40 to-transparent pt-32">
+        <div className="container mx-auto px-4 md:px-6 lg:px-12">
+          <div className="flex flex-row w-full border-b border-white/20">
+            {slides.map((slide, idx) => (
+              <button
+                key={slide.id}
+                onClick={() => handleNavClick(idx)}
+                aria-label={`Go to ${slide.navLabel}`}
+                className="relative flex-1 py-4 md:py-6 px-2 text-left group"
+              >
+                <span className={`block text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] md:tracking-[0.2em] transition-colors duration-300 font-['Inter',sans-serif] uppercase whitespace-nowrap overflow-hidden text-ellipsis ${
+                  currentSlide === idx ? 'text-[#D5A547]' : 'text-white/60 group-hover:text-white'
+                }`}>
+                  {slide.navLabel}
+                </span>
+                
+                {/* Active Progress Line */}
+                {currentSlide === idx && (
+                  <motion.div
+                    className="absolute bottom-[-1px] left-0 h-[2px] bg-[#D5A547]"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: 7, ease: "linear" }}
+                    key={`progress-${idx}`}
+                  />
+                )}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
