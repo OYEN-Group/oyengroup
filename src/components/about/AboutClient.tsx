@@ -225,14 +225,14 @@ export default function AboutClient() {
               desc: "AI-Powered Academic Research & Writing.",
               details: "Technology supporting academic research and writing workflows.",
               img: "/images/verba.jpg",
-              link: "/products/verba"
+              link: "/products"
             },
             {
               name: "ORIVEX",
               desc: "Petroleum Depot Operational Intelligence.",
               details: "An operational intelligence concept connecting depot information and decision support.",
               img: "/images/energy.jpg",
-              link: "/products/orivex"
+              link: "/products"
             }
           ].map((product, idx) => (
             <motion.div 
