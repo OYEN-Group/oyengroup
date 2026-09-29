@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const leaders = [
-  { name: 'Farooq Oyeniyi', role: 'Founder & CEO', img: '/images/partnership.jpg' },
+  { name: 'Rufus Edesiri Ejukonemu', role: 'Co-Founder, CEO', img: '/images/rufus.jpg' },
   { name: 'OYEWOLE, James Mayowa', role: 'Founder & CTO', img: '/images/james.jpg' },
   { name: 'Sarah Adebayo', role: 'Director of Operations', img: '/images/partnership.jpg' },
   { name: 'Dr. Emmanuel Okon', role: 'Head of Research', img: '/images/partnership.jpg' },
