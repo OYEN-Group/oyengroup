@@ -60,7 +60,6 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 text-sm uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">Connect</h4>
             <ul className="space-y-4 text-sm text-white/70 font-['Inter',sans-serif]">
               <li><Link href="/contact" className="hover:text-[#D5A547] transition-colors">Contact Us</Link></li>
-              <li><Link href="/investment" className="hover:text-[#D5A547] transition-colors">Investment</Link></li>
               <li><Link href="/contact" className="hover:text-[#D5A547] transition-colors">Partnerships</Link></li>
             </ul>
           </div>

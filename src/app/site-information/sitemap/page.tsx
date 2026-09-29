@@ -66,7 +66,6 @@ export default function SitemapPage() {
               <h2 className="text-[20px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-6 text-[#09251F] border-b border-gray-200 pb-2">Media & Connect</h2>
               <ul className="space-y-4 text-[#59636D]">
                 <li><Link href="/news" className="hover:text-[#D5A547] hover:underline transition-colors">Newsroom</Link></li>
-                <li><Link href="/investment" className="hover:text-[#D5A547] hover:underline transition-colors">Investment</Link></li>
                 <li><Link href="/careers" className="hover:text-[#D5A547] hover:underline transition-colors">Careers</Link></li>
                 <li><Link href="/suppliers" className="hover:text-[#D5A547] hover:underline transition-colors">Suppliers</Link></li>
               </ul>
