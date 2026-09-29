@@ -76,9 +76,11 @@ export default function Footer() {
           </div>
           
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/site-information/privacy-notice" className="hover:text-white transition-colors">Privacy Notice</Link>
             <span className="text-white/20">|</span>
-            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms and Conditions</Link>
+            <Link href="/site-information/terms-and-conditions" className="hover:text-white transition-colors">Terms and Conditions</Link>
+            <span className="text-white/20">|</span>
+            <Link href="/site-information" className="hover:text-white transition-colors">Site Information</Link>
             <span className="text-white/20">|</span>
             <button onClick={scrollToTop} className="hover:text-white transition-colors focus:outline-none flex items-center gap-1">
               Back to Top ↑
