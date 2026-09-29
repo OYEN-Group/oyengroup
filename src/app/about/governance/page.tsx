@@ -9,148 +9,168 @@ export const metadata = {
 
 export default function GovernancePage() {
   return (
-    <main className="bg-white min-h-screen pt-32 pb-24 font-['Inter',sans-serif]">
-      <div className="max-w-[900px] mx-auto px-6 lg:px-0">
-        
-        {/* Breadcrumb */}
-        <div className="mb-16">
-          <div className="mb-8 flex items-center text-sm text-[#59636D]">
-            <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
-            <span className="mx-2">/</span>
-            <span className="text-[#59636D]">Company</span>
-            <span className="mx-2">/</span>
-            <span className="text-[#111719] font-medium">Governance</span>
-          </div>
-        </div>
-
-        {/* Page Header */}
-        <div className="mb-20">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#D5A547] block mb-4">
-            OUR GOVERNANCE
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#111719] mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-            A Foundation of Trust.
-          </h1>
-          <p className="text-[#59636D] text-lg md:text-xl leading-relaxed max-w-2xl">
-            At OYEN GROUP, governance provides the framework for responsible decision-making, accountability and sustainable growth across our activities.
-          </p>
-        </div>
-
-        <div className="space-y-24 text-[#111719] leading-relaxed text-[16px] md:text-[17px]">
+    <main className="bg-white min-h-screen pt-28 pb-0 font-['Inter',sans-serif]">
+      
+      {/* Boxed Hero Section */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-16">
+        <div className="relative w-full h-[450px] rounded-[24px] overflow-hidden">
+          <Image 
+            quality={100} 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+            alt="Corporate Governance" 
+            fill 
+            className="object-cover object-center"
+            priority
+          />
+          {/* Dark Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#09251F]/90 via-[#09251F]/60 to-transparent"></div>
           
-          {/* Section 1 — Governance Overview */}
-          <section>
-            <h2 className="text-[28px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-6 text-[#09251F] tracking-tight">
-              Guided by Purpose. Grounded in Accountability.
-            </h2>
-            <p className="text-[#59636D] text-lg max-w-3xl leading-relaxed">
-              OYEN GROUP's governance approach establishes clear responsibilities, encourages transparency and supports responsible decision-making across our technology, research and business activities.
-            </p>
-          </section>
-
-          {/* Section 2 — Leadership & Oversight */}
-          <section className="border-t border-gray-100 pt-16">
-            <h2 className="text-[28px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-6 text-[#09251F] tracking-tight">
-              The People Behind Our Direction.
-            </h2>
-            <p className="text-[#59636D] mb-8 max-w-3xl leading-relaxed">
-              Our leadership team comprises founders, executive management, and formally appointed directors who collectively guide our strategic vision. They ensure that our operations align with our core values, driving both innovation and ethical conduct at every level of the organization.
-            </p>
-            <Link href="/about/leadership" className="inline-flex items-center text-[#09251F] font-bold group">
-              Meet Our Leadership
-              <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </section>
-
-          {/* Section 3 — Our Governance Framework */}
-          <section className="border-t border-gray-100 pt-16">
-            <h2 className="text-[28px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-10 text-[#09251F] tracking-tight">
-              Our Governance Framework
-            </h2>
-            <div className="flex flex-col border-t border-gray-200">
-              {/* Row 1 */}
-              <div className="flex flex-col md:flex-row py-6 border-b border-gray-200 gap-4 md:gap-12">
-                <div className="w-full md:w-1/3 font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">Strategic Direction</div>
-                <div className="w-full md:w-2/3 text-[#59636D]">Organisational priorities and long-term planning</div>
-              </div>
-              {/* Row 2 */}
-              <div className="flex flex-col md:flex-row py-6 border-b border-gray-200 gap-4 md:gap-12">
-                <div className="w-full md:w-1/3 font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">Management Responsibility</div>
-                <div className="w-full md:w-2/3 text-[#59636D]">Operational oversight and accountability</div>
-              </div>
-              {/* Row 3 */}
-              <div className="flex flex-col md:flex-row py-6 border-b border-gray-200 gap-4 md:gap-12">
-                <div className="w-full md:w-1/3 font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">Ethics & Integrity</div>
-                <div className="w-full md:w-2/3 text-[#59636D]">Professional conduct and responsible practices</div>
-              </div>
-              {/* Row 4 */}
-              <div className="flex flex-col md:flex-row py-6 border-b border-gray-200 gap-4 md:gap-12">
-                <div className="w-full md:w-1/3 font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">Risk Management</div>
-                <div className="w-full md:w-2/3 text-[#59636D]">Identifying and managing organisational risks</div>
-              </div>
+          <div className="absolute inset-0 flex flex-col justify-between p-10 lg:p-16">
+            {/* Breadcrumb inside hero */}
+            <div className="flex items-center text-xs font-medium text-white/80 uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="mx-3">›</span>
+              <span className="hover:text-white transition-colors cursor-default">Company</span>
+              <span className="mx-3">›</span>
+              <span className="text-white">Our Governance</span>
             </div>
-          </section>
+
+            {/* Title */}
+            <div className="max-w-2xl">
+              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight leading-[1.1]">
+                Our Governance
+              </h1>
+              <p className="text-xl text-white/90 font-light tracking-wide">
+                A Foundation of Trust.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Section 4 — Our Commitment */}
-      <section className="bg-[#09251F] text-white py-24 mt-24">
-        <div className="max-w-[900px] mx-auto px-6 lg:px-0">
-          <h2 className="text-[28px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-12 tracking-tight">
-            Our Commitment
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="flex flex-col">
-              <span className="text-[#D5A547] text-3xl font-bold mb-4 font-['Plus_Jakarta_Sans',sans-serif]">01</span>
-              <h3 className="font-bold text-lg mb-2">Accountability</h3>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[#D5A547] text-3xl font-bold mb-4 font-['Plus_Jakarta_Sans',sans-serif]">02</span>
-              <h3 className="font-bold text-lg mb-2">Transparency</h3>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[#D5A547] text-3xl font-bold mb-4 font-['Plus_Jakarta_Sans',sans-serif]">03</span>
-              <h3 className="font-bold text-lg mb-2">Integrity</h3>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[#D5A547] text-3xl font-bold mb-4 font-['Plus_Jakarta_Sans',sans-serif]">04</span>
-              <h3 className="font-bold text-lg mb-2">Responsible Innovation</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Centered Introduction Text */}
+      <div className="max-w-[800px] mx-auto px-6 lg:px-0 text-center mb-24">
+        <p className="text-[22px] md:text-[24px] text-[#111719] leading-relaxed font-light mb-8">
+          Guided by Purpose. Grounded in Accountability.
+        </p>
+        <p className="text-[16px] text-[#59636D] leading-relaxed max-w-2xl mx-auto">
+          OYEN GROUP's governance approach establishes clear responsibilities, encourages transparency and supports responsible decision-making across our technology, research and business activities.
+        </p>
+      </div>
 
-      {/* Section 5 — Governance & Corporate Information */}
-      <section className="max-w-[900px] mx-auto px-6 lg:px-0 mt-24">
-        <h2 className="text-[24px] font-bold font-['Plus_Jakarta_Sans',sans-serif] mb-8 text-[#09251F] tracking-tight">
-          Corporate Information
+      {/* "In this section" Cards Grid */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-24">
+        <h2 className="text-3xl font-light text-[#111719] mb-10 font-['Plus_Jakarta_Sans',sans-serif]">
+          In this section
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-8">
-          <Link href="/about/leadership" className="text-[#007079] font-medium hover:text-[#D5A547] hover:underline transition-colors py-2 border-b border-gray-100 flex justify-between items-center group">
-            Our Leadership
-            <span className="text-gray-300 group-hover:text-[#D5A547] transition-colors">→</span>
-          </Link>
-          <div className="text-[#59636D] font-medium py-2 border-b border-gray-100 flex justify-between items-center opacity-60 cursor-not-allowed" title="Document in preparation">
-            Organisational Structure
-            <span className="text-gray-300">→</span>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Card 1: Leadership & Oversight */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
+              <Image 
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" 
+                alt="Leadership and Oversight" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h3 className="text-[22px] font-medium text-[#111719] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">
+              Leadership & Oversight
+            </h3>
+            <p className="text-[#59636D] text-[15px] leading-relaxed mb-6 flex-grow">
+              The People Behind Our Direction. Discover the roles of the founders, executive management and appointed directors guiding OYEN GROUP.
+            </p>
+            <Link href="/about/leadership" className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              Meet Our Leadership
+            </Link>
           </div>
-          <div className="text-[#59636D] font-medium py-2 border-b border-gray-100 flex justify-between items-center opacity-60 cursor-not-allowed" title="Document in preparation">
-            Code of Conduct
-            <span className="text-gray-300">→</span>
+
+          {/* Card 2: Our Governance Framework */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
+              <Image 
+                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                alt="Governance Framework" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h3 className="text-[22px] font-medium text-[#111719] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">
+              Our Governance Framework
+            </h3>
+            <p className="text-[#59636D] text-[15px] leading-relaxed mb-6 flex-grow">
+              Learn about our strategic direction, management responsibility, ethics & integrity, and risk management practices.
+            </p>
+            <span className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              Read more
+            </span>
           </div>
-          <Link href="/site-information/privacy-notice" className="text-[#007079] font-medium hover:text-[#D5A547] hover:underline transition-colors py-2 border-b border-gray-100 flex justify-between items-center group">
-            Privacy & Data Protection
-            <span className="text-gray-300 group-hover:text-[#D5A547] transition-colors">→</span>
-          </Link>
-          <Link href="/contact" className="text-[#007079] font-medium hover:text-[#D5A547] hover:underline transition-colors py-2 border-b border-gray-100 flex justify-between items-center group">
-            Contact OYEN GROUP
-            <span className="text-gray-300 group-hover:text-[#D5A547] transition-colors">→</span>
-          </Link>
+
+          {/* Card 3: Our Commitment */}
+          <div className="flex flex-col group cursor-pointer">
+            <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
+              <Image 
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" 
+                alt="Our Commitment" 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <h3 className="text-[22px] font-medium text-[#111719] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">
+              Our Commitment
+            </h3>
+            <p className="text-[#59636D] text-[15px] leading-relaxed mb-6 flex-grow">
+              Accountability, Transparency, Integrity, and Responsible Innovation. These principles define our professional conduct.
+            </p>
+            <span className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              Read more
+            </span>
+          </div>
+
         </div>
-      </section>
-      
+      </div>
+
+      {/* Corporate Information Directory / Full-width banner style */}
+      <div className="relative w-full h-[300px] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000&auto=format&fit=crop" 
+          alt="Corporate Information" 
+          fill 
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#09251F]/80"></div>
+        <div className="relative z-10 text-center px-6">
+          <h2 className="text-3xl md:text-4xl font-light text-white mb-8 font-['Plus_Jakarta_Sans',sans-serif]">
+            Governance & Corporate Information
+          </h2>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <Link href="/about/leadership" className="text-white hover:text-[#D5A547] transition-colors text-sm font-medium inline-flex items-center">
+              Our Leadership
+            </Link>
+            <Link href="/site-information/privacy-notice" className="text-white hover:text-[#D5A547] transition-colors text-sm font-medium inline-flex items-center">
+              Privacy & Data Protection
+            </Link>
+            <Link href="/site-information/terms-and-conditions" className="text-white hover:text-[#D5A547] transition-colors text-sm font-medium inline-flex items-center">
+              Terms and Conditions
+            </Link>
+            <Link href="/contact" className="text-white hover:text-[#D5A547] transition-colors text-sm font-medium inline-flex items-center">
+              Contact OYEN GROUP
+            </Link>
+          </div>
+        </div>
+      </div>
+
     </main>
   );
 }
