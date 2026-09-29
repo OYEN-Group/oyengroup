@@ -8,25 +8,25 @@ import { motion } from 'framer-motion';
 const features = [
  {
  title: 'Programme Design & Management',
- description: 'Structure training programmes, coordinate learning activities and manage programme delivery from one connected environment.',
+ description: 'Structure educational programmes, coordinate learning activities and manage delivery from one connected environment.',
  image: '/images/tech.jpg',
  layout: 'image-left'
  },
  {
  title: 'Participant Management',
- description: 'Organise participant information and maintain visibility across training activities.',
+ description: 'Organise participant information and maintain visibility across educational activities.',
  image: '/images/energy.jpg',
  layout: 'text-left'
  },
  {
  title: 'Facilitator Coordination',
- description: 'Support facilitator assignments, programme coordination and training delivery.',
+ description: 'Support facilitator assignments, programme coordination and delivery workflows.',
  image: '/images/partnership.jpg',
  layout: 'image-left'
  },
  {
  title: 'Attendance & Progress Tracking',
- description: 'Maintain records of attendance and monitor participant progress throughout programme delivery.',
+ description: 'Maintain records of attendance and monitor participant progress throughout delivery lifecycles.',
  image: '/images/tech.jpg',
  layout: 'text-left'
  }
@@ -41,7 +41,7 @@ export default function OyenGridPage() {
  <div className="absolute inset-0 z-0">
  <Image 
  src="/images/tech.jpg" 
- alt="OYEN GRID Training Workshop"
+ alt="OYEN GRID Platform"
  fill
  className="object-cover"
  quality={100}
@@ -77,7 +77,7 @@ export default function OyenGridPage() {
  transition={{ delay: 0.2 }}
  className="text-xl md:text-3xl text-white/95 mb-8 md:mb-12 tracking-wide"
  >
- Training & Programme Management
+ Enterprise Learning Platform
  </motion.h2>
  
  <motion.p 
@@ -86,7 +86,7 @@ export default function OyenGridPage() {
  transition={{ delay: 0.3 }}
  className="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
  >
- A platform for organisations to run structured training and learning programmes — from programme design and participant management to facilitators, attendance, progress and programme operations.
+ A software platform for organisations to run structured learning systems — from design and participant management to facilitators, attendance, progress and operations.
  </motion.p>
  </div>
  </section>
@@ -148,7 +148,7 @@ export default function OyenGridPage() {
  Learn. Build. Grow.
  </h2>
  <p className="text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed">
- Bringing structure, visibility and coordination to training and programme management.
+ Bringing structure, visibility and coordination to enterprise learning systems.
  </p>
  
  <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
