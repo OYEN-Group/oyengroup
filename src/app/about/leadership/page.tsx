@@ -152,7 +152,7 @@ export default function LeadershipPage() {
               <div key={item} className="bg-white rounded-2xl p-8 flex flex-col hover:shadow-lg transition-shadow cursor-pointer min-h-[300px]">
                 <span className="text-xs font-bold text-[#59636D] uppercase tracking-wider mb-2 font-['Inter',sans-serif]">Press release</span>
                 <p className="text-sm text-[#59636D] mb-4">May 14, 2026</p>
-                <h3 className="text-[#111719] font-bold font-['Plus_Jakarta_Sans',sans-serif] text-lg leading-snug hover:text-[#D5A547] transition-colors">
+                <h3 className="text-[#111719] font-bold font-['Plus_Jakarta_Sans',sans-serif] text-lg leading-snug hover:text-[#D5A547] transition-colors blur-[6px] select-none">
                   OYEN GROUP announces new strategic partnership for technical skills development.
                 </h3>
                 <div className="mt-auto pt-6 flex justify-end">
