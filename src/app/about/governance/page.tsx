@@ -16,7 +16,7 @@ export default function GovernancePage() {
         <div className="relative w-full h-[450px] rounded-[24px] overflow-hidden">
           <Image 
             quality={100} 
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/governance/banner.png" 
             alt="Corporate Governance" 
             fill 
             className="object-cover object-center"
