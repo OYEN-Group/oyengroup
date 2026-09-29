@@ -7,11 +7,11 @@ import Link from 'next/link';
 const solutionsRow1 = [
   { id: 'training', title: 'Training & Programme Management', bg: '/images/oyen_grid.jpg' },
   { id: 'academic', title: 'Academic Research & Writing', bg: '/images/verba.jpg' },
-  { id: 'industrial', title: 'Industrial Intelligence', bg: '/images/energy.jpg' },
+  { id: 'industrial', title: 'Industrial Intelligence', bg: '/images/energy.jpg', comingSoon: true },
 ];
 
 const solutionsRow2 = [
-  { id: 'digital', title: 'Digital Solutions & Applied Research', bg: '/images/tech.jpg' },
+  { id: 'digital', title: 'Digital Solutions & Applied Research', bg: '/images/tech.jpg', comingSoon: true },
   { id: 'strategic', title: 'Strategic Collaboration', bg: '/images/partnership.jpg' },
 ];
 
@@ -55,16 +55,21 @@ export default function SolutionsAreasSection() {
                     src={solution.bg}
                     alt={solution.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-700 ${solution.comingSoon ? 'blur-[4px] scale-105 opacity-80' : 'group-hover:scale-105'}`}
                     quality={90}
                     unoptimized={true}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 transition-colors duration-500" />
+                  <div className={`absolute inset-0 transition-colors duration-500 ${solution.comingSoon ? 'bg-black/60' : 'bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95'}`} />
                   
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end md:justify-center items-center text-center z-10">
+                  <div className={`absolute inset-0 p-6 flex flex-col justify-end md:justify-center items-center text-center z-10 ${solution.comingSoon ? 'opacity-100' : ''}`}>
                     <h3 className="text-[17px] md:text-[19px] font-bold text-white leading-snug font-['Plus_Jakarta_Sans',sans-serif] md:-mt-4">
                       {solution.title}
                     </h3>
+                    {solution.comingSoon && (
+                      <div className="mt-4 bg-black/50 px-4 py-1.5 rounded-sm font-semibold text-xs text-white uppercase tracking-widest font-['Inter',sans-serif] border border-white/20 backdrop-blur-md">
+                        Coming Soon
+                      </div>
+                    )}
                   </div>
                 </Link>
               </motion.div>
@@ -86,16 +91,21 @@ export default function SolutionsAreasSection() {
                     src={solution.bg}
                     alt={solution.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`object-cover transition-transform duration-700 ${solution.comingSoon ? 'blur-[4px] scale-105 opacity-80' : 'group-hover:scale-105'}`}
                     quality={90}
                     unoptimized={true}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95 transition-colors duration-500" />
+                  <div className={`absolute inset-0 transition-colors duration-500 ${solution.comingSoon ? 'bg-black/60' : 'bg-gradient-to-t from-black/90 via-black/40 to-black/10 group-hover:from-black/95'}`} />
                   
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end md:justify-center items-center text-center z-10">
+                  <div className={`absolute inset-0 p-6 flex flex-col justify-end md:justify-center items-center text-center z-10 ${solution.comingSoon ? 'opacity-100' : ''}`}>
                     <h3 className="text-[17px] md:text-[19px] font-bold text-white leading-snug font-['Plus_Jakarta_Sans',sans-serif] md:-mt-4">
                       {solution.title}
                     </h3>
+                    {solution.comingSoon && (
+                      <div className="mt-4 bg-black/50 px-4 py-1.5 rounded-sm font-semibold text-xs text-white uppercase tracking-widest font-['Inter',sans-serif] border border-white/20 backdrop-blur-md">
+                        Coming Soon
+                      </div>
+                    )}
                   </div>
                 </Link>
               </motion.div>
