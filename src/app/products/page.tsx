@@ -12,19 +12,19 @@ const solutions = [
     id: 'training',
     name: 'Training & Programme Management',
     image: '/images/showcase/grid_ui.png',
-    link: '/products/oyen-grid',
+    link: '/products/training',
   },
   {
     id: 'academic',
     name: 'Academic Research & Writing',
     image: '/images/showcase/verba_ui.png',
-    link: '/products/verba',
+    link: '/products/academic',
   },
   {
     id: 'industrial',
     name: 'Industrial Intelligence',
     image: '/images/showcase/orivex_ui.png',
-    link: '#',
+    link: '/products/industrial',
     comingSoon: true,
   },
   {
