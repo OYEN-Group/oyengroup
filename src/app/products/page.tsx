@@ -3,83 +3,96 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
- title: 'Our Businesses | OYEN GROUP',
- description: 'Explore OYEN GROUP divisions: Oyen Energy, Oyen Tech, and Oyen Agro.',
+  title: 'Solutions | OYEN GROUP',
+  description: 'Explore OYEN GROUP solutions and capabilities.',
 };
 
-const divisions = [
- {
- id: 'energy',
- name: 'Oyen Energy',
- description: 'Innovative solutions in the energy and petroleum value chain. We provide robust infrastructure and strategic management to power industries and communities.',
- image: '/images/energy.jpg',
- link: '/businesses/energy',
- },
- {
- id: 'tech',
- name: 'Oyen Tech',
- description: 'Technology solutions for smarter and more efficient operations. From digital infrastructure to industrial automation, we enable the next generation of enterprise capabilities.',
- image: '/images/tech.jpg',
- link: '/businesses/tech',
- },
- {
- id: 'agro',
- name: 'Oyen Agro',
- description: 'Modern agricultural solutions for food security and economic growth. We integrate technology with sustainable farming practices to maximize yield and impact.',
- image: '/images/agro.jpg',
- link: '/businesses/agro',
- }
+const solutions = [
+  {
+    id: 'training',
+    name: 'Training & Programme Management',
+    image: '/images/energy.jpg', // Placeholder image
+    link: '#',
+  },
+  {
+    id: 'academic',
+    name: 'Academic Research & Writing',
+    image: '/images/showcase/verba_ui.png',
+    link: '/products/verba',
+  },
+  {
+    id: 'industrial',
+    name: 'Industrial Intelligence',
+    image: '/images/showcase/orivex_ui.png',
+    link: '/products/energy',
+  },
+  {
+    id: 'digital',
+    name: 'Digital Solutions',
+    image: '/images/showcase/grid_ui.png',
+    link: '/products/oyen-grid',
+  },
+  {
+    id: 'collaboration',
+    name: 'Strategic Collaboration',
+    image: '/images/partnership.jpg',
+    link: '#',
+  }
 ];
 
-export default function BusinessesPage() {
- return (
- <main className="bg-brand-offwhite pt-32 pb-24 min-h-screen">
- <div className="container mx-auto px-6 lg:px-12 max-w-6xl">
- <div className="mb-20 text-center max-w-3xl mx-auto">
- <h1 className="text-4xl md:text-5xl font-bold text-brand-primary mb-6 tracking-tight">
- Our Portfolio
- </h1>
- <p className="text-lg text-brand-muted leading-relaxed">
- OYEN GROUP operates through three primary business divisions, each dedicated to excellence, innovation, and sustainable long-term value creation.
- </p>
- </div>
+export default function SolutionsPage() {
+  return (
+    <main className="bg-[#111719] min-h-screen">
+      
+      {/* HERO SECTION */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex flex-col items-center justify-center text-center px-6 pt-20">
+        <Image 
+          src="/images/tech.jpg" 
+          alt="Solutions at OYEN GROUP" 
+          fill 
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+            Solutions at OYEN GROUP
+          </h1>
+          <p className="text-base md:text-lg text-white/90 leading-relaxed font-['Inter',sans-serif] max-w-3xl mx-auto">
+            As the industry evolves and shifts, the market is demanding a higher level of intelligence and integration. 
+            We provide robust platforms and strategic management to power industries and communities. 
+            Across all of our key segments, OYEN GROUP delivers premium software and systems that are elegantly engineered 
+            and boldly executed, enabling the best in smart, sustainable technology with precision and power.
+          </p>
+        </div>
+      </section>
 
- <div className="space-y-24">
- {divisions.map((division, index) => (
- <div key={division.id} className={`flex flex-col ${index % 2 !== 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}>
- <div className="w-full lg:w-1/2">
- <div className="relative h-[400px] w-full overflow-hidden rounded-sm group">
- <Image quality={100}
- src={division.image}
- alt={division.name}
- fill
- className="object-cover transition-transform duration-700 group-hover:scale-105"
- />
- <div className="absolute inset-0 bg-brand-primary/10" />
- </div>
- </div>
- 
- <div className="w-full lg:w-1/2 space-y-6">
- <h2 className="text-3xl md:text-4xl font-bold text-brand-primary">{division.name}</h2>
- <p className="text-lg text-brand-muted leading-relaxed">
- {division.description}
- </p>
- <div className="pt-4">
- <Link 
- href={division.link}
- className="inline-flex items-center gap-3 text-brand-primary font-semibold uppercase tracking-widest text-base hover:text-brand-accent transition-colors group"
- >
- <span className="border-b-2 border-brand-primary group-hover:border-brand-accent pb-1 transition-colors">
- Explore {division.name}
- </span>
- <span className="transform transition-transform duration-300 group-hover:translate-x-2">→</span>
- </Link>
- </div>
- </div>
- </div>
- ))}
- </div>
- </div>
- </main>
- );
+      {/* STACKED SOLUTION SECTIONS */}
+      {solutions.map((solution) => (
+        <section key={solution.id} className="relative w-full h-[50vh] min-h-[400px] flex flex-col items-center justify-center text-center px-6 border-t border-white/10">
+          <Image 
+            src={solution.image} 
+            alt={solution.name} 
+            fill 
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors duration-500" />
+          
+          <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight drop-shadow-md">
+              {solution.name}
+            </h2>
+            <Link 
+              href={solution.link}
+              className="bg-[#EAE8E1] text-[#111719] px-8 py-3 rounded-sm font-semibold text-sm hover:bg-white transition-colors uppercase tracking-widest font-['Inter',sans-serif]"
+            >
+              Learn More
+            </Link>
+          </div>
+        </section>
+      ))}
+
+    </main>
+  );
 }
