@@ -79,7 +79,7 @@ export default function SiteInformationPage() {
           {entries.map((entry, idx) => (
             <div key={idx} className="flex flex-col">
               {entry.isAction ? (
-                <button className="text-left group" onClick={() => alert('Cookie Preference Center opened. (Mock)')}>
+                <button className="text-left group cursor-pointer" type="button">
                   <h2 className="text-[19px] font-bold text-[#111719] mb-2 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#D5A547] transition-colors">
                     {entry.title}
                   </h2>
