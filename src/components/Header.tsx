@@ -51,11 +51,11 @@ export default function Header() {
       href: '#', 
       dropdown: [
         { name: 'Solutions', href: '/products' },
-        { name: 'Training & Programme Management', href: '/products' },
-        { name: 'Academic Research & Writing', href: '/products' },
-        { name: 'Industrial Intelligence', href: '/products' },
-        { name: 'Digital Solutions', href: '/products' },
-        { name: 'Strategic Collaboration', href: '/products' },
+        { name: 'Training & Programme Management', href: '/products/oyen-grid' },
+        { name: 'Academic Research & Writing', href: '/products/verba' },
+        { name: 'Industrial Intelligence', href: '/products/orivex' },
+        { name: 'Digital Solutions', href: '/products/digital' },
+        { name: 'Strategic Collaboration', href: '/products/collaboration' },
       ] 
     },
     { 

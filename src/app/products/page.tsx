@@ -31,14 +31,14 @@ const solutions = [
     id: 'digital',
     name: 'Digital Solutions',
     image: '/images/tech.jpg',
-    link: '#',
+    link: '/products/digital',
     comingSoon: true,
   },
   {
     id: 'collaboration',
     name: 'Strategic Collaboration',
     image: '/images/partnership.jpg',
-    link: '#',
+    link: '/products/collaboration',
   }
 ];
 
