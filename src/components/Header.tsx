@@ -62,8 +62,9 @@ export default function Header() {
       name: 'Suppliers', 
       href: '#', 
       dropdown: [
-        { name: 'Partner with Us', href: '/contact' },
-        { name: 'Procurement Guidelines', href: '/about' },
+        { name: 'Become a Supplier', href: '/suppliers#become-a-supplier' },
+        { name: 'Supplier Guidelines', href: '/suppliers#guidelines' },
+        { name: 'Supplier Enquiries', href: '/suppliers#enquiries' },
       ] 
     },
     { 
