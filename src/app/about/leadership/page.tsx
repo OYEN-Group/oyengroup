@@ -105,7 +105,7 @@ export default function LeadershipPage() {
       <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden">
-            <Image src="/images/energy.jpg" alt="Our board of directors" fill className="object-cover" />
+            <Image src="/images/board_of_directors.jpg" alt="Our board of directors" fill className="object-cover" />
           </div>
           <div className="flex flex-col">
             <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-6">
