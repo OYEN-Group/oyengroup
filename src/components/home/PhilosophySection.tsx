@@ -1,13 +1,7 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const VALUES = [
   { title: 'People first.', desc: 'Empowering individuals and communities through empathetic leadership and support.' },
@@ -18,169 +12,105 @@ const VALUES = [
 ];
 
 export default function PhilosophySection() {
-  const containerRef = useRef<HTMLElement>(null);
-  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
-
-  useGSAP(() => {
-    // Check if user prefers reduced motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!prefersReducedMotion) {
-      // 1. Background and Text Color Transition
-      const bgTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 40%',
-          end: 'top 10%',
-          scrub: true,
-        }
-      });
-
-      bgTl.to(containerRef.current, { backgroundColor: '#09251F', ease: 'none' }, 0)
-          .to('.dynamic-text', { color: '#ffffff', ease: 'none' }, 0)
-          .to('.dynamic-text-muted', { color: 'rgba(255, 255, 255, 0.7)', ease: 'none' }, 0)
-          .to('.dynamic-border', { borderColor: 'rgba(255, 255, 255, 0.1)', ease: 'none' }, 0);
-
-      // 2. Kinetic Typography "What Drives Us." word-by-word reveal
-      gsap.from('.word-reveal', {
-        yPercent: 100,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 1.2,
-        ease: 'power4.out',
-        scrollTrigger: {
-          trigger: '.heading-container',
-          start: 'top 80%',
-        }
-      });
-
-      // 3. Vision & Mission Sequential Reveal
-      gsap.from('.editorial-reveal', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.25,
-        duration: 1.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: '.vision-mission-container',
-          start: 'top 75%',
-        }
-      });
-
-      // 4. Values Horizontal Animation & Progress Line
-      const valuesTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: '.values-container',
-          start: 'top 80%',
-          end: 'bottom 60%',
-          scrub: 1,
-        }
-      });
-
-      valuesTl.to('.progress-line', {
-        scaleX: 1,
-        ease: 'none',
-      }, 0)
-      .from('.value-item', {
-        opacity: 0,
-        y: 30,
-        stagger: 0.15,
-        ease: 'power2.out',
-      }, 0.1);
-    } else {
-      // Provide instant color switch for reduced motion
-      gsap.to(containerRef.current, {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 30%',
-          onEnter: () => {
-            gsap.set(containerRef.current, { backgroundColor: '#09251F' });
-            gsap.set('.dynamic-text', { color: '#ffffff' });
-            gsap.set('.dynamic-text-muted', { color: 'rgba(255, 255, 255, 0.7)' });
-            gsap.set('.dynamic-border', { borderColor: 'rgba(255, 255, 255, 0.1)' });
-          },
-          onLeaveBack: () => {
-            gsap.set(containerRef.current, { backgroundColor: '#ffffff' });
-            gsap.set('.dynamic-text', { color: '#111719' });
-            gsap.set('.dynamic-text-muted', { color: '#59636D' });
-            gsap.set('.dynamic-border', { borderColor: 'rgba(229, 231, 235, 1)' });
-          }
-        }
-      });
-    }
-
-  }, { scope: containerRef });
-
   return (
-    <section ref={containerRef} className="py-32 lg:py-48 bg-white overflow-hidden transition-colors duration-300">
-      <div className="container mx-auto px-6 lg:px-12 max-w-7xl">
+    <section className="relative py-32 lg:py-48 bg-[#09251F] overflow-hidden">
+      {/* Background Image with Dark Green Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image src="/images/hero-slide2.jpg" alt="Background" fill className="object-cover opacity-20 mix-blend-luminosity" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#09251F] via-[#09251F]/90 to-[#09251F]"></div>
+      </div>
+
+      <div className="container mx-auto px-6 lg:px-12 max-w-7xl relative z-10">
         
         {/* Heading */}
-        <div className="heading-container mb-24 md:mb-32">
-          <div className="text-[#D5A547] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-8 font-['Inter',sans-serif]">
+        <div className="mb-24 md:mb-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-[#D5A547] text-sm font-bold tracking-[0.2em] uppercase mb-8 font-['Inter',sans-serif]"
+          >
             Our Identity
-          </div>
-          <h2 className="text-5xl md:text-7xl lg:text-[100px] font-bold tracking-tight font-['Plus_Jakarta_Sans',sans-serif] flex flex-wrap gap-x-4 md:gap-x-6 lg:gap-x-8 dynamic-text text-[#111719]">
-            {["What", "Drives", "Us."].map((word, i) => (
-              <span key={i} className="overflow-hidden inline-block pb-2 lg:pb-6">
-                <span className="word-reveal inline-block">{word}</span>
-              </span>
-            ))}
-          </h2>
+          </motion.div>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-7xl lg:text-[100px] font-bold tracking-tight font-['Plus_Jakarta_Sans',sans-serif] text-white leading-tight"
+          >
+            What Drives Us.
+          </motion.h2>
         </div>
 
-        {/* Vision & Mission Columns */}
-        <div className="vision-mission-container grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 mb-32 pb-32 border-b border-gray-200 dynamic-border">
-          <div className="flex flex-col editorial-reveal">
-            <h3 className="text-[#D5A547] text-sm font-bold uppercase tracking-[0.2em] mb-8 font-['Inter',sans-serif]">
+        {/* Vision & Mission Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-32">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+            className="bg-white p-12 lg:p-16 rounded-[32px] shadow-2xl relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gray-100 rounded-full blur-3xl -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-150"></div>
+            <h3 className="relative text-[#111719] text-sm font-bold uppercase tracking-[0.2em] mb-8 font-['Inter',sans-serif] pb-4 border-b border-gray-200">
               Our Vision
             </h3>
-            <p className="dynamic-text text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.3] font-['Plus_Jakarta_Sans',sans-serif] text-[#111719]">
+            <p className="relative text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.3] font-['Plus_Jakarta_Sans',sans-serif] text-[#111719]">
               A more capable Africa powered by technology, talent and innovation.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col editorial-reveal">
-            <h3 className="text-[#D5A547] text-sm font-bold uppercase tracking-[0.2em] mb-8 font-['Inter',sans-serif]">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
+            className="bg-[#111719] p-12 lg:p-16 rounded-[32px] border border-white/10 shadow-2xl relative overflow-hidden group"
+          >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#1a2327] rounded-full blur-3xl -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-150"></div>
+            <h3 className="relative text-[#D5A547] text-sm font-bold uppercase tracking-[0.2em] mb-8 font-['Inter',sans-serif] pb-4 border-b border-white/10">
               Our Mission
             </h3>
-            <p className="dynamic-text-muted text-2xl md:text-3xl leading-relaxed font-['Inter',sans-serif] font-medium text-[#59636D]">
+            <p className="relative text-2xl md:text-3xl leading-relaxed font-['Inter',sans-serif] font-medium text-white/90">
               To research, build and deploy practical solutions that solve real problems and create lasting value for industries and communities.
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        {/* Values */}
-        <div className="values-container relative">
-          <div className="mb-16">
+        {/* Values Grid */}
+        <div className="border-t border-white/10 pt-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="mb-16"
+          >
             <h3 className="text-[#D5A547] text-sm font-bold uppercase tracking-[0.2em] font-['Inter',sans-serif]">
               Our Values
             </h3>
-          </div>
+          </motion.div>
           
-          <div className="relative w-full h-[2px] bg-gray-200 dynamic-border mb-16 lg:mb-20">
-             <div className="progress-line absolute top-0 left-0 h-full bg-[#D5A547] w-full origin-left scale-x-0" />
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
             {VALUES.map((val, i) => (
-              <div 
+              <motion.div 
                 key={i} 
-                className="value-item group cursor-pointer lg:pr-6"
-                onMouseEnter={() => setHoveredValue(i)}
-                onMouseLeave={() => setHoveredValue(null)}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.1, duration: 0.6 }}
+                className="flex flex-col group cursor-pointer"
               >
-                <div className="text-xl lg:text-2xl font-bold dynamic-text text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif] transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-full border border-[#D5A547]/50 flex items-center justify-center text-[#D5A547] mb-6 group-hover:bg-[#D5A547] group-hover:text-[#09251F] transition-all duration-300 font-bold">
+                  {i + 1}
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-4 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#D5A547] transition-colors">
                   {val.title}
-                </div>
-                <div 
-                  className={`overflow-hidden transition-all duration-500 ease-in-out lg:opacity-0 lg:max-h-0 ${hoveredValue === i ? 'lg:max-h-32 lg:opacity-100 lg:mt-4' : ''} max-h-32 opacity-100 mt-4`}
-                >
-                  <p className="text-[15px] leading-relaxed dynamic-text-muted text-[#59636D] font-['Inter',sans-serif]">
-                    {val.desc}
-                  </p>
-                </div>
-              </div>
+                </h4>
+                <p className="text-lg leading-relaxed text-white/60 font-['Inter',sans-serif] group-hover:text-white/90 transition-colors">
+                  {val.desc}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
