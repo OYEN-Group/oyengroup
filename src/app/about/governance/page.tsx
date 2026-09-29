@@ -70,7 +70,7 @@ export default function GovernancePage() {
           <div className="flex flex-col group cursor-pointer">
             <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
               <Image 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1000&auto=format&fit=crop" 
+                src="/images/governance/leadership.jpg" 
                 alt="Leadership and Oversight" 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -94,7 +94,7 @@ export default function GovernancePage() {
           <div className="flex flex-col group cursor-pointer">
             <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
               <Image 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop" 
+                src="/images/governance/framework.jpg" 
                 alt="Governance Framework" 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -118,7 +118,7 @@ export default function GovernancePage() {
           <div className="flex flex-col group cursor-pointer">
             <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
               <Image 
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop" 
+                src="/images/governance/commitment.jpg" 
                 alt="Our Commitment" 
                 fill 
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
