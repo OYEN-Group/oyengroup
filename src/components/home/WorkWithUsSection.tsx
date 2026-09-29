@@ -38,11 +38,6 @@ export default function WorkWithUsSection() {
             
             <div className="flex flex-col sm:flex-row gap-6 lg:gap-8 pt-6 border-t border-gray-200">
               <CTAButton 
-                href="/investment"
-                text="Investment Opportunities"
-                theme="dark"
-              />
-              <CTAButton 
                 href="/contact"
                 text="General Enquiries"
                 theme="dark"
