@@ -1,183 +1,172 @@
-﻿import Image from 'next/image';
-import Link from 'next/link';
+'use client';
 
-export const metadata = {
-  title: 'OYEN GRID | OYEN GROUP',
-  description: 'Training and programme management platform.',
-};
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+const features = [
+ {
+ title: 'Programme Design & Management',
+ description: 'Structure training programmes, coordinate learning activities and manage programme delivery from one connected environment.',
+ image: '/images/tech.jpg',
+ layout: 'image-left'
+ },
+ {
+ title: 'Participant Management',
+ description: 'Organise participant information and maintain visibility across training activities.',
+ image: '/images/energy.jpg',
+ layout: 'text-left'
+ },
+ {
+ title: 'Facilitator Coordination',
+ description: 'Support facilitator assignments, programme coordination and training delivery.',
+ image: '/images/partnership.jpg',
+ layout: 'image-left'
+ },
+ {
+ title: 'Attendance & Progress Tracking',
+ description: 'Maintain records of attendance and monitor participant progress throughout programme delivery.',
+ image: '/images/tech.jpg',
+ layout: 'text-left'
+ }
+];
 
 export default function OyenGridPage() {
-  return (
-    <div className="bg-white min-h-screen pb-0">
-      
-      {/* 1. HERO SECTION */}
-      <section className="pt-24 md:pt-32 px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
-        <div className="mb-6 flex items-center text-sm font-['Inter',sans-serif] text-[#59636D]">
-          <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/products" className="hover:text-[#D5A547] transition-colors">Products</Link>
-          <span className="mx-2">/</span>
-          <span className="text-[#111719] font-medium">OYEN GRID</span>
-        </div>
+ return (
+ <main className="bg-white min-h-screen">
+ {/* 1. PAGE HERO */}
+ <section className="relative h-screen min-h-[600px] flex items-center justify-center bg-[#111719] overflow-hidden">
+ {/* Bright, sharp Photographic Background */}
+ <div className="absolute inset-0 z-0">
+ <Image 
+ src="/images/tech.jpg" 
+ alt="OYEN GRID Training Workshop"
+ fill
+ className="object-cover"
+ quality={100}
+ unoptimized={true}
+ priority
+ />
+ {/* Subtle gradient to keep the centered white text readable without washing out the image */}
+ <div className="absolute inset-0 bg-black/40" />
+ <div className="absolute inset-0 bg-gradient-to-b from-[#111719]/60 via-transparent to-[#111719]/80" />
+ </div>
+ 
+ <div className="container relative z-10 mx-auto px-6 lg:px-12 text-center mt-16">
+ <motion.span 
+ initial={{ opacity: 0, y: 10 }}
+ animate={{ opacity: 1, y: 0 }}
+ className="text-base md:text-base font-bold uppercase tracking-[0.25em] text-[#D5A547] block mb-4 md:mb-6"
+ >
+ AN OYEN GROUP PRODUCT
+ </motion.span>
+ 
+ <motion.h1 
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.1 }}
+ className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight mb-4 md:mb-6"
+ >
+ OYEN GRID
+ </motion.h1>
+ 
+ <motion.h2 
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.2 }}
+ className="text-xl md:text-3xl text-white/95 mb-8 md:mb-12 tracking-wide"
+ >
+ Training & Programme Management
+ </motion.h2>
+ 
+ <motion.p 
+ initial={{ opacity: 0, y: 20 }}
+ animate={{ opacity: 1, y: 0 }}
+ transition={{ delay: 0.3 }}
+ className="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+ >
+ A platform for organisations to run structured training and learning programmes — from programme design and participant management to facilitators, attendance, progress and programme operations.
+ </motion.p>
+ </div>
+ </section>
 
-        <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden">
-          <Image 
-            src="/images/tech.jpg" 
-            alt="OYEN GRID" 
-            fill 
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-          
-          <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-4 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-              OYEN GRID
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 font-['Inter',sans-serif] max-w-2xl leading-relaxed">
-              Training and programme management platform.
-            </p>
-          </div>
-        </div>
-      </section>
+ {/* 2 & 3. MAIN CONTENT LAYOUT / ALTERNATING ROWS */}
+ <section className="py-24 md:py-32 bg-white">
+ <div className="container mx-auto px-6 lg:px-12 max-w-7xl flex flex-col gap-16 md:gap-20">
+ {features.map((feature, index) => {
+ const isImageLeft = feature.layout === 'image-left';
+ 
+ return (
+ <motion.div 
+ key={index}
+ initial={{ opacity: 0, y: 40 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ viewport={{ once: true, margin: "-100px" }}
+ transition={{ duration: 0.7 }}
+ className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+ >
+ {/* Image Container */}
+ <div className={`relative aspect-[4/3] w-full bg-[#FAFAFA] overflow-hidden ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+ <Image 
+ src={feature.image}
+ alt={feature.title}
+ fill
+ className="object-cover"
+ quality={100}
+ unoptimized={true}
+ />
+ {/* Fallback styling if images don't exist yet */}
+ <div className="absolute inset-0 bg-gray-200 -z-10 flex items-center justify-center text-gray-600 text-base">
+ {feature.title} Image
+ </div>
+ </div>
+ 
+ {/* Text Container */}
+ <div className={`flex flex-col justify-center ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+ <h3 className="text-3xl md:text-4xl font-bold text-[#111719] mb-6 tracking-tight leading-tight">
+ {feature.title}
+ </h3>
+ <div className="w-12 h-1 bg-[#D5A547] mb-8" />
+ <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+ {feature.description}
+ </p>
+ </div>
+ </motion.div>
+ );
+ })}
+ </div>
+ </section>
 
-      {/* 2. CENTERED TEXT INTRO */}
-      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-[1000px] mx-auto">
-        <div className="flex flex-col gap-8 text-[19px] md:text-[21px] text-[#59636D] font-['Inter',sans-serif] leading-[1.6]">
-          <p className="text-[#111719] font-medium">
-            OYEN GRID is a platform designed for organisations to run structured training and learning programmes efficiently. It acts as a central hub for programme design, participant management, and operational delivery.
-          </p>
-          <p>
-            By structuring training programmes in one connected environment, OYEN GRID helps coordinate learning activities and manage programme delivery from start to finish, ensuring consistency and quality at scale.
-          </p>
-          <p>
-            It offers comprehensive features to support facilitator assignments, programme coordination, and training delivery, empowering administrators with full visibility over training operations.
-          </p>
-        </div>
-      </section>
-
-      {/* 3. CENTERED TITLE & TEXT (Versatile resource equivalent) */}
-      <section className="py-12 md:py-16 px-6 md:px-12 lg:px-24 max-w-[1000px] mx-auto text-center">
-        <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-12">
-          Participant Management
-        </h2>
-        <div className="text-[17px] md:text-[19px] text-[#59636D] font-['Inter',sans-serif] leading-[1.6] text-left mx-auto max-w-3xl space-y-6">
-          <p>
-            Organise participant information and maintain visibility across training activities. OYEN GRID simplifies the onboarding process and tracks learner engagement throughout the lifecycle of the programme.
-          </p>
-          <p>
-            Maintain detailed records of attendance and monitor participant progress throughout programme delivery, ensuring that learning objectives are met effectively.
-          </p>
-        </div>
-      </section>
-
-      {/* 4. SPLIT SECTION (Increasing our production equivalent) */}
-      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
-            <Image src="/images/energy.jpg" alt="Facilitator Coordination" fill className="object-cover" />
-          </div>
-          <div className="flex flex-col pt-8">
-            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-8">
-              Facilitator Coordination
-            </h2>
-            <div className="space-y-6 text-[19px] text-[#59636D] font-['Inter',sans-serif] leading-relaxed">
-              <p>
-                Support facilitator assignments, programme coordination and training delivery through a streamlined interface that connects educators with learners seamlessly.
-              </p>
-              <p>
-                Our platform enables precise scheduling, resource allocation, and communication channels that keep facilitators aligned with programme goals and participant needs.
-              </p>
-              <p>
-                By automating routine administrative tasks, facilitators can focus on what matters mostÔÇödelivering high-quality education and driving participant success.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. SPLIT 50/50 TEXT ONLY (The role of technology) */}
-      <section className="py-12 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto border-t border-gray-100">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
-          <div>
-            <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif]">
-              The role of technology
-            </h2>
-          </div>
-          <div className="space-y-6 text-[17px] text-[#59636D] font-['Inter',sans-serif] leading-relaxed">
-            <p>
-              Technology is at the core of <Link href="#" className="text-[#007079] hover:underline">modern education</Link>. OYEN GRID leverages cloud infrastructure to provide a scalable, secure, and accessible learning environment for all participants.
-            </p>
-            <p>
-              We continuously integrate the latest advancements in data analytics and user experience design, ensuring that our platforms meet the evolving demands of educational institutions and corporate training departments.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. DASHBOARD / MAP SECTION */}
-      <section className="bg-[#F8F9FA] py-20 md:py-32">
-        <div className="px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto text-center">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-16">
-            Programme operations dashboard
-          </h2>
-          <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] md:aspect-[21/9] bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 flex items-center justify-center">
-            {/* Using a placeholder image for the dashboard map */}
-            <Image src="/images/hero-slide1.jpg" alt="Dashboard" fill className="object-cover opacity-80" />
-            <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
-            <div className="relative z-10 bg-white p-6 rounded-lg shadow-lg flex items-center gap-4">
-               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-               <span className="font-bold text-[#111719] font-['Inter',sans-serif]">Global Training Hub Active</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. DARK SPLIT BLOCKS (Bottom) */}
-      <section className="bg-white">
-        {/* Block 1 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="relative w-full h-[400px] lg:h-auto">
-            <Image src="/images/partnership.jpg" alt="Unconventional resources" fill className="object-cover" />
-          </div>
-          <div className="bg-[#2B2B2B] p-12 lg:p-24 flex flex-col justify-center">
-            <h2 className="text-3xl font-bold text-white font-['Plus_Jakarta_Sans',sans-serif] mb-6">
-              Advanced analytics
-            </h2>
-            <p className="text-lg text-white/80 font-['Inter',sans-serif] mb-12 leading-relaxed">
-              Gain insights into learning outcomes and programme performance. Our advanced reporting tools help you make data-driven decisions to improve your training delivery.
-            </p>
-            <Link href="#" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
-              Find out more
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-white p-1">
-                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </div>
-        </div>
-
-        {/* Block 2 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="bg-[#3D4042] p-12 lg:p-24 flex flex-col justify-center lg:order-2">
-            <h2 className="text-3xl font-bold text-white font-['Plus_Jakarta_Sans',sans-serif] mb-6">
-              Global deployment
-            </h2>
-            <p className="text-lg text-white/80 font-['Inter',sans-serif] mb-12 leading-relaxed">
-              Deploy your training programmes globally with a platform built for scale. Support diverse learning environments and diverse participant groups simultaneously.
-            </p>
-            <Link href="#" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
-              Find out more
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-white p-1">
-                <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </Link>
-          </div>
-          <div className="relative w-full h-[400px] lg:h-auto lg:order-1">
-            <Image src="/images/tech.jpg" alt="Global business" fill className="object-cover" />
-          </div>
-        </div>
-      </section>
-
-    </div>
-  );
+ {/* 5. CLOSING SECTION */}
+ <section className="bg-[#111719] py-24 md:py-32">
+ <div className="container mx-auto px-6 lg:px-12 max-w-4xl text-center">
+ <span className="text-base md:text-base font-bold uppercase tracking-[0.25em] text-[#D5A547] block mb-6">
+ OYEN GRID
+ </span>
+ <h2 className="text-4xl md:text-6xl text-white mb-8 tracking-tight">
+ Learn. Build. Grow.
+ </h2>
+ <p className="text-lg md:text-xl text-gray-300 mb-16 max-w-2xl mx-auto leading-relaxed">
+ Bringing structure, visibility and coordination to training and programme management.
+ </p>
+ 
+ <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+ <Link 
+ href="/contact"
+ className="w-full sm:w-auto px-8 py-4 bg-[#D5A547] hover:bg-[#c29541] text-[#111719] font-bold tracking-wide transition-colors duration-300 uppercase text-base"
+ >
+ Request a Demo
+ </Link>
+ <Link 
+ href="/contact"
+ className="w-full sm:w-auto px-8 py-4 border border-white/20 hover:bg-white/5 text-white font-semibold tracking-wide transition-colors duration-300 uppercase text-base"
+ >
+ Contact OYEN GROUP
+ </Link>
+ </div>
+ </div>
+ </section>
+ </main>
+ );
 }

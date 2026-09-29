@@ -1,12 +1,12 @@
-﻿import Image from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'OYEN GRID | OYEN GROUP',
-  description: 'Training and programme management platform.',
+  title: 'Training & Programme Management | OYEN GROUP',
+  description: 'Enterprise-grade training and learning programme management.',
 };
 
-export default function OyenGridPage() {
+export default function TrainingPage() {
   return (
     <div className="bg-white min-h-screen pb-0">
       
@@ -15,15 +15,15 @@ export default function OyenGridPage() {
         <div className="mb-6 flex items-center text-sm font-['Inter',sans-serif] text-[#59636D]">
           <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/products" className="hover:text-[#D5A547] transition-colors">Products</Link>
+          <Link href="/products" className="hover:text-[#D5A547] transition-colors">Solutions</Link>
           <span className="mx-2">/</span>
-          <span className="text-[#111719] font-medium">OYEN GRID</span>
+          <span className="text-[#111719] font-medium">Training & Programme Management</span>
         </div>
 
         <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden">
           <Image 
             src="/images/tech.jpg" 
-            alt="OYEN GRID" 
+            alt="Training & Programme Management" 
             fill 
             className="object-cover"
             priority
@@ -32,10 +32,10 @@ export default function OyenGridPage() {
           
           <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-4 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-              OYEN GRID
+              Training & Programme Management
             </h1>
             <p className="text-lg md:text-xl text-white/90 font-['Inter',sans-serif] max-w-2xl leading-relaxed">
-              Training and programme management platform.
+              Enterprise-grade structured training and learning programme delivery.
             </p>
           </div>
         </div>
@@ -45,33 +45,33 @@ export default function OyenGridPage() {
       <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-[1000px] mx-auto">
         <div className="flex flex-col gap-8 text-[19px] md:text-[21px] text-[#59636D] font-['Inter',sans-serif] leading-[1.6]">
           <p className="text-[#111719] font-medium">
-            OYEN GRID is a platform designed for organisations to run structured training and learning programmes efficiently. It acts as a central hub for programme design, participant management, and operational delivery.
+            Our Training & Programme Management solution is designed for global organisations to run structured training and learning programmes efficiently. It acts as a central operational framework for programme design, participant management, and delivery.
           </p>
           <p>
-            By structuring training programmes in one connected environment, OYEN GRID helps coordinate learning activities and manage programme delivery from start to finish, ensuring consistency and quality at scale.
+            By structuring training programmes in one connected environment, we help coordinate learning activities and manage programme delivery from start to finish, ensuring consistency and quality at an enterprise scale.
           </p>
           <p>
-            It offers comprehensive features to support facilitator assignments, programme coordination, and training delivery, empowering administrators with full visibility over training operations.
+            We offer comprehensive support for facilitator assignments, curriculum coordination, and on-site delivery, empowering enterprise administrators with full visibility over their training operations.
           </p>
         </div>
       </section>
 
-      {/* 3. CENTERED TITLE & TEXT (Versatile resource equivalent) */}
+      {/* 3. CENTERED TITLE & TEXT */}
       <section className="py-12 md:py-16 px-6 md:px-12 lg:px-24 max-w-[1000px] mx-auto text-center">
         <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-12">
           Participant Management
         </h2>
         <div className="text-[17px] md:text-[19px] text-[#59636D] font-['Inter',sans-serif] leading-[1.6] text-left mx-auto max-w-3xl space-y-6">
           <p>
-            Organise participant information and maintain visibility across training activities. OYEN GRID simplifies the onboarding process and tracks learner engagement throughout the lifecycle of the programme.
+            Organise participant information and maintain visibility across all regional training activities. We simplify the onboarding process and track learner engagement throughout the lifecycle of the entire programme.
           </p>
           <p>
-            Maintain detailed records of attendance and monitor participant progress throughout programme delivery, ensuring that learning objectives are met effectively.
+            Maintain detailed records of attendance and monitor participant progress throughout the operational delivery, ensuring that enterprise learning objectives are met effectively.
           </p>
         </div>
       </section>
 
-      {/* 4. SPLIT SECTION (Increasing our production equivalent) */}
+      {/* 4. SPLIT SECTION */}
       <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           <div className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-sm">
@@ -83,20 +83,20 @@ export default function OyenGridPage() {
             </h2>
             <div className="space-y-6 text-[19px] text-[#59636D] font-['Inter',sans-serif] leading-relaxed">
               <p>
-                Support facilitator assignments, programme coordination and training delivery through a streamlined interface that connects educators with learners seamlessly.
+                Support facilitator assignments, programme coordination and training delivery through a streamlined infrastructure that connects educators with enterprise learners seamlessly.
               </p>
               <p>
-                Our platform enables precise scheduling, resource allocation, and communication channels that keep facilitators aligned with programme goals and participant needs.
+                Our services enable precise scheduling, resource allocation, and communication channels that keep facilitators aligned with corporate programme goals and participant needs.
               </p>
               <p>
-                By automating routine administrative tasks, facilitators can focus on what matters mostÔÇödelivering high-quality education and driving participant success.
+                By streamlining routine administrative tasks, facilitators can focus on what matters most—delivering high-quality education and driving participant success.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 5. SPLIT 50/50 TEXT ONLY (The role of technology) */}
+      {/* 5. SPLIT 50/50 TEXT ONLY */}
       <section className="py-12 md:py-20 px-6 md:px-12 lg:px-24 max-w-[1200px] mx-auto border-t border-gray-100">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
           <div>
@@ -106,10 +106,10 @@ export default function OyenGridPage() {
           </div>
           <div className="space-y-6 text-[17px] text-[#59636D] font-['Inter',sans-serif] leading-relaxed">
             <p>
-              Technology is at the core of <Link href="#" className="text-[#007079] hover:underline">modern education</Link>. OYEN GRID leverages cloud infrastructure to provide a scalable, secure, and accessible learning environment for all participants.
+              Technology is at the core of <Link href="/products/oyen-grid" className="text-[#007079] hover:underline">modern education infrastructure</Link>. We leverage enterprise cloud capabilities to provide a scalable, secure, and accessible learning environment for all corporate participants.
             </p>
             <p>
-              We continuously integrate the latest advancements in data analytics and user experience design, ensuring that our platforms meet the evolving demands of educational institutions and corporate training departments.
+              We continuously integrate the latest advancements in data analytics and user experience design, ensuring that our training delivery meets the evolving demands of educational institutions and corporate departments.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function OyenGridPage() {
       <section className="bg-[#F8F9FA] py-20 md:py-32">
         <div className="px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto text-center">
           <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-16">
-            Programme operations dashboard
+            Programme operations tracking
           </h2>
           <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] md:aspect-[21/9] bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 flex items-center justify-center">
             {/* Using a placeholder image for the dashboard map */}
@@ -145,9 +145,9 @@ export default function OyenGridPage() {
               Advanced analytics
             </h2>
             <p className="text-lg text-white/80 font-['Inter',sans-serif] mb-12 leading-relaxed">
-              Gain insights into learning outcomes and programme performance. Our advanced reporting tools help you make data-driven decisions to improve your training delivery.
+              Gain insights into learning outcomes and programme performance. Our advanced reporting frameworks help you make data-driven decisions to improve your training delivery.
             </p>
-            <Link href="#" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
+            <Link href="/contact" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
               Find out more
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-white p-1">
                 <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
@@ -163,9 +163,9 @@ export default function OyenGridPage() {
               Global deployment
             </h2>
             <p className="text-lg text-white/80 font-['Inter',sans-serif] mb-12 leading-relaxed">
-              Deploy your training programmes globally with a platform built for scale. Support diverse learning environments and diverse participant groups simultaneously.
+              Deploy your training programmes globally with a framework built for scale. Support diverse learning environments and diverse participant groups simultaneously.
             </p>
-            <Link href="#" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
+            <Link href="/contact" className="text-white font-bold font-['Inter',sans-serif] flex items-center gap-2 hover:gap-3 transition-all text-lg w-fit">
               Find out more
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="rounded-full border-2 border-white p-1">
                 <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
