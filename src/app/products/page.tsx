@@ -11,8 +11,8 @@ const solutions = [
   {
     id: 'training',
     name: 'Training & Programme Management',
-    image: '/images/energy.jpg', // Placeholder image
-    link: '#',
+    image: '/images/showcase/grid_ui.png',
+    link: '/products/oyen-grid',
   },
   {
     id: 'academic',
@@ -24,13 +24,15 @@ const solutions = [
     id: 'industrial',
     name: 'Industrial Intelligence',
     image: '/images/showcase/orivex_ui.png',
-    link: '/products/energy',
+    link: '#',
+    comingSoon: true,
   },
   {
     id: 'digital',
     name: 'Digital Solutions',
-    image: '/images/showcase/grid_ui.png',
-    link: '/products/oyen-grid',
+    image: '/images/tech.jpg',
+    link: '#',
+    comingSoon: true,
   },
   {
     id: 'collaboration',
@@ -70,25 +72,32 @@ export default function SolutionsPage() {
 
       {/* STACKED SOLUTION SECTIONS */}
       {solutions.map((solution) => (
-        <section key={solution.id} className="relative w-full h-[50vh] min-h-[400px] flex flex-col items-center justify-center text-center px-6 border-t border-white/10">
+        <section key={solution.id} className="relative w-full h-[50vh] min-h-[400px] flex flex-col items-center justify-center text-center px-6 border-t border-white/10 overflow-hidden">
           <Image 
             src={solution.image} 
             alt={solution.name} 
             fill 
-            className="object-cover"
+            className={`object-cover transition-transform duration-1000 ${solution.comingSoon ? 'blur-md scale-105 opacity-60' : ''}`}
           />
-          <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors duration-500" />
+          <div className={`absolute inset-0 transition-colors duration-500 ${solution.comingSoon ? 'bg-black/70' : 'bg-black/50 hover:bg-black/40'}`} />
           
-          <div className="relative z-10 flex flex-col items-center">
+          <div className={`relative z-10 flex flex-col items-center ${solution.comingSoon ? 'opacity-90' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight drop-shadow-md">
               {solution.name}
             </h2>
-            <Link 
-              href={solution.link}
-              className="bg-[#EAE8E1] text-[#111719] px-8 py-3 rounded-sm font-semibold text-sm hover:bg-white transition-colors uppercase tracking-widest font-['Inter',sans-serif]"
-            >
-              Learn More
-            </Link>
+            
+            {solution.comingSoon ? (
+              <div className="bg-black/50 px-8 py-3 rounded-sm font-semibold text-sm text-white uppercase tracking-widest font-['Inter',sans-serif] border border-white/20 backdrop-blur-md">
+                Coming Soon
+              </div>
+            ) : (
+              <Link 
+                href={solution.link}
+                className="bg-[#EAE8E1] text-[#111719] px-8 py-3 rounded-sm font-semibold text-sm hover:bg-white transition-colors uppercase tracking-widest font-['Inter',sans-serif]"
+              >
+                Learn More
+              </Link>
+            )}
           </div>
         </section>
       ))}
