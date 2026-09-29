@@ -51,8 +51,8 @@ export default function WorkWithUsSection() {
       <div className="w-full lg:w-1/2 relative min-h-[400px] md:min-h-[500px] lg:min-h-full order-1 lg:order-2">
         <Image 
           quality={100} 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
-          alt="Professional collaboration" 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+          alt="Corporate oversight and governance" 
           fill 
           className="object-cover object-center"
           unoptimized={true}
