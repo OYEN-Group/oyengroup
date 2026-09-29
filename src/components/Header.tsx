@@ -50,7 +50,7 @@ export default function Header() {
       name: 'Solutions', 
       href: '#', 
       dropdown: [
-        { name: 'OYEN VERBA', href: '/products/verba' },
+        { name: 'Solutions', href: '/products' },
         { name: 'Training & Programme Management', href: '/products' },
         { name: 'Academic Research & Writing', href: '/products' },
         { name: 'Industrial Intelligence', href: '/products' },
