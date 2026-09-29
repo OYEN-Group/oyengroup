@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span className="text-white/20">|</span>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms and Conditions</Link>
             <span className="text-white/20">|</span>
             <button onClick={scrollToTop} className="hover:text-white transition-colors focus:outline-none flex items-center gap-1">
               Back to Top ↑
