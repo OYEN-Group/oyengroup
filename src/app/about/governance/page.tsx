@@ -22,28 +22,9 @@ export default function GovernancePage() {
             className="object-cover object-center"
             priority
           />
-          {/* Dark Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#09251F]/90 via-[#09251F]/60 to-transparent"></div>
-          
-          <div className="absolute inset-0 flex flex-col justify-between p-10 lg:p-16">
-            {/* Breadcrumb inside hero */}
-            <div className="flex items-center text-xs font-medium text-white/80 uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="mx-3">›</span>
-              <span className="hover:text-white transition-colors cursor-default">Company</span>
-              <span className="mx-3">›</span>
-              <span className="text-white">Our Governance</span>
-            </div>
-
-            {/* Title */}
-            <div className="max-w-2xl">
-              <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight leading-[1.1]">
-                Our Governance
-              </h1>
-              <p className="text-xl text-white/90 font-light tracking-wide">
-                A Foundation of Trust.
-              </p>
-            </div>
+          <div className="sr-only">
+            <h1>Our Governance</h1>
+            <p>A Foundation of Trust.</p>
           </div>
         </div>
       </div>
