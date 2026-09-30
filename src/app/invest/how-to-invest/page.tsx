@@ -1,0 +1,130 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+
+export default function HowToInvestPage() {
+  return (
+    <main className="bg-[#F8FAFC] min-h-screen pt-40 pb-0 font-['Inter',sans-serif]">
+      
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-32">
+        <div className="flex items-center text-sm font-['Inter',sans-serif] text-[#59636D] mb-8">
+          <Link href="/invest" className="hover:text-[#D5A547] transition-colors">Investment</Link>
+          <span className="mx-2">/</span>
+          <span className="text-[#111719] font-medium">How to Invest</span>
+        </div>
+        <h1 className="text-5xl md:text-7xl font-bold text-[#111719] max-w-4xl font-['Plus_Jakarta_Sans',sans-serif] tracking-tight leading-[1.1]">
+          A Clear Path to Becoming an OYEN Investor.
+        </h1>
+      </div>
+
+      {/* STAGES */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-40">
+        <div className="relative">
+          {/* Connected Progress Line */}
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-200 -translate-y-1/2 hidden md:block"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative z-10">
+            {[
+              { id: '01', title: 'Express Interest' },
+              { id: '02', title: 'Investor Discussion' },
+              { id: '03', title: 'Review & Documentation' },
+              { id: '04', title: 'Complete Investment' }
+            ].map((stage, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center group">
+                <div className="w-16 h-16 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center text-xl font-bold text-[#09251F] mb-6 font-['Plus_Jakarta_Sans',sans-serif] group-hover:border-[#D5A547] group-hover:bg-[#D5A547] group-hover:text-white transition-colors duration-500 shadow-sm">
+                  {stage.id}
+                </div>
+                <h3 className="text-lg font-bold text-[#111719] tracking-widest uppercase font-['Plus_Jakarta_Sans',sans-serif]">{stage.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* POST INVESTMENT */}
+      <section className="bg-[#09251F] py-32 text-center px-6 text-white">
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold mb-16 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+            Your Investment. Our Execution.<br />Shared Progress.
+          </h2>
+
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm font-bold text-white tracking-widest uppercase mb-24 border border-white/20 py-6 px-10 rounded-full bg-white/5">
+            <span>Capital</span>
+            <span className="text-[#D5A547]">→</span>
+            <span>Product Completion</span>
+            <span className="text-[#D5A547]">→</span>
+            <span>Pilot & Validation</span>
+            <span className="text-[#D5A547]">→</span>
+            <span>Market Entry</span>
+            <span className="text-[#D5A547]">→</span>
+            <span>Growth</span>
+          </div>
+
+          <h3 className="text-[#D5A547] font-bold tracking-widest text-sm uppercase mb-10 font-['Plus_Jakarta_Sans',sans-serif]">What investors can expect</h3>
+          
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-white/80 font-light text-lg">
+            <span>Company Updates</span>
+            <span className="hidden md:block text-[#D5A547]">·</span>
+            <span>Milestone Communication</span>
+            <span className="hidden md:block text-[#D5A547]">·</span>
+            <span>Major Developments</span>
+            <span className="hidden md:block text-[#D5A547]">·</span>
+            <span>Shareholder Information</span>
+          </div>
+        </div>
+      </section>
+
+      {/* FORM / CTA */}
+      <section className="py-32 bg-white">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#111719] mb-12 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+            Ready to start the conversation?
+          </h2>
+          
+          <form className="bg-[#F8FAFC] p-8 md:p-12 rounded-[24px] border border-gray-100 flex flex-col gap-6 text-left shadow-sm mb-12" onSubmit={(e) => e.preventDefault()}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold tracking-widest uppercase text-[#59636D]">Name</label>
+                <input type="text" className="border-b border-gray-300 py-3 focus:outline-none focus:border-[#D5A547] bg-transparent text-[#111719]" placeholder="Your full name" required />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold tracking-widest uppercase text-[#59636D]">Email</label>
+                <input type="email" className="border-b border-gray-300 py-3 focus:outline-none focus:border-[#D5A547] bg-transparent text-[#111719]" placeholder="Your business email" required />
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold tracking-widest uppercase text-[#59636D]">Phone / WhatsApp</label>
+                <input type="tel" className="border-b border-gray-300 py-3 focus:outline-none focus:border-[#D5A547] bg-transparent text-[#111719]" placeholder="With country code" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold tracking-widest uppercase text-[#59636D]">Investment Range</label>
+                <select className="border-b border-gray-300 py-3 focus:outline-none focus:border-[#D5A547] bg-transparent text-[#111719] appearance-none" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="500k-1m">₦500K – ₦1M</option>
+                  <option value="1m-2.5m">₦1M – ₦2.5M</option>
+                  <option value="2.5m-5m">₦2.5M – ₦5M</option>
+                  <option value="5m+">₦5M+</option>
+                </select>
+              </div>
+            </div>
+
+            <button 
+              type="submit"
+              className="mt-6 w-full md:w-auto self-center bg-[#09251F] text-white hover:bg-[#D5A547] px-10 py-5 rounded-full font-bold tracking-widest uppercase text-sm transition-colors duration-300 group shadow-lg"
+            >
+              Speak With OYEN <span className="ml-3 border border-white rounded-full p-1 group-hover:border-white transition-colors">→</span>
+            </button>
+          </form>
+
+          <p className="text-xs text-gray-400 leading-relaxed font-['Inter',sans-serif] max-w-2xl mx-auto">
+            Please note: This information is provided for discussion purposes. Prospective investors should review all formal opportunity materials and obtain independent professional advice where appropriate before participating.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  );
+}
