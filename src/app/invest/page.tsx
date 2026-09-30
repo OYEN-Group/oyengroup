@@ -58,19 +58,22 @@ export default function InvestmentHubPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'OYEN GRID', desc: 'Enterprise learning & programme operations.', img: '/images/hero-slide1.jpg' },
-              { name: 'VERBA', desc: 'Language, research & communication technology.', img: '/images/showcase/verba_ui.png' },
-              { name: 'ORIVEX', desc: 'Operational intelligence & decision support.', img: '/images/tech.jpg' }
+              { name: 'OYEN GRID', desc: 'Enterprise learning & programme operations.', img: '/images/hero-slide1.jpg', link: '/products/oyen-grid' },
+              { name: 'VERBA', desc: 'Language, research & communication technology.', img: '/images/showcase/verba_ui.png', link: '/products/verba' },
+              { name: 'ORIVEX', desc: 'Operational intelligence & decision support.', img: '/images/tech.jpg', link: '/products/orivex' }
             ].map((prod, idx) => (
-              <div key={idx} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group">
+              <Link key={idx} href={prod.link} className="block bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group hover:shadow-md hover:border-[#D5A547] transition-all duration-300">
                 <div className="relative w-full h-[250px] overflow-hidden">
                   <Image src={prod.img} alt={prod.name} fill className="object-cover transition-transform duration-700 group-hover:scale-105" unoptimized />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#09251F] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">{prod.name}</h3>
-                  <p className="text-[#59636D] font-light text-lg">{prod.desc}</p>
+                <div className="p-8 flex items-end justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#09251F] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">{prod.name}</h3>
+                    <p className="text-[#59636D] font-light text-lg">{prod.desc}</p>
+                  </div>
+                  <span className="text-[#007079] group-hover:text-[#D5A547] transition-colors font-bold text-lg ml-4 flex-shrink-0">→</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
