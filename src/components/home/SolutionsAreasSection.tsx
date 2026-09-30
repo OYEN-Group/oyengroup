@@ -35,9 +35,11 @@ export default function SolutionsAreasSection() {
         <div className="bg-white w-full p-6 md:p-10 lg:p-16 shadow-sm">
           {/* Header */}
           <div className="text-center mb-10 md:mb-12">
-            <h2 className="text-[28px] md:text-[36px] font-bold text-brand-primary tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-              Solutions
-            </h2>
+            <Link href="/products" className="inline-block">
+              <h2 className="text-[28px] md:text-[36px] font-bold text-brand-primary hover:text-[#D5A547] transition-colors tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                Solutions
+              </h2>
+            </Link>
           </div>
 
           {/* Cards Grid - Row 1 */}
