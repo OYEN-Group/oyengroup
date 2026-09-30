@@ -97,61 +97,7 @@ export default function InvestmentOpportunityPage() {
         </div>
       </section>
 
-      {/* ─── 03 "IN THIS SECTION" — Three Products ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-8 mb-24">
-        <h2 className="text-2xl font-bold text-[#111719] mb-10 font-['Plus_Jakarta_Sans',sans-serif]">
-          The Portfolio
-        </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              img: '/images/hero-slide1.jpg',
-              title: 'OYEN GRID',
-              tag: 'Enterprise Technology',
-              desc: 'A platform for managing learning programmes at scale. Designed for organisations coordinating participants, facilitators, activities and progress across multiple cohorts.',
-              link: '/products/oyen-grid',
-            },
-            {
-              img: '/images/showcase/verba_ui.png',
-              title: 'VERBA',
-              tag: 'Research Technology',
-              desc: 'Language, research and communication technology built for rigorous academic writing, editing and research-process support.',
-              link: '/products/verba',
-            },
-            {
-              img: '/images/showcase/orivex_ui.png',
-              title: 'ORIVEX',
-              tag: 'Operational Intelligence',
-              desc: 'Decision support and operational intelligence built for critical petroleum logistics and energy sector operations.',
-              link: '/products/orivex',
-            },
-          ].map((prod, idx) => (
-            <div key={idx} className="group border border-gray-100 rounded-xl overflow-hidden hover:shadow-lg transition-shadow bg-white">
-              <div className="relative w-full h-[220px] overflow-hidden">
-                <Image
-                  src={prod.img}
-                  alt={prod.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  unoptimized
-                />
-              </div>
-              <div className="p-6">
-                <p className="text-[#007079] text-xs font-bold tracking-widest uppercase mb-2">{prod.tag}</p>
-                <h3 className="text-xl font-bold text-[#111719] mb-2 font-['Plus_Jakarta_Sans',sans-serif]">{prod.title}</h3>
-                <p className="text-[#59636D] text-sm leading-relaxed mb-4">{prod.desc}</p>
-                <Link
-                  href={prod.link}
-                  className="inline-flex items-center text-[#007079] text-sm font-bold tracking-widest uppercase group-hover:text-[#D5A547] transition-colors"
-                >
-                  Learn more <span className="ml-2">→</span>
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ─── 04 INTERACTIVE PARTICIPATION (image left + selector right) ─── */}
       <section className="bg-[#F8FAFC] py-24 mb-0">
