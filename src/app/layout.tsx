@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ScrollToTop from '@/components/ScrollToTop';
+
 import SignatureLoader from '@/components/SignatureLoader';
 import CustomCursor from '@/components/CustomCursor';
 import './globals.css';
@@ -30,7 +30,7 @@ export default function RootLayout({
  <Header />
  <main className="grow">{children}</main>
  <Footer />
- <ScrollToTop />
+
  </body>
  </html>
  );
