@@ -5,14 +5,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const solutionsRow1 = [
-  { id: 'training', title: 'Training & Programme Management', bg: '/images/oyen_grid.jpg' },
-  { id: 'academic', title: 'Academic Research & Writing', bg: '/images/verba.jpg' },
-  { id: 'industrial', title: 'Industrial Intelligence', bg: '/images/energy.jpg', comingSoon: true },
+  { id: 'training', title: 'Training & Programme Management', bg: '/images/oyen_grid.jpg', href: '/products/oyen-grid' },
+  { id: 'academic', title: 'Academic Research & Writing', bg: '/images/verba.jpg', href: '/products/academic' },
+  { id: 'industrial', title: 'Industrial Intelligence', bg: '/images/energy.jpg', href: '/products/industrial', comingSoon: true },
 ];
 
 const solutionsRow2 = [
-  { id: 'digital', title: 'Digital Solutions & Applied Research', bg: '/images/tech.jpg', comingSoon: true },
-  { id: 'strategic', title: 'Strategic Collaboration', bg: '/images/partnership.jpg' },
+  { id: 'digital', title: 'Digital Solutions & Applied Research', bg: '/images/tech.jpg', href: '/products/digital', comingSoon: true },
+  { id: 'strategic', title: 'Strategic Collaboration', bg: '/images/partnership.jpg', href: '/products/collaboration' },
 ];
 
 export default function SolutionsAreasSection() {
@@ -50,7 +50,7 @@ export default function SolutionsAreasSection() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Link href="/products" className="group block relative w-full aspect-[16/11] md:aspect-[4/3] overflow-hidden bg-[#111719]">
+                <Link href={solution.href} className="group block relative w-full aspect-[16/11] md:aspect-[4/3] overflow-hidden bg-[#111719]">
                   <Image 
                     src={solution.bg}
                     alt={solution.title}
@@ -86,7 +86,7 @@ export default function SolutionsAreasSection() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               >
-                <Link href="/products" className="group block relative w-full aspect-[16/11] md:aspect-[4/3] overflow-hidden bg-[#111719]">
+                <Link href={solution.href} className="group block relative w-full aspect-[16/11] md:aspect-[4/3] overflow-hidden bg-[#111719]">
                   <Image 
                     src={solution.bg}
                     alt={solution.title}
