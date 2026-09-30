@@ -8,43 +8,10 @@ export const metadata = {
 };
 
 export default function OurCommitmentPage() {
-  const commitments = [
-    {
-      id: 1,
-      title: 'Accountability',
-      description: 'Taking responsibility for our decisions, work and outcomes.',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop',
-    },
-    {
-      id: 2,
-      title: 'Transparency',
-      description: 'Communicating clearly and responsibly with clients, partners and stakeholders.',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1000&auto=format&fit=crop',
-    },
-    {
-      id: 3,
-      title: 'Integrity',
-      description: 'Maintaining ethical and professional standards across our activities.',
-      image: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1000&auto=format&fit=crop',
-    },
-    {
-      id: 4,
-      title: 'Responsible Innovation',
-      description: 'Developing technology and research with consideration for safety, people, data and potential impact.',
-      image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1000&auto=format&fit=crop',
-    },
-    {
-      id: 5,
-      title: 'Long-Term Value',
-      description: 'Building solutions and relationships intended to create sustainable value for industries and communities.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop',
-    }
-  ];
-
   return (
     <main className="bg-white min-h-screen pt-28 pb-0 font-['Inter',sans-serif]">
       
-      {/* Boxed Hero Section */}
+      {/* 01 — HERO */}
       <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-16">
         <div className="relative w-full h-[450px] rounded-[24px] overflow-hidden">
           <Image 
@@ -83,54 +50,143 @@ export default function OurCommitmentPage() {
         </div>
       </div>
 
-      {/* Centered Introduction Text */}
+      {/* 02 — CENTERED INTRO TEXT */}
       <div className="max-w-[800px] mx-auto px-6 lg:px-0 text-center mb-24">
-        <p className="text-[20px] md:text-[22px] text-[#59636D] leading-relaxed font-light mb-8">
+        <p className="text-[20px] md:text-[22px] text-[#007079] leading-relaxed font-light">
           OYEN GROUP is committed to building technology, conducting research and developing partnerships responsibly. Our approach is guided by accountability, transparency, integrity and consideration for the long-term impact of our work.
         </p>
       </div>
 
-      {/* "In this section" Cards Grid */}
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-24">
-        <h2 className="text-3xl font-light text-[#111719] mb-10 font-['Plus_Jakarta_Sans',sans-serif]">
-          Our Principles
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          {commitments.map((item) => (
-            <div key={item.id} className="flex flex-col group">
-              <div className="relative w-full h-[220px] rounded-xl overflow-hidden mb-6">
-                <Image 
-                  src={item.image} 
-                  alt={item.title} 
-                  fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <span className="text-[#09251F] text-[12px] font-bold tracking-[0.2em] mb-2 font-['Inter',sans-serif]">0{item.id}</span>
-              <h3 className="text-[20px] font-medium text-[#111719] mb-3 font-['Plus_Jakarta_Sans',sans-serif]">
-                {item.title}
-              </h3>
-              <p className="text-[#59636D] text-[14px] leading-relaxed mb-6 flex-grow">
-                {item.description}
-              </p>
-            </div>
-          ))}
-
+      {/* 03 — IMAGE LEFT, TEXT RIGHT */}
+      <div className="max-w-[1000px] mx-auto px-6 lg:px-8 mb-24">
+        <div className="flex flex-col md:flex-row gap-16 items-center">
+          <div className="w-full md:w-1/2 relative h-[350px] rounded-xl overflow-hidden shadow-lg">
+            <Image 
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop" 
+              alt="Accountability" 
+              fill 
+              className="object-cover"
+            />
+          </div>
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-light text-[#111719] mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+              01 — Accountability
+            </h2>
+            <p className="text-[#59636D] text-[16px] leading-relaxed mb-6">
+              Taking responsibility for our decisions, work and outcomes.
+            </p>
+            <p className="text-[#59636D] text-[16px] leading-relaxed">
+              Accountability is at the core of how we operate, ensuring that every project, partnership, and technological deployment is managed with clear ownership. We hold ourselves to the highest standards, ensuring that our actions align with our strategic objectives and stakeholder expectations.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Corporate Information Directory / Full-width banner style */}
-      <div className="relative w-full h-[300px] flex items-center justify-center overflow-hidden">
+      {/* 04 — TWO COLUMNS TEXT */}
+      <div className="max-w-[1000px] mx-auto px-6 lg:px-8 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div>
+            <h3 className="text-xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              02 — Transparency
+            </h3>
+            <p className="text-[#59636D] text-[15px] leading-relaxed">
+              Communicating clearly and responsibly with clients, partners and stakeholders. We believe that open communication builds trust and fosters stronger, more resilient relationships across all our business activities.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              03 — Integrity
+            </h3>
+            <p className="text-[#59636D] text-[15px] leading-relaxed">
+              Maintaining ethical and professional standards across our activities. Our commitment to integrity means we do not compromise on our principles, ensuring that our work consistently aligns with our core values.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 05 — LARGE IMAGE SECTION */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-16">
+        <h2 className="text-3xl md:text-4xl font-light text-[#111719] mb-10 font-['Plus_Jakarta_Sans',sans-serif]">
+          Innovation and Sustainable Value
+        </h2>
+        <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-lg mb-4">
+          <Image 
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2000&auto=format&fit=crop" 
+            alt="Innovation and Sustainable Value" 
+            fill 
+            className="object-cover"
+          />
+        </div>
+        <p className="text-xs text-gray-500 italic">Technology and research designed for long-term impact.</p>
+      </div>
+
+      {/* 06 — THREE COLUMNS TEXT */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div>
+            <h3 className="text-lg font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              04 — Responsible Innovation
+            </h3>
+            <p className="text-[#59636D] text-[14px] leading-relaxed">
+              Developing technology and research with consideration for safety, people, data and potential impact. We ensure our digital and industrial solutions are built to serve responsibly.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              05 — Long-Term Value
+            </h3>
+            <p className="text-[#59636D] text-[14px] leading-relaxed">
+              Building solutions and relationships intended to create sustainable value for industries and communities. We focus on enduring outcomes rather than short-term gains.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              06 — Governance Alignment
+            </h3>
+            <p className="text-[#59636D] text-[14px] leading-relaxed">
+              Ensuring that our commitments are backed by robust governance frameworks, leadership oversight, and clear policies that guide our everyday operations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* 07 — CENTERED TEXT (Boosting the economy style) */}
+      <div className="max-w-[800px] mx-auto px-6 lg:px-0 mb-32">
+        <h3 className="text-2xl font-bold text-[#111719] mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+          A Foundation for Responsible Growth
+        </h3>
+        <p className="text-[#59636D] text-[16px] leading-relaxed mb-6">
+          These principles form the bedrock of OYEN GROUP's operations. They support our organic growth across technology, research, and corporate services, ensuring that as we expand our footprint, our ethical and professional standards scale with us.
+        </p>
+        <p className="text-[#59636D] text-[16px] leading-relaxed mb-6">
+          By adhering to these commitments, we aim to deliver excellence to our partners and build a sustainable, trusted organisation.
+        </p>
+        
+        <h4 className="font-bold text-[#111719] mb-4 mt-8">Learn More</h4>
+        <ul className="list-disc pl-5 text-[#007079] space-y-2 text-[15px]">
+          <li>
+            <Link href="/about/governance/framework" className="hover:underline">Explore our Governance Framework</Link>
+          </li>
+          <li>
+            <Link href="/about/leadership" className="hover:underline">Meet our Leadership Team</Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* 08 — BOTTOM BANNER (Exploration style) */}
+      <div className="relative w-full h-[250px] flex items-center justify-center overflow-hidden">
         <Image 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
           alt="Corporate Information Links" 
           fill 
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-[#09251F]/80"></div>
+        <div className="absolute inset-0 bg-[#8BA832]/90 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#09251F]/60"></div>
         <div className="relative z-10 text-center px-6">
+          <h2 className="text-3xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+            Corporate Directory
+          </h2>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
             <Link href="/about/governance/framework" className="text-white hover:text-[#D5A547] transition-colors text-sm font-medium inline-flex items-center">
               Governance Framework
