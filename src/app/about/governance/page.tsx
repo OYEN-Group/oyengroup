@@ -87,7 +87,7 @@ export default function GovernancePage() {
             <p className="text-[#59636D] text-[15px] leading-relaxed mb-6 flex-grow">
               Learn about our strategic direction, management responsibility, ethics & integrity, and risk management practices.
             </p>
-            <Link href="/about/governance/framework" className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
+            <Link href="/about/governance/our-commitment" className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -111,7 +111,7 @@ export default function GovernancePage() {
             <p className="text-[#59636D] text-[15px] leading-relaxed mb-6 flex-grow">
               Accountability, Transparency, Integrity, and Responsible Innovation. These principles define our professional conduct.
             </p>
-            <Link href="/about/governance/framework" className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
+            <Link href="/about/governance/our-commitment" className="inline-flex items-center text-[#007079] font-medium text-sm group-hover:text-[#D5A547] transition-colors">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -155,4 +155,5 @@ export default function GovernancePage() {
     </main>
   );
 }
+
 
