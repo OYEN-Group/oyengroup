@@ -12,7 +12,7 @@ const solutions = [
     id: 'training',
     name: 'Training & Programme Management',
     image: '/images/showcase/grid_ui.png',
-    link: '/products/training',
+    link: '/products/oyen-grid',
   },
   {
     id: 'academic',
