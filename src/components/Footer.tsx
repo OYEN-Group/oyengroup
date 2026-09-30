@@ -40,7 +40,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4 text-[13px] uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">Company</h4>
             <ul className="space-y-3 text-[13px] text-white/70">
               <li><Link href="/about" className="hover:text-[#D5A547] transition-colors">About Us</Link></li>
-              <li><Link href="/#approach" className="hover:text-[#D5A547] transition-colors">Our Approach</Link></li>
+              <li><Link href="/about/approach" className="hover:text-[#D5A547] transition-colors">Our Approach</Link></li>
               <li><Link href="/about/leadership" className="hover:text-[#D5A547] transition-colors">Leadership</Link></li>
             </ul>
           </div>
