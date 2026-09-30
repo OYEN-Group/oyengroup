@@ -1,190 +1,460 @@
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
-  title: 'OYEN GRID | OYEN GROUP',
-  description: 'Enterprise Learning Platform.',
+  title: 'OYEN GRID | Learning Programme Management Platform',
+  description: 'Design programmes, coordinate participants and facilitators, track progress and manage delivery from one connected environment.',
 };
 
 export default function OyenGridPage() {
   return (
-    <div className="bg-white min-h-screen pb-0 font-['Inter',sans-serif]">
+    <main className="bg-white min-h-screen pt-28 pb-0 font-['Inter',sans-serif]">
       
-      {/* 1. HERO SECTION */}
-      <section className="pt-24 md:pt-32 px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
-        <div className="mb-6 flex items-center text-sm text-[#59636D]">
-          <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/products" className="hover:text-[#D5A547] transition-colors">Technology</Link>
-          <span className="mx-2">/</span>
-          <span className="text-[#111719] font-medium">OYEN GRID</span>
-        </div>
-
-        <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden">
+      {/* 01 — HERO */}
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 mb-16">
+        <div className="relative w-full h-[500px] rounded-[24px] overflow-hidden shadow-2xl">
           <Image 
-            src="/images/tech.jpg" 
-            alt="OYEN GRID Platform" 
+            quality={100} 
+            src="/images/products/oyen_grid_hero.jpg" 
+            alt="OYEN GRID Learning Management" 
             fill 
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#09251F]/95 via-[#09251F]/80 to-transparent"></div>
           
-          <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-4 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-              OYEN GRID
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-              Enterprise learning operations and platform delivery excellence.
-            </p>
+          <div className="absolute inset-0 flex flex-col justify-between p-10 lg:p-16">
+            <div className="flex items-center text-xs font-medium text-white/80 uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span className="mx-3">›</span>
+              <span className="hover:text-white transition-colors cursor-default">Technology</span>
+              <span className="mx-3">›</span>
+              <span className="text-white font-bold">OYEN GRID</span>
+            </div>
+
+            <div className="max-w-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight leading-[1.1]">
+                OYEN GRID
+              </h1>
+              <p className="text-2xl text-[#D5A547] font-medium mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+                The platform for managing learning programmes at scale.
+              </p>
+              <p className="text-lg text-white/90 font-light tracking-wide mb-8 leading-relaxed max-w-xl">
+                Design programmes, coordinate participants and facilitators, track progress and manage delivery from one connected environment.
+              </p>
+              <div className="flex gap-4">
+                <Link href="/contact" className="px-8 py-3 bg-[#D5A547] hover:bg-[#c29640] text-[#09251F] font-bold rounded-lg transition-colors text-sm">
+                  Explore OYEN GRID
+                </Link>
+                <Link href="/contact" className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg transition-colors text-sm backdrop-blur-sm">
+                  Talk to Us
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* 2. CENTERED TEXT INTRO */}
-      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-[1000px] mx-auto">
-        <div className="flex flex-col gap-8 text-[17px] md:text-[19px] text-[#59636D] leading-[1.7]">
-          <p className="text-[#111719] font-medium text-[19px] md:text-[21px]">
-            OYEN GRID is our proprietary enterprise platform designed to modernise learning operations. It acts as the digital backbone for structuring programmes across regional and global operations, supplying administrative teams with the leading tools they require to scale their business.
-          </p>
-          <p>
-            By centralising operations into one unified environment, we help coordinate learning activities and manage programme delivery from start to finish, ensuring consistency and quality at an enterprise scale.
-          </p>
-          <p>
-            We offer comprehensive support for facilitator assignments, curriculum coordination, and on-site delivery, empowering enterprise administrators with full visibility over their operations. We continuously optimise our platform to meet expanding corporate demands while looking toward the future.
-          </p>
+      {/* 02 — THE PROBLEM */}
+      <section className="py-24 max-w-[900px] mx-auto px-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-light text-[#111719] mb-8 font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
+          Running a large learning programme involves more than delivering content.
+        </h2>
+        <p className="text-lg text-[#59636D] leading-relaxed mb-12">
+          Participants, facilitators, schedules, attendance, progress, reporting and multiple locations can quickly become difficult to coordinate.
+        </p>
+        
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm font-medium text-[#09251F] bg-gray-50 py-6 px-8 rounded-xl border border-gray-100 mb-12">
+          <span>Fragmented information</span>
+          <span className="text-gray-400 hidden md:inline">→</span>
+          <span>Manual tracking</span>
+          <span className="text-gray-400 hidden md:inline">→</span>
+          <span>Limited visibility</span>
+          <span className="text-gray-400 hidden md:inline">→</span>
+          <span>Slow reporting</span>
         </div>
+
+        <p className="text-2xl font-medium text-[#007079] font-['Plus_Jakarta_Sans',sans-serif]">
+          OYEN GRID brings the operation together.
+        </p>
       </section>
 
-      {/* 3. COLORED FEATURE BOX (The "grades" equivalent) */}
-      <section className="py-12 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
-        <div className="bg-[#8BA832] rounded-3xl p-12 md:p-20 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white font-['Plus_Jakarta_Sans',sans-serif] mb-16">
-            Platform Capabilities
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+      {/* 03 — HOW IT WORKS */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+              From programme design to completion.
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row justify-between items-start relative">
+            {/* Desktop Connector Line */}
+            <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-200 z-0"></div>
+
             {[
-              { title: 'Programme Design', desc: 'Curriculum structuring' },
-              { title: 'Participant Tracking', desc: 'Engagement metrics' },
-              { title: 'Facilitator Hub', desc: 'Resource allocation' },
-              { title: 'Progress Analytics', desc: 'Performance records' },
-              { title: 'Global Deployment', desc: 'Scalable infrastructure' }
-            ].map((item, i) => (
-              <div key={i} className="flex flex-col items-center">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white/20 rounded-full flex items-center justify-center mb-6">
-                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full"></div>
+              { num: '01', title: 'Design', desc: 'Create the programme structure.' },
+              { num: '02', title: 'Enrol', desc: 'Organise participants and cohorts.' },
+              { num: '03', title: 'Deliver', desc: 'Coordinate facilitators and activities.' },
+              { num: '04', title: 'Track', desc: 'Monitor participation and progress.' },
+              { num: '05', title: 'Analyse', desc: 'Turn programme data into actionable reports.' },
+            ].map((step, i) => (
+              <div key={i} className="relative z-10 flex flex-col items-center text-center px-4 mb-8 md:mb-0 w-full md:w-1/5">
+                <div className="w-16 h-16 rounded-full bg-white border-2 border-[#007079] flex items-center justify-center text-[#007079] font-bold text-xl mb-6 shadow-sm">
+                  {step.num}
                 </div>
-                <h3 className="text-white font-bold text-sm md:text-base mb-2">{item.title}</h3>
-                <p className="text-white/80 text-xs md:text-sm">{item.desc}</p>
+                <h3 className="text-lg font-bold text-[#111719] mb-2 font-['Plus_Jakarta_Sans',sans-serif]">{step.title}</h3>
+                <p className="text-sm text-[#59636D] leading-relaxed">{step.desc}</p>
+                {/* Mobile Connector */}
+                {i < 4 && <div className="md:hidden text-gray-300 mt-6">↓</div>}
               </div>
             ))}
           </div>
-          <div className="mt-16 text-left">
-            <Link href="/contact" className="text-white hover:underline text-sm font-medium">
-              Read more about our tools +
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* 4. SPLIT 50/50 TEXT ONLY */}
-      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 text-[15px] md:text-[17px] text-[#59636D] leading-[1.7]">
-          <div>
-            <p>
-              We maintain detailed records of attendance and monitor participant progress throughout the operational delivery, ensuring that enterprise learning objectives are met effectively. By streamlining routine administrative tasks, facilitators can focus on what matters most.
-            </p>
-          </div>
-          <div>
-            <p>
-              Technology is at the core of modern education infrastructure. We leverage enterprise cloud capabilities to provide a scalable, secure, and accessible learning environment for all corporate participants, pushing the boundaries of what enterprise platforms can achieve.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. DASHBOARD / MAP SECTION */}
-      <section className="bg-[#F8F9FA] py-20 md:py-32">
-        <div className="px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto text-center">
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-16">
-            Global Operations Dashboard
-          </h2>
-          <div className="relative w-full max-w-[1200px] mx-auto aspect-[16/9] md:aspect-[21/9] bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 flex items-center justify-center p-4">
-            <Image src="/images/hero-slide1.jpg" alt="Operations Dashboard" fill className="object-cover opacity-50" />
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]"></div>
+      {/* 04 — PLATFORM CAPABILITIES */}
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="bg-[#8BA832] rounded-[24px] p-12 md:p-20 text-white shadow-xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+              Platform Capabilities
+            </h2>
             
-            {/* Mock Dashboard UI */}
-            <div className="relative z-10 w-full h-full bg-white/90 rounded-xl shadow-sm border border-gray-100 flex p-6">
-               <div className="w-64 border-r border-gray-200 pr-6 hidden md:block text-left">
-                  <h3 className="font-bold text-gray-800 mb-4">Category</h3>
-                  <div className="space-y-3 text-sm text-gray-600">
-                     <div className="flex items-center gap-2 text-[#007079] font-medium"><div className="w-2 h-2 rounded-full bg-[#007079]"></div> Hubs</div>
-                     <div>Regions</div>
-                     <div>Active Sessions</div>
-                     <div>Metrics</div>
-                  </div>
-               </div>
-               <div className="flex-1 relative">
-                  {/* Mock Map Dots */}
-                  <div className="absolute top-[40%] left-[45%] w-4 h-4 bg-[#007079] rounded-full border-4 border-white shadow-md"></div>
-                  <div className="absolute top-[30%] left-[20%] w-3 h-3 bg-[#007079] rounded-full border-2 border-white shadow-md"></div>
-                  <div className="absolute top-[60%] left-[70%] w-3 h-3 bg-[#007079] rounded-full border-2 border-white shadow-md"></div>
-               </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 text-center">
+              
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <div className="w-8 h-8 rounded-full bg-white"></div>
+                </div>
+                <h3 className="font-bold text-lg mb-4 font-['Plus_Jakarta_Sans',sans-serif]">PROGRAMME DESIGN</h3>
+                <p className="font-bold text-sm text-[#09251F]/80 mb-3 uppercase tracking-wider">Build the programme before delivery begins.</p>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Create structured programmes, define cohorts, assign activities, organise schedules and establish the framework for delivery.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <div className="w-8 h-8 rounded-full bg-white"></div>
+                </div>
+                <h3 className="font-bold text-lg mb-4 font-['Plus_Jakarta_Sans',sans-serif]">PARTICIPANT TRACKING</h3>
+                <p className="font-bold text-sm text-[#09251F]/80 mb-3 uppercase tracking-wider">Know where every participant stands.</p>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Monitor enrolment, attendance, participation, completion and individual progress across cohorts.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <div className="w-8 h-8 rounded-full bg-white"></div>
+                </div>
+                <h3 className="font-bold text-lg mb-4 font-['Plus_Jakarta_Sans',sans-serif]">FACILITATOR HUB</h3>
+                <p className="font-bold text-sm text-[#09251F]/80 mb-3 uppercase tracking-wider">Give facilitators one place to manage delivery.</p>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Access programme information, participant records, schedules, activities and relevant resources.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <div className="w-8 h-8 rounded-full bg-white"></div>
+                </div>
+                <h3 className="font-bold text-lg mb-4 font-['Plus_Jakarta_Sans',sans-serif]">PROGRESS ANALYTICS</h3>
+                <p className="font-bold text-sm text-[#09251F]/80 mb-3 uppercase tracking-wider">Turn programme activity into useful information.</p>
+                <p className="text-sm text-white/90 leading-relaxed font-light">See participation, completion, performance and programme-level trends through centralised reporting.</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-6">
+                  <div className="w-8 h-8 rounded-full bg-white"></div>
+                </div>
+                <h3 className="font-bold text-lg mb-4 font-['Plus_Jakarta_Sans',sans-serif]">GLOBAL DEPLOYMENT</h3>
+                <p className="font-bold text-sm text-[#09251F]/80 mb-3 uppercase tracking-wider">Run programmes across locations.</p>
+                <p className="text-sm text-white/90 leading-relaxed font-light">Coordinate programmes, participants and delivery teams across multiple locations from one platform.</p>
+              </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* 6. SPLIT IMAGE/TEXT BLOCK (The Story) */}
-      <section className="py-20 md:py-32 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden">
-            <Image src="/images/energy.jpg" alt="The OYEN GRID Story" fill className="object-cover" />
-          </div>
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#111719] font-['Plus_Jakarta_Sans',sans-serif] mb-6">
-              The Platform Story
+      {/* 05 — OYEN GRID DASHBOARD (UI Mockup) */}
+      <section className="py-24 bg-[#09251F] text-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-light mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+              See your programmes as they happen.
             </h2>
-            <p className="text-[#59636D] leading-[1.7] mb-8">
-              Developed in-house to solve complex organisational challenges, OYEN GRID has grown into a mature, sophisticated ecosystem. From managing small cohorts to orchestrating global learning deployments for enterprise clients, the platform ensures seamless tracking and high reliability.
-            </p>
-            <Link href="/about" className="text-[#007079] font-medium flex items-center gap-2 hover:underline">
-              Read more
-              <div className="w-8 h-8 rounded-full border border-[#007079] flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            <p className="text-[#D5A547] text-sm uppercase tracking-widest font-bold">OYEN GRID Interface Overview</p>
+          </div>
+
+          {/* Interactive UI Mockup */}
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden max-w-5xl mx-auto border border-white/10">
+            {/* Header bar */}
+            <div className="bg-[#f8fafc] border-b border-gray-200 px-6 py-4 flex justify-between items-center text-gray-800">
+              <div className="flex items-center gap-4">
+                <div className="w-8 h-8 bg-[#09251F] rounded-md flex items-center justify-center text-white font-bold text-xs">OG</div>
+                <span className="font-bold text-lg">Dashboard</span>
               </div>
-            </Link>
+              <div className="flex gap-6 text-sm font-medium text-gray-500">
+                <span className="text-[#007079] border-b-2 border-[#007079] pb-4 -mb-4">Overview</span>
+                <span>Programmes</span>
+                <span>Cohorts</span>
+                <span>Reports</span>
+              </div>
+            </div>
+
+            <div className="p-8 text-gray-800 bg-[#f8fafc]">
+              <h3 className="text-xl font-bold mb-6">Programme Overview</h3>
+              
+              {/* KPIs */}
+              <div className="grid grid-cols-4 gap-4 mb-8">
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Active Programmes</p>
+                  <p className="text-3xl font-light text-[#09251F]">12</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Total Participants</p>
+                  <p className="text-3xl font-light text-[#007079]">850</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Avg Completion Rate</p>
+                  <p className="text-3xl font-light text-[#8BA832]">76%</p>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                  <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">Active Facilitators</p>
+                  <p className="text-3xl font-light text-gray-700">34</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-6">
+                {/* Table */}
+                <div className="col-span-2 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                  <h4 className="font-bold mb-4">Programme Progress</h4>
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-100 text-gray-500">
+                        <th className="pb-2 font-medium">Programme</th>
+                        <th className="pb-2 font-medium">Participants</th>
+                        <th className="pb-2 font-medium">Progress</th>
+                        <th className="pb-2 font-medium">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-50">
+                        <td className="py-3 font-medium text-[#09251F]">Leadership Programme</td>
+                        <td className="py-3 text-gray-600">120</td>
+                        <td className="py-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="w-[78%] h-full bg-[#007079]"></div></div>
+                            <span className="text-xs text-gray-500">78%</span>
+                          </div>
+                        </td>
+                        <td className="py-3"><span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">Active</span></td>
+                      </tr>
+                      <tr className="border-b border-gray-50">
+                        <td className="py-3 font-medium text-[#09251F]">Digital Skills Bootcamp</td>
+                        <td className="py-3 text-gray-600">250</td>
+                        <td className="py-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="w-[64%] h-full bg-[#D5A547]"></div></div>
+                            <span className="text-xs text-gray-500">64%</span>
+                          </div>
+                        </td>
+                        <td className="py-3"><span className="px-2 py-1 bg-green-50 text-green-700 rounded text-xs font-medium">Active</span></td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 font-medium text-[#09251F]">Graduate Development</td>
+                        <td className="py-3 text-gray-600">180</td>
+                        <td className="py-3">
+                          <div className="flex items-center gap-2">
+                            <div className="w-24 h-2 bg-gray-100 rounded-full overflow-hidden"><div className="w-[91%] h-full bg-[#8BA832]"></div></div>
+                            <span className="text-xs text-gray-500">91%</span>
+                          </div>
+                        </td>
+                        <td className="py-3"><span className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs font-medium">Near Completion</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Right panel */}
+                <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col gap-6">
+                  <div>
+                    <h4 className="font-bold mb-3 text-sm">Upcoming Sessions</h4>
+                    <div className="text-sm text-gray-600 border-l-2 border-[#007079] pl-3 mb-3">
+                      <p className="font-medium text-gray-800">Module 3: Strategic Ops</p>
+                      <p className="text-xs mt-1">Today, 14:00 (EMEA Region)</p>
+                    </div>
+                    <div className="text-sm text-gray-600 border-l-2 border-gray-200 pl-3">
+                      <p className="font-medium text-gray-800">Cohort 4 Onboarding</p>
+                      <p className="text-xs mt-1">Tomorrow, 09:00 (APAC Region)</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-3 text-sm">Regional Distribution</h4>
+                    <div className="h-24 w-full bg-gray-50 border border-gray-100 rounded flex items-center justify-center text-xs text-gray-400 italic">
+                      [ Map Visualization ]
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-right text-[10px] text-gray-400 mt-4 uppercase">* Sample dashboard data</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 7. DARK SPLIT BLOCK (Bottom) */}
-      <section className="bg-[#4D5358]">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="p-12 lg:p-24 xl:p-32 flex flex-col justify-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white font-['Plus_Jakarta_Sans',sans-serif] mb-6 leading-tight">
-              The scale of OYEN GRID deployments
-            </h2>
-            <p className="text-lg text-white/80 mb-12">
-              Launch enterprise-level structures effortlessly.
-            </p>
-            <Link href="/contact" className="text-white font-medium flex items-center gap-2 hover:gap-3 transition-all w-fit">
-              Explore the potential of our operations
-              <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center ml-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+      {/* 06 & 07 — BUILT FOR / ROLES */}
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            
+            <div>
+              <h2 className="text-3xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                One platform. Different programme models.
+              </h2>
+              <p className="text-[#59636D] mb-8">Built for programmes that involve more than just a classroom.</p>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <span className="text-[#D5A547] mr-3 mt-1">●</span>
+                  <div>
+                    <strong className="text-[#09251F] block">Corporate Training</strong>
+                    <span className="text-sm text-[#59636D]">Coordinate employee development and monitor progress.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D5A547] mr-3 mt-1">●</span>
+                  <div>
+                    <strong className="text-[#09251F] block">Bootcamps & Skills Programmes</strong>
+                    <span className="text-sm text-[#59636D]">Manage cohorts, facilitators, activities and outcomes.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D5A547] mr-3 mt-1">●</span>
+                  <div>
+                    <strong className="text-[#09251F] block">Professional & Graduate Development</strong>
+                    <span className="text-sm text-[#59636D]">Structure long-term development journeys.</span>
+                  </div>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-[#D5A547] mr-3 mt-1">●</span>
+                  <div>
+                    <strong className="text-[#09251F] block">Large-Scale Training Initiatives</strong>
+                    <span className="text-sm text-[#59636D]">Keep distributed programmes organised across locations and partners.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-3xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                A Multi-Role Experience
+              </h2>
+              <p className="text-[#59636D] mb-8">Providing the right tools and visibility for every user.</p>
+
+              <div className="space-y-6">
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 flex items-center">
+                  <div className="bg-white w-12 h-12 flex items-center justify-center rounded shadow-sm text-[#007079] mr-4 font-bold font-['Plus_Jakarta_Sans',sans-serif]">PM</div>
+                  <div>
+                    <h4 className="font-bold text-[#111719] text-sm">Programme Manager</h4>
+                    <p className="text-sm text-[#59636D]">→ manages programmes and cohorts</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 flex items-center">
+                  <div className="bg-white w-12 h-12 flex items-center justify-center rounded shadow-sm text-[#8BA832] mr-4 font-bold font-['Plus_Jakarta_Sans',sans-serif]">FC</div>
+                  <div>
+                    <h4 className="font-bold text-[#111719] text-sm">Facilitator</h4>
+                    <p className="text-sm text-[#59636D]">→ manages delivery and participants</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 flex items-center">
+                  <div className="bg-white w-12 h-12 flex items-center justify-center rounded shadow-sm text-[#D5A547] mr-4 font-bold font-['Plus_Jakarta_Sans',sans-serif]">PR</div>
+                  <div>
+                    <h4 className="font-bold text-[#111719] text-sm">Participant</h4>
+                    <p className="text-sm text-[#59636D]">→ accesses activities and tracks progress</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 flex items-center">
+                  <div className="bg-white w-12 h-12 flex items-center justify-center rounded shadow-sm text-[#09251F] mr-4 font-bold font-['Plus_Jakarta_Sans',sans-serif]">AD</div>
+                  <div>
+                    <h4 className="font-bold text-[#111719] text-sm">Administrator</h4>
+                    <p className="text-sm text-[#59636D]">→ manages users, programmes and reporting</p>
+                  </div>
+                </div>
               </div>
-            </Link>
-          </div>
-          <div className="relative w-full h-[400px] lg:h-auto">
-            <Image src="/images/partnership.jpg" alt="Enterprise scale" fill className="object-cover" />
+            </div>
+
           </div>
         </div>
       </section>
 
-    </div>
+      {/* 08 — ANALYTICS */}
+      <section className="py-24 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
+               <Image 
+                  src="/images/products/oyen_grid_analytics.jpg" 
+                  alt="Analytics Dashboard" 
+                  fill 
+                  className="object-cover"
+                />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold text-[#111719] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                Know what is happening across every programme.
+              </h2>
+              <p className="text-[#59636D] mb-8 leading-relaxed">
+                Modern enterprise learning requires deep visibility. Turn programme activity into comprehensive, actionable data.
+              </p>
+              <div className="grid grid-cols-2 gap-y-4 font-medium text-[#09251F]">
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Participation</div>
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Attendance</div>
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Completion</div>
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Performance</div>
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Cohort Progress</div>
+                <div className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-[#007079]"></div> Programme Outcomes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 09 — SCALE */}
+      <section className="py-32 text-center max-w-[800px] mx-auto px-6">
+        <h2 className="text-3xl md:text-5xl font-light text-[#111719] mb-8 font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
+          One platform. Multiple programmes.<br/>Multiple locations.
+        </h2>
+        <p className="text-xl text-[#59636D] leading-relaxed">
+          OYEN GRID is designed to help organisations coordinate learning programmes as they grow — from a single cohort to complex, distributed deployments.
+        </p>
+      </section>
+
+      {/* 10 — FINAL CTA */}
+      <div className="relative w-full h-[350px] flex items-center justify-center overflow-hidden">
+        <Image 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" 
+          alt="Deploy OYEN GRID" 
+          fill 
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#09251F]/90"></div>
+        <div className="relative z-10 text-center px-6 max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+            Ready to bring your programmes together?
+          </h2>
+          <p className="text-white/80 text-lg mb-10 font-light">
+            See how OYEN GRID can help you plan, coordinate and measure learning delivery.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact" className="px-8 py-3 bg-[#D5A547] hover:bg-[#c29640] text-[#09251F] font-bold rounded-lg transition-colors text-sm">
+              Explore the Platform
+            </Link>
+            <Link href="/contact" className="px-8 py-3 bg-white hover:bg-gray-100 text-[#09251F] font-bold rounded-lg transition-colors text-sm">
+              Contact OYEN
+            </Link>
+          </div>
+        </div>
+      </div>
+
+    </main>
   );
 }
