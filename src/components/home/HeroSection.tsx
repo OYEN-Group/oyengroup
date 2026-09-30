@@ -23,7 +23,7 @@ const slides = [
     headline: 'Ideas Become Solutions.',
     subtitle: 'Bringing people, research and technology together to address real challenges.',
     ctaText: 'Our Approach',
-    ctaLink: '/about#approach',
+    ctaLink: '/about/approach',
   },
   {
     id: 3,

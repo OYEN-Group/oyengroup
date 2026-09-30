@@ -189,7 +189,7 @@ export default function AboutClient() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
           {[
             { title: "Our leadership", desc: "Meet the people behind OYEN.", img: "/images/partnership.jpg", link: "/about/leadership" },
-            { title: "Our approach", desc: "Discover how we work.", img: "/images/hero-slide2.jpg", link: "/about#approach" },
+            { title: "Our approach", desc: "Discover how we work.", img: "/images/hero-slide2.jpg", link: "/about/approach" },
             { title: "Our technology", desc: "Explore what we're building.", img: "/images/tech.jpg", link: "/products" }
           ].map((card, idx) => (
             <div key={idx} className="flex flex-col group cursor-pointer">
