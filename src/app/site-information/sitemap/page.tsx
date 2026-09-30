@@ -56,7 +56,7 @@ export default function SitemapPage() {
                 <li><Link href="/products/oyen-grid" className="hover:text-[#D5A547] hover:underline transition-colors">OYEN GRID</Link></li>
                 <li><Link href="/products/verba" className="hover:text-[#D5A547] hover:underline transition-colors">VERBA</Link></li>
                 <li><Link href="/products/orivex" className="hover:text-[#D5A547] hover:underline transition-colors">ORIVEX</Link></li>
-                <li><Link href="/products/training" className="hover:text-[#D5A547] hover:underline transition-colors">Training & Programme Management</Link></li>
+                <li><Link href="/products/oyen-grid" className="hover:text-[#D5A547] hover:underline transition-colors">Training & Programme Management</Link></li>
                 <li><Link href="/products/academic" className="hover:text-[#D5A547] hover:underline transition-colors">Academic Research & Writing</Link></li>
               </ul>
             </div>
