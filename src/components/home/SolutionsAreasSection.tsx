@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import ParallaxImage from '@/components/animations/ParallaxImage';
 
 const solutionsRow1 = [
   { id: 'training', title: 'Training & Programme Management', bg: '/images/oyen_grid.jpg', href: '/products/oyen-grid' },
@@ -19,14 +20,12 @@ export default function SolutionsAreasSection() {
   return (
     <section className="relative w-full bg-brand-offwhite pb-24 lg:pb-32">
       {/* Background Industrial Image */}
-      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
-        <Image
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+        <ParallaxImage
           src="/images/hero-slide3.png"
           alt="Industrial Manufacturing Facility"
-          fill
-          className="object-cover object-center"
-          quality={100}
-          unoptimized={true}
+          className="object-cover object-center w-full h-full"
+          containerClassName="absolute inset-0 w-full h-full"
         />
       </div>
 
