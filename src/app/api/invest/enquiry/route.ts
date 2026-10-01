@@ -1,9 +1,20 @@
-import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Force this route to be server-rendered only, never statically evaluated at build time
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set.');
+      return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
+    }
+
+    // Dynamic import to prevent build-time module evaluation
+    const { Resend } = await import('resend');
+    const resend = new Resend(apiKey);
+
     const { name, email, phone, investmentRange } = await req.json();
 
     if (!name || !email) {
@@ -62,11 +73,6 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
-
-    // NOTE: Investor confirmation email requires a verified sending domain in Resend.
-    // To enable it, verify oyengroup.com in the Resend dashboard and update the from address.
-    // For now, only the internal notification to oyengroupp@gmail.com is sent.
-
 
     return NextResponse.json({ success: true });
   } catch (error) {
