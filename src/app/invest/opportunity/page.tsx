@@ -164,7 +164,7 @@ export default function InvestmentOpportunityPage() {
               </p>
 
               <Link
-                href="/invest/how-to-invest"
+                href="/invest/how-to-invest#enquiry-form"
                 className="inline-flex items-center text-white bg-[#09251F] hover:bg-[#D5A547] hover:text-[#111719] px-8 py-4 font-bold tracking-widest uppercase text-sm transition-colors duration-300 rounded-sm group self-start"
               >
                 Start a Conversation <span className="ml-3 border border-white group-hover:border-[#111719] rounded-full p-1 transition-colors">→</span>

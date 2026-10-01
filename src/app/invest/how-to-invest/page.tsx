@@ -245,7 +245,7 @@ export default function HowToInvestPage() {
       </section>
 
       {/* ─── 05 ENQUIRY FORM (half-photo, half-form) ─── */}
-      <section className="max-w-[1400px] mx-auto px-6 lg:px-8 py-24">
+      <section id="enquiry-form" className="max-w-[1400px] mx-auto px-6 lg:px-8 py-24">
         <div className="flex flex-col md:flex-row gap-0 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
           <div className="relative w-full md:w-[45%] h-[300px] md:h-auto">
             <Image src="/images/hero-slide1.jpg" alt="Start the conversation" fill className="object-cover" unoptimized />
