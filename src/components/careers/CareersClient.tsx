@@ -149,19 +149,19 @@ export default function CareersClient() {
               quote: "OYEN gives you the freedom to build things that actually matter. The scale of the problems we solve here is incredible.",
               name: "Sarah Adebayo",
               title: "Lead Engineer",
-              img: "/images/partnership.jpg" // placeholder
+              img: "/images/team/sarah.jpg"
             },
             {
               quote: "Moving from academia to OYEN was the best decision. Here, our research is immediately applied to industrial challenges.",
               name: "Dr. Emmanuel Okon",
               title: "Senior Researcher",
-              img: "/images/partnership.jpg"
+              img: "/images/team/emmanuel.jpg"
             },
             {
               quote: "The environment is intensely collaborative. You are constantly learning from experts across completely different domains.",
               name: "Amira Hassan",
               title: "Product Manager",
-              img: "/images/partnership.jpg"
+              img: "/images/team/amira.jpg"
             }
           ].map((test, idx) => (
             <div key={idx} className="flex flex-col items-center text-center">
