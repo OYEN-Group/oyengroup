@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import CTAButton from '@/components/CTAButton';
+import FadeUp from '@/components/animations/FadeUp';
 
 const products = [
   {
@@ -43,11 +44,8 @@ export default function BusinessesSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {products.map((product, index) => {
             const innerContent = (
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: index * 0.15 }}
+              <FadeUp
+                delay={index * 0.15}
                 className="relative w-full aspect-[4/5] overflow-hidden rounded-md shadow-lg"
               >
                 {/* Image Background */}
@@ -97,7 +95,7 @@ export default function BusinessesSection() {
                     </div>
                   </div>
                 )}
-              </motion.div>
+              </FadeUp>
             );
 
             if (product.comingSoon) {
