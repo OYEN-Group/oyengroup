@@ -2,43 +2,48 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import FadeUp from '@/components/animations/FadeUp';
+import ParallaxImage from '@/components/animations/ParallaxImage';
 
 export default function CareersClient() {
   return (
-    <div className="bg-white min-h-screen pb-32">
+    <div className="bg-brand-offwhite min-h-screen pb-32">
       
       {/* 1. HERO SECTION */}
       <section className="pt-24 md:pt-32 px-4 md:px-8 lg:px-12 max-w-[1600px] mx-auto">
-        <div className="mb-6 flex items-center text-sm font-['Inter',sans-serif] text-[#59636D]">
+        <div className="mb-6 flex items-center text-xs font-bold tracking-widest uppercase text-[#59636D]">
           <Link href="/" className="hover:text-[#D5A547] transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-[#111719] font-medium">Careers</span>
+          <span className="mx-3">/</span>
+          <span className="text-[#111719]">Careers</span>
         </div>
 
-        <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden">
-          <Image 
-            src="/images/hero-slide4.jpg" 
-            alt="Careers at OYEN GROUP" 
-            fill 
-            className="object-cover object-top"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-          
-          <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-[64px] font-bold text-white mb-6 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-              Careers
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-['Inter',sans-serif] max-w-2xl leading-relaxed mb-8">
-              Explore opportunities to build, research, and innovate with us.
-            </p>
-            <div className="flex gap-4">
-              <button className="px-8 py-3 bg-[#D5A547] hover:bg-[#b58b3a] text-white rounded-full font-bold transition-all">
-                Search open roles
-              </button>
+        <FadeUp delay={0.1}>
+          <div className="relative w-full h-[500px] md:h-[600px] lg:h-[700px] rounded-2xl md:rounded-[32px] overflow-hidden shadow-2xl">
+            <ParallaxImage 
+              src="/images/hero-slide4.jpg" 
+              alt="Careers at OYEN GROUP" 
+              className="object-cover object-top w-full h-full"
+              containerClassName="absolute inset-0 w-full h-full"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-black/10"></div>
+            
+            <div className="absolute bottom-12 md:bottom-24 left-6 md:left-12 lg:left-24 max-w-3xl z-10">
+              <h1 className="text-4xl md:text-5xl lg:text-[72px] font-bold text-white mb-6 leading-[1.1] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+                Careers
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl leading-relaxed mb-8">
+                Explore opportunities to build, research, and innovate with us.
+              </p>
+              <div className="flex gap-4">
+                <button className="px-8 py-4 bg-[#D5A547] hover:bg-[#b58b3a] text-[#111719] tracking-widest uppercase text-sm rounded-sm font-bold transition-all">
+                  Search open roles
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </FadeUp>
       </section>
 
       {/* 2. THREE-COLUMN INTRO */}
@@ -65,26 +70,40 @@ export default function CareersClient() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
             {[
-              { title: "Professionals", desc: "Bring your expertise to our growing teams across technology, research, and industry.", img: "/images/partnership.jpg" },
-              { title: "Graduates & Interns", desc: "Start your career with hands-on experience on projects that shape the future.", img: "/images/hero-slide2.jpg" },
-              { title: "Researchers", desc: "Push the boundaries of applied knowledge in our dedicated research labs.", img: "/images/tech.jpg" }
+              { title: "Professionals", desc: "Bring your expertise to our growing teams across technology, research, and industry.", img: "/images/partnership.jpg", comingSoon: true },
+              { title: "Graduates & Interns", desc: "Start your career with hands-on experience on projects that shape the future.", img: "/images/hero-slide2.jpg", comingSoon: true },
+              { title: "Researchers", desc: "Push the boundaries of applied knowledge in our dedicated research labs.", img: "/images/tech.jpg", comingSoon: true }
             ].map((card, idx) => (
-              <div key={idx} className="flex flex-col group cursor-pointer">
+              <div key={idx} className={`flex flex-col group ${card.comingSoon ? 'cursor-not-allowed opacity-80' : 'cursor-pointer'}`}>
                 <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6">
-                  <Image src={card.img} alt={card.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <Image 
+                    src={card.img} 
+                    alt={card.title} 
+                    fill 
+                    className={`object-cover transition-transform duration-700 ${card.comingSoon ? 'blur-sm scale-105' : 'group-hover:scale-105'}`} 
+                  />
+                  {card.comingSoon && (
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center z-10">
+                      <div className="bg-[#D5A547] text-[#09251F] px-4 py-2 rounded-sm font-bold uppercase tracking-widest text-xs shadow-xl">
+                        Coming Soon
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-[#111719] text-[22px] font-bold mb-3 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#D5A547] transition-colors">
+                <h3 className={`text-[#111719] text-[22px] font-bold mb-3 font-['Plus_Jakarta_Sans',sans-serif] transition-colors ${!card.comingSoon && 'group-hover:text-[#D5A547]'}`}>
                   {card.title}
                 </h3>
                 <p className="text-[#59636D] text-[17px] font-['Inter',sans-serif] mb-6 leading-relaxed">
                   {card.desc}
                 </p>
-                <span className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
-                  Learn more
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </span>
+                {!card.comingSoon && (
+                  <span className="text-[#D5A547] font-bold font-['Inter',sans-serif] flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                    Learn more
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                )}
               </div>
             ))}
           </div>
