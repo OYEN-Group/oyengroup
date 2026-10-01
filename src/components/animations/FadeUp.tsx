@@ -13,10 +13,10 @@ interface FadeUpProps {
 export default function FadeUp({ children, delay = 0, className = '', duration = 0.6 }: FadeUpProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10%" }}
-      transition={{ duration: duration, delay: delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration: duration + 0.2, delay: delay, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={className}
     >
       {children}

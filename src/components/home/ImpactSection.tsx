@@ -4,16 +4,17 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import CTAButton from '@/components/CTAButton';
+import ParallaxImage from '@/components/animations/ParallaxImage';
 
 export default function ImpactSection() {
  return (
  <section className="relative w-full h-[70vh] min-h-[600px] flex items-center bg-brand-primary">
- <div className="absolute inset-0">
- <Image quality={100}
+ <div className="absolute inset-0 overflow-hidden">
+ <ParallaxImage 
  src="/images/impact_bg.jpg"
  alt="Architectural overview showing progress and development"
- fill
- className="object-cover"
+ className="object-cover w-full h-full"
+ containerClassName="absolute inset-0 w-full h-full"
  />
  {/* Lighter overlay to let the image shine */}
  <div className="absolute inset-0 bg-gradient-to-t from-[#111719]/90 via-[#111719]/40 to-transparent" />
