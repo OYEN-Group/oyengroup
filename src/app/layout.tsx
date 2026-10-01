@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-plus-jakarta-sans' });
 
 export const metadata: Metadata = {
- title: 'OYEN GROUP — People. Ideas. Solutions. Impact.',
+ title: 'OYEN GROUP',
  description: 'OYEN GROUP is a diversified business group focused on building and scaling innovative solutions across key sectors.',
  keywords: 'Oyen Group, diversified business, energy, tech, agro',
  authors: [{ name: 'OYEN GROUP' }],
