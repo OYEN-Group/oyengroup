@@ -47,7 +47,7 @@ function InvestorEnquiryForm() {
           We have received your enquiry. A member of the OYEN team will be in touch shortly to arrange a conversation.
         </p>
         <p className="text-xs text-gray-400 mt-2 leading-relaxed">
-          A confirmation has been sent to <strong>{form.email}</strong>.
+          Our team will reach out to <strong>{form.email}</strong> or your provided phone number.
         </p>
       </div>
     );

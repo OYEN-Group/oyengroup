@@ -63,42 +63,10 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    // Send confirmation email to the investor
-    await resend.emails.send({
-      from: 'OYEN GROUP <onboarding@resend.dev>',
-      to: [email],
-      subject: 'We have received your enquiry — OYEN GROUP',
-      html: `
-        <div style="font-family: 'Inter', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden;">
-          
-          <div style="background: #09251F; padding: 32px 40px;">
-            <p style="color: #D5A547; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 8px 0;">OYEN GROUP</p>
-            <h1 style="color: #ffffff; font-size: 26px; font-weight: 700; margin: 0; line-height: 1.3;">Thank you, ${name}.</h1>
-          </div>
+    // NOTE: Investor confirmation email requires a verified sending domain in Resend.
+    // To enable it, verify oyengroup.com in the Resend dashboard and update the from address.
+    // For now, only the internal notification to oyengroupp@gmail.com is sent.
 
-          <div style="padding: 40px;">
-            <p style="font-size: 16px; color: #59636D; line-height: 1.7; margin: 0 0 20px 0;">
-              We have received your investment enquiry and a member of the OYEN team will be in touch shortly to arrange a conversation.
-            </p>
-            <p style="font-size: 16px; color: #59636D; line-height: 1.7; margin: 0 0 32px 0;">
-              In the meantime, you are welcome to explore more about our technology and approach on the OYEN website.
-            </p>
-
-            <div style="border-top: 1px solid #e5e7eb; padding-top: 24px;">
-              <p style="font-size: 13px; color: #9ca3af; line-height: 1.6; margin: 0;">
-                This confirmation is provided for discussion purposes only. Formal investment documentation will be provided following your investor discussion with the OYEN team. Prospective investors should obtain independent professional advice where appropriate.
-              </p>
-            </div>
-          </div>
-
-          <div style="background: #f8fafc; padding: 20px 40px; border-top: 1px solid #e5e7eb;">
-            <p style="margin: 0; font-size: 11px; color: #9ca3af; letter-spacing: 1px; text-transform: uppercase;">
-              OYEN GROUP · Africa and Beyond · oyengroup.com
-            </p>
-          </div>
-        </div>
-      `,
-    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
